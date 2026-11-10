@@ -227,3 +227,7 @@ header *, .header *, [class*="logo"] *, [class*="brand"] * {
     font-weight: 900 !important;
     font-size: 14px !important;
 }
+nav a, .menu a, .nav-menu a, header a, .main-menu a, [class*="menu"] a, .nav-link, .menu-item a {
+    font-size: 26px !important;
+    font-weight: 700 !important;
+}
