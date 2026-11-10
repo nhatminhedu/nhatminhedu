@@ -1,12 +1,12 @@
 
-// Menu trên điện thoại
+// MENU ĐIỆN THOẠI
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
 if (menuToggle && mainNav) {
   menuToggle.addEventListener("click", () => {
-    const isOpen = mainNav.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    const opened = mainNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(opened));
   });
 
   mainNav.querySelectorAll("a").forEach(link => {
@@ -17,29 +17,29 @@ if (menuToggle && mainNav) {
   });
 }
 
-// Lọc khóa học
+// TÌM KIẾM VÀ LỌC KHÓA HỌC
 const filterButtons = document.querySelectorAll(".filter-btn");
 const courseCards = document.querySelectorAll(".course-card");
 const courseSearch = document.getElementById("courseSearch");
 
-let activeCategory = "all";
+let selectedCategory = "all";
 
 function filterCourses() {
   const keyword = (courseSearch?.value || "").trim().toLowerCase();
 
   courseCards.forEach(card => {
     const category = card.dataset.category || "";
-    const searchableText = (
-      card.dataset.search + " " + card.textContent
+    const content = (
+      (card.dataset.search || "") + " " + card.textContent
     ).toLowerCase();
 
-    const matchesCategory =
-      activeCategory === "all" || category === activeCategory;
-    const matchesKeyword = searchableText.includes(keyword);
+    const categoryMatch =
+      selectedCategory === "all" || category === selectedCategory;
+    const keywordMatch = content.includes(keyword);
 
     card.classList.toggle(
       "hidden",
-      !(matchesCategory && matchesKeyword)
+      !(categoryMatch && keywordMatch)
     );
   });
 }
@@ -48,14 +48,15 @@ filterButtons.forEach(button => {
   button.addEventListener("click", () => {
     filterButtons.forEach(item => item.classList.remove("active"));
     button.classList.add("active");
-    activeCategory = button.dataset.filter;
+    selectedCategory = button.dataset.filter;
     filterCourses();
   });
 });
 
 courseSearch?.addEventListener("input", filterCourses);
 
-// Biểu mẫu tư vấn DEMO: không gửi dữ liệu lên máy chủ
+// BIỂU MẪU DEMO
+// Không gửi thông tin lên máy chủ và không lưu dữ liệu.
 const consultForm = document.getElementById("consultForm");
 const formMessage = document.getElementById("formMessage");
 
@@ -74,21 +75,22 @@ consultForm?.addEventListener("submit", event => {
   }
 
   if (!phonePattern.test(phone)) {
-    formMessage.textContent = "Vui lòng kiểm tra lại số điện thoại.";
+    formMessage.textContent = "Số điện thoại chưa đúng định dạng.";
     return;
   }
 
   formMessage.textContent =
-    "Biểu mẫu DEMO đã kiểm tra thông tin. Website chưa kết nối hệ thống nhận đăng ký.";
+    "Thông tin đã được kiểm tra trên bản DEMO. Website chưa kết nối hệ thống nhận đăng ký.";
 });
 
-// Năm hiện tại ở chân trang
+// HIỂN THỊ NĂM HIỆN TẠI
 const currentYear = document.getElementById("currentYear");
+
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
 }
 
-// Đánh dấu mục menu đang xem
+// ĐÁNH DẤU MENU THEO KHU VỰC ĐANG XEM
 const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll(".main-nav a[href^='#']");
 
@@ -104,7 +106,9 @@ if ("IntersectionObserver" in window) {
         });
       }
     });
-  }, { rootMargin: "-35% 0px -55% 0px" });
+  }, {
+    rootMargin: "-30% 0px -60% 0px"
+  });
 
   sections.forEach(section => observer.observe(section));
 }
