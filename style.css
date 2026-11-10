@@ -243,3 +243,10 @@ nav *, [class*="nav"] *, [class*="menu"] *, header li a, .navbar-nav a, .nav-ite
 nav a:hover, [class*="menu"] a:hover, .nav-link:hover {
     color: #ffffff !important;
 }
+.main-header, header .main-header, [class*="main-header"], .header-main {
+    background-color: #4ee44e !important;
+}
+
+.logo-text h1 {
+    color: #ffffff !important;
+}
