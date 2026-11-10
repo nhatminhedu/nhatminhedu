@@ -243,26 +243,28 @@ nav *, [class*="nav"] *, [class*="menu"] *, header li a, .navbar-nav a, .nav-ite
 nav a:hover, [class*="menu"] a:hover, .nav-link:hover {
     color: #ffffff !important;
 }
-/* 1. Phóng rộng chiều cao toàn bộ thanh banner (Header) */
+/* 1. Đổi nền xanh đậm toàn dải */
 header, .site-header, header .main-header, .main-header {
     background-color: #1b5e20 !important;
-    padding-top: 35px !important;   /* Tăng khoảng cách trống phía trên để thanh rộng hơn */
-    padding-bottom: 35px !important;/* Tăng khoảng cách trống phía dưới để thanh rộng hơn */
-    min-height: 140px !important;   /* Cưỡng ép chiều cao tối thiểu của banner lớn hơn */
 }
 
-/* 2. Cưỡng ép tên thương hiệu to hẳn lên gấp đôi và đổi sang màu TRẮNG SÁNG */
-header h1, header h1 a, .logo-text h1, .logo-text a, [class*="logo"] h1, [class*="logo"] a, h1 {
+/* 2. Cưỡng ép chữ tên thương hiệu sang màu trắng nổi bật */
+.logo-text h1, .logo-text a, header h1, header h1 a {
     color: #ffffff !important;
-    font-size: 38px !important;    /* Kích thước to vượt trội hẳn */
-    font-weight: 900 !important;    /* Làm chữ cực kỳ dày, đậm nét */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* 3. Thu nhỏ dòng chữ khẩu hiệu và đổi sang màu VÀNG NEON làm nền */
-header p, .header p, [class*="logo"] p, [class*="brand"] p, .logo-text p, header span {
+/* 3. Dòng chữ khẩu hiệu sang màu vàng neon */
+header p, .header p, [class*="logo"] p, [class*="brand"] p, .logo-text p {
     color: #ffeb3b !important; 
-    font-size: 14px !important;    /* Nhỏ gọn vừa phải để tôn tên chính */
-    font-weight: 700 !important;
-    margin-top: 8px !important;     /* Tạo khoảng cách giãn dòng cho thoáng */
+    font-weight: 800 !important;
+}
+
+/* 4. Định hình lại khung hotline và nút bấm để không bị nhảy lệch */
+.header-right, .contact-info, .btn-nav-tuyen-sinh, [class*="hotline"] {
+    display: flex !important;
+    align-items: center !important;
+    color: #ffffff !important;
+}
+.contact-text strong {
+    color: #ffeb3b !important;
 }
