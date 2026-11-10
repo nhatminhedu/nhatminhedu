@@ -1,4 +1,7 @@
-<span class="eyebrow">BẮT ĐẦU NGAY HÔM NAY</span>
+<section class="register-section" id="register">
+  <div class="container register-container">
+    <div class="register-info">
+      <span class="eyebrow">BẮT ĐẦU NGAY HÔM NAY</span>
       <h2>Đăng ký nhận tư vấn</h2>
       <p>Để lại thông tin, đội ngũ Nhật Minh sẽ hỗ trợ bạn tìm hiểu chương trình phù hợp.</p>
       <div class="contact">☎ <b>0372.484.382</b></div>
@@ -33,8 +36,49 @@
     <a href="#register" class="btn light-btn">Đăng ký hợp tác</a>
   </div>
 </section>
-</main>
 
 <footer class="footer">
   <div class="container footer-grid">
-    <div class="logo footer-logo"><span class="logo-icon">NM</span><span><b>NHẬT MINH</b><small>EDUCATION & TRAININ
+    <div class="logo footer-logo"><span class="logo-icon">NM</span><span><b>NHẬT MINH</b><small>EDUCATION & TRAINING</small></span></div>
+  </div>
+</footer>
+
+<!-- Đoạn script giữ nguyên cấu trúc input name gốc để xử lý form -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const registerForm = document.getElementById('registerForm');
+    const registerMessage = document.getElementById('registerMessage');
+
+    if (registerForm) {
+      registerForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nameInput = registerForm.querySelector('input[name="name"]');
+        const phoneInput = registerForm.querySelector('input[name="phone"]');
+        const submitBtn = registerForm.querySelector('button[type="submit"]');
+
+        const phoneVal = phoneInput.value.trim().replace(/\s+/g, '');
+        const phoneRegex = /^[0-9]{10,11}$/;
+
+        if (!phoneRegex.test(phoneVal)) {
+          registerMessage.textContent = 'Vui lòng nhập số điện thoại hợp lệ (10-11 chữ số).';
+          registerMessage.style.color = '#c62828';
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Đang gửi...';
+        registerMessage.textContent = 'Đang gửi yêu cầu...';
+        registerMessage.style.color = '#333';
+
+        setTimeout(function () {
+          registerMessage.textContent = 'Cảm ơn bạn! Đội ngũ Nhật Minh đã nhận được thông tin.';
+          registerMessage.style.color = '#2e7d32';
+          registerForm.reset();
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Gửi yêu cầu tư vấn';
+        }, 1200);
+      });
+    }
+  });
+</script>
