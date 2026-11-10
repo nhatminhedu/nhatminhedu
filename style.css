@@ -243,14 +243,13 @@ nav *, [class*="nav"] *, [class*="menu"] *, header li a, .navbar-nav a, .nav-ite
 nav a:hover, [class*="menu"] a:hover, .nav-link:hover {
     color: #ffffff !important;
 }
-header > div:first-child, 
-.top-bar, 
-[class*="topbar"], 
-[class*="header-top"] {
+body > div:first-of-type,
+body > header:first-of-type,
+[style*="background-color: rgb(0, 0, 0)"],
+[style*="background: rgb(0, 0, 0)"],
+.top-bar, .topbar, .header-top {
     display: none !important;
     height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
 }
