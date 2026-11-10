@@ -1,313 +1,184 @@
-/* ==================================================
-   GIÁO DỤC NHẬT MINH
-   Các tương tác của website DEMO
-================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
-  // -----------------------------------------------
-  // 1. MENU TRÊN ĐIỆN THOẠI
-  // -----------------------------------------------
 
+  // 1. MENU ĐIỆN THOẠI
   const menuToggle = document.getElementById("menuToggle");
   const mainNav = document.getElementById("mainNav");
-  const navLinks = document.querySelectorAll(".nav-link");
 
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener("click", function () {
-      const isOpen = mainNav.classList.toggle("open");
-
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Đóng menu" : "Mở menu"
-      );
-    });
-
-    navLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        mainNav.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Mở menu");
-      });
-    });
-
-    document.addEventListener("click", function (event) {
-      const clickedInsideMenu = mainNav.contains(event.target);
-      const clickedToggle = menuToggle.contains(event.target);
-
-      if (!clickedInsideMenu && !clickedToggle) {
-        mainNav.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-
-  // -----------------------------------------------
-  // 2. ĐÁNH DẤU MENU THEO VỊ TRÍ TRANG
-  // -----------------------------------------------
-
-  const sections = document.querySelectorAll("main section[id]");
-
-  function updateActiveMenu() {
-    let currentSection = "home";
-
-    sections.forEach(function (section) {
-      const sectionTop = section.offsetTop - 150;
-
-      if (window.scrollY >= sectionTop) {
-        currentSection = section.id;
-      }
-    });
-
-    navLinks.forEach(function (link) {
-      const target = link.getAttribute("href");
-
-      link.classList.toggle(
-        "active",
-        target === "#" + currentSection
-      );
-    });
-  }
-
-  window.addEventListener("scroll", updateActiveMenu, {
-    passive: true
+  menuToggle.addEventListener("click", function () {
+    mainNav.classList.toggle("open");
+    menuToggle.textContent = mainNav.classList.contains("open")
+      ? "×"
+      : "☰";
   });
 
-  updateActiveMenu();
+  document.querySelectorAll(".nav-link").forEach(function (link) {
+    link.addEventListener("click", function () {
+      document.querySelectorAll(".nav-link").forEach(function (item) {
+        item.classList.remove("active");
+      });
 
-  // -----------------------------------------------
-  // 3. TÌM KIẾM VÀ LỌC KHÓA HỌC
-  // -----------------------------------------------
+      link.classList.add("active");
+      mainNav.classList.remove("open");
+      menuToggle.textContent = "☰";
+    });
+  });
 
+  // 2. TÌM KIẾM VÀ LỌC KHÓA HỌC
   const courseSearch = document.getElementById("courseSearch");
-  const courseFilters = document.getElementById("courseFilters");
+  const courseCategory = document.getElementById("courseCategory");
   const courseCards = document.querySelectorAll(".course-card");
-  const emptyState = document.getElementById("emptyState");
-
-  let selectedCategory = "all";
+  const noCourse = document.getElementById("noCourse");
 
   function filterCourses() {
-    const keyword = courseSearch
-      ? courseSearch.value.trim().toLowerCase()
-      : "";
+    const keyword = courseSearch.value.trim().toLowerCase();
+    const category = courseCategory.value;
 
     let visibleCount = 0;
 
     courseCards.forEach(function (card) {
-      const category = card.dataset.category || "";
-      const searchText = (
-        card.dataset.search + " " + card.innerText
-      ).toLowerCase();
+      const content = card.textContent.toLowerCase();
+      const cardCategory = card.dataset.category;
 
-      const matchesCategory =
-        selectedCategory === "all" ||
-        category === selectedCategory;
+      const matchKeyword = content.includes(keyword);
+      const matchCategory =
+        category === "all" || cardCategory === category;
 
-      const matchesKeyword =
-        keyword === "" || searchText.includes(keyword);
-
-      const isVisible = matchesCategory && matchesKeyword;
-
-      card.hidden = !isVisible;
-
-      if (isVisible) {
+      if (matchKeyword && matchCategory) {
+        card.style.display = "";
         visibleCount++;
+      } else {
+        card.style.display = "none";
       }
     });
 
-    if (emptyState) {
-      emptyState.hidden = visibleCount !== 0;
-    }
+    noCourse.hidden = visibleCount !== 0;
   }
 
-  if (courseSearch) {
-    courseSearch.addEventListener("input", filterCourses);
-  }
+  courseSearch.addEventListener("input", filterCourses);
+  courseCategory.addEventListener("change", filterCourses);
 
-  if (courseFilters) {
-    courseFilters.addEventListener("click", function (event) {
-      const button = event.target.closest(".filter-btn");
-
-      if (!button) return;
-
-      selectedCategory = button.dataset.filter;
-
-      courseFilters.querySelectorAll(".filter-btn").forEach(
-        function (filterButton) {
-          filterButton.classList.remove("active");
-        }
-      );
-
-      button.classList.add("active");
-      filterCourses();
-    });
-  }
-
-  // -----------------------------------------------
-  // 4. HỘP XEM CHI TIẾT KHÓA HỌC
-  // -----------------------------------------------
-
-  const courseModal = document.getElementById("courseModal");
+  // 3. MODAL CHI TIẾT KHÓA HỌC
+  const modal = document.getElementById("detailModal");
   const modalTitle = document.getElementById("modalTitle");
-  const modalDescription = document.getElementById(
-    "modalDescription"
-  );
+  const modalDescription = document.getElementById("modalDescription");
   const modalClose = document.getElementById("modalClose");
-  const modalRegister = document.getElementById("modalRegister");
+  const modalBackdrop = document.getElementById("modalBackdrop");
+  const modalConsult = document.getElementById("modalConsult");
 
-  const detailButtons = document.querySelectorAll(".detail-link");
-
-  function openCourseModal(title, description) {
-    if (!courseModal) return;
-
+  function openModal(title, description) {
     modalTitle.textContent = title;
     modalDescription.textContent = description;
 
-    courseModal.classList.add("open");
-    courseModal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
 
-    if (modalClose) {
-      modalClose.focus();
-    }
+    modalClose.focus();
   }
 
-  function closeCourseModal() {
-    if (!courseModal) return;
-
-    courseModal.classList.remove("open");
-    courseModal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
+  function closeModal() {
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
   }
 
-  detailButtons.forEach(function (button) {
+  document.querySelectorAll(".detail-btn").forEach(function (button) {
     button.addEventListener("click", function () {
-      openCourseModal(
-        button.dataset.title || "Thông tin chương trình",
-        button.dataset.description || ""
+      openModal(
+        button.dataset.title,
+        button.dataset.desc
       );
     });
   });
 
-  if (modalClose) {
-    modalClose.addEventListener("click", closeCourseModal);
-  }
+  modalClose.addEventListener("click", closeModal);
+  modalBackdrop.addEventListener("click", closeModal);
 
-  if (courseModal) {
-    courseModal.addEventListener("click", function (event) {
-      if (event.target.hasAttribute("data-close-modal")) {
-        closeCourseModal();
-      }
-    });
-  }
+  modalConsult.addEventListener("click", function () {
+    closeModal();
+  });
 
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
-      closeCourseModal();
+      closeModal();
     }
   });
 
-  if (modalRegister) {
-    modalRegister.addEventListener("click", function () {
-      closeCourseModal();
-    });
+  // 4. THÔNG BÁO
+  const toast = document.getElementById("toast");
+  let toastTimer;
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(function () {
+      toast.classList.remove("show");
+    }, 3500);
   }
 
-  // -----------------------------------------------
-  // 5. BIỂU MẪU ĐĂNG KÝ TƯ VẤN DEMO
-  // -----------------------------------------------
+  // 5. TRA CỨU HỒ SƠ DEMO
+  const lookupForm = document.getElementById("lookupForm");
 
-  const registerForm = document.getElementById("registerForm");
-  const formNotice = document.getElementById("formNotice");
+  lookupForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  if (registerForm) {
-    registerForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+    const code = document.getElementById("lookupCode").value.trim();
 
-      const fullName = document
-        .getElementById("fullName")
-        .value.trim();
+    if (!code) {
+      showToast("Vui lòng nhập mã hồ sơ hoặc số điện thoại.");
+      return;
+    }
 
-      const phone = document
-        .getElementById("phone")
-        .value.trim();
+    showToast(
+      "Chức năng tra cứu sẽ hoạt động sau khi kết nối cơ sở dữ liệu."
+    );
+  });
 
-      const email = document
-        .getElementById("email")
-        .value.trim();
+  // 6. ĐĂNG KÝ TƯ VẤN DEMO
+  const consultForm = document.getElementById("consultForm");
+  const formMessage = document.getElementById("formMessage");
 
-      const program = document
-        .getElementById("program")
-        .value;
+  consultForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      // Kiểm tra họ tên
-      if (fullName.length < 2) {
-        showFormMessage("Vui lòng nhập họ và tên hợp lệ.", false);
-        document.getElementById("fullName").focus();
-        return;
-      }
+    const name = document.getElementById("fullName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const interest = document.getElementById("interest").value;
 
-      // Kiểm tra số điện thoại Việt Nam
-      const phonePattern = /^(0|\+84)[0-9]{9,10}$/;
+    if (!name || !phone || !interest) {
+      showToast("Vui lòng điền đầy đủ thông tin.");
+      return;
+    }
 
-      if (!phonePattern.test(phone.replace(/\s/g, ""))) {
-        showFormMessage(
-          "Vui lòng kiểm tra lại số điện thoại.",
-          false
-        );
-        document.getElementById("phone").focus();
-        return;
-      }
+    const phonePattern = /^[0-9+\s().-]{9,15}$/;
 
-      // Kiểm tra email nếu người dùng nhập
-      if (email !== "") {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!phonePattern.test(phone)) {
+      showToast("Vui lòng kiểm tra lại số điện thoại.");
+      return;
+    }
 
-        if (!emailPattern.test(email)) {
-          showFormMessage(
-            "Địa chỉ email chưa đúng định dạng.",
-            false
-          );
-          document.getElementById("email").focus();
-          return;
-        }
-      }
+    // Chưa có máy chủ lưu dữ liệu.
+    formMessage.textContent =
+      "Đây là biểu mẫu demo. Chưa gửi hoặc lưu thông tin.";
 
-      // Chỉ là DEMO: không gửi dữ liệu đi đâu
-      showFormMessage(
-        "Thông tin đã được kiểm tra trên bản demo. " +
-        "Website chưa kết nối máy chủ nên chưa lưu hoặc gửi đăng ký thật. " +
-        "Vui lòng gọi 0372.484.382 để được tư vấn.",
-        true
-      );
+    showToast(
+      "Giao diện đã nhận thông tin thử nghiệm. Chưa có dữ liệu được lưu."
+    );
 
-      console.log("Thông tin thử nghiệm trên trình duyệt:", {
-        fullName: fullName,
-        phone: phone,
-        email: email,
-        program: program
-      });
-    });
-  }
+    consultForm.reset();
+  });
 
-  function showFormMessage(message, success) {
-    if (!formNotice) return;
+  // 7. NĂM HIỆN TẠI Ở CHÂN TRANG
+  const footerText = document.querySelector(".footer-bottom .container");
 
-    formNotice.textContent = message;
-    formNotice.classList.toggle("success", success);
-  }
-
-  // -----------------------------------------------
-  // 6. NĂM HIỆN TẠI Ở FOOTER
-  // -----------------------------------------------
-
-  const footerYear = document.querySelector(".footer-bottom");
-
-  if (footerYear) {
-    footerYear.innerHTML =
-      '<div class="container">© ' +
-      new Date().getFullYear() +
-      ' GIÁO DỤC NHẬT MINH. Nội dung website đang trong giai đoạn demo.</div>';
+  if (footerText) {
+    footerText.textContent =
+      "© " + new Date().getFullYear() +
+      " GIÁO DỤC NHẬT MINH. All rights reserved.";
   }
 
 });
