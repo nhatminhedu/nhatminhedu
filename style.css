@@ -243,15 +243,28 @@ nav *, [class*="nav"] *, [class*="menu"] *, header li a, .navbar-nav a, .nav-ite
 nav a:hover, [class*="menu"] a:hover, .nav-link:hover {
     color: #ffffff !important;
 }
+/* 1. Đổi nền xanh đậm toàn dải */
 header, .site-header, header .main-header, .main-header {
     background-color: #1b5e20 !important;
 }
 
-.logo-text h1 {
+/* 2. Cưỡng ép chữ tên thương hiệu sang màu trắng nổi bật */
+.logo-text h1, .logo-text a, header h1, header h1 a {
     color: #ffffff !important;
 }
 
+/* 3. Dòng chữ khẩu hiệu sang màu vàng neon */
 header p, .header p, [class*="logo"] p, [class*="brand"] p, .logo-text p {
     color: #ffeb3b !important; 
     font-weight: 800 !important;
+}
+
+/* 4. Định hình lại khung hotline và nút bấm để không bị nhảy lệch */
+.header-right, .contact-info, .btn-nav-tuyen-sinh, [class*="hotline"] {
+    display: flex !important;
+    align-items: center !important;
+    color: #ffffff !important;
+}
+.contact-text strong {
+    color: #ffeb3b !important;
 }
