@@ -1,802 +1,1096 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
 
+/* =========================================
+   NHAT MINH EDU - WEBSITE STYLE
+   File: style.css
+========================================= */
+
+/* 1. CAU HINH CHUNG */
 :root {
-  --green: #176b50;
-  --dark: #104535;
-  --gold: #d5a44c;
-  --text: #24352d;
-  --muted: #68786f;
-  --soft: #f3f7f2;
-  --border: #e2eae3;
+    --green: #126344;
+    --green-dark: #0b4933;
+    --green-light: #eaf5ef;
+    --gold: #d9ad50;
+    --gold-light: #f8edcf;
+    --white: #ffffff;
+    --text: #26352e;
+    --muted: #68766f;
+    --background: #f7faf8;
+    --border: #e3ebe5;
+    --shadow: 0 8px 28px rgba(16, 70, 48, 0.09);
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
 
 body {
-  font-family: 'Be Vietnam Pro', Arial, sans-serif;
-  color: var(--text);
-  line-height: 1.7;
-  background: white;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    background: var(--white);
 }
 
-a { text-decoration: none; color: inherit; }
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
 
 .container {
-  width: min(1160px, calc(100% - 40px));
-  margin: auto;
+    width: min(1160px, 92%);
+    margin: 0 auto;
 }
 
-/* HEADER */
+.section {
+    padding: 85px 0;
+}
 
+/* 2. HEADER */
 .header {
-  height: 82px;
-  background: white;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-.nav {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.header-container {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 .logo-icon {
-  width: 45px;
-  height: 45px;
-  background: var(--green);
-  border-radius: 12px;
-  color: white;
-  display: grid;
-  place-items: center;
-  font-size: 18px;
-  font-weight: 800;
+    width: 49px;
+    height: 49px;
+    border-radius: 12px;
+    background: var(--green);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: 900;
+    border: 2px solid var(--gold);
 }
 
-.logo b {
-  display: block;
-  font-size: 18px;
-  letter-spacing: 1.5px;
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
 }
 
-.logo small {
-  display: block;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  color: #829087;
+.logo-text strong {
+    font-size: 21px;
+    color: var(--green);
+    letter-spacing: 1px;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  gap: 19px;
+.logo-text small {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+    color: var(--muted);
 }
 
-nav a {
-  font-size: 11px;
-  font-weight: 600;
-  transition: .2s;
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 21px;
 }
 
-nav a:hover { color: var(--green); }
-
-.nav-button {
-  background: var(--green);
-  color: white;
-  padding: 11px 15px;
-  border-radius: 6px;
+.nav a {
+    font-size: 13px;
+    font-weight: 700;
+    color: #35443c;
+    transition: 0.25s;
 }
 
-.nav-button:hover {
-  background: var(--dark);
-  color: white;
+.nav a:hover {
+    color: var(--gold);
 }
 
-.menu-btn {
-  display: none;
-  border: none;
-  background: none;
-  font-size: 26px;
-  cursor: pointer;
+.nav .nav-contact {
+    background: var(--green);
+    color: var(--white);
+    padding: 11px 19px;
+    border-radius: 6px;
 }
 
-/* BUTTONS */
+.nav .nav-contact:hover {
+    background: var(--green-dark);
+    color: var(--white);
+}
 
+.menu-toggle {
+    display: none;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 13px;
+    font-size: 22px;
+}
+
+/* 3. BUTTON */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 20px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: .2s;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 23px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: 0.25s;
+    text-align: center;
 }
 
-.primary {
-  background: var(--green);
-  color: white;
+.btn-primary {
+    background: var(--green);
+    color: var(--white);
 }
 
-.primary:hover {
-  background: var(--dark);
-  transform: translateY(-2px);
+.btn-primary:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
 }
 
-.secondary {
-  border-color: #b9cbbf;
-  color: var(--dark);
+.btn-outline {
+    color: var(--green);
+    border-color: var(--green);
+    background: transparent;
 }
 
-.light-btn {
-  background: white;
-  color: var(--dark);
+.btn-outline:hover {
+    background: var(--green);
+    color: white;
 }
 
-/* HERO */
+.btn-light {
+    background: var(--gold);
+    color: var(--green-dark);
+}
 
+.btn-light:hover {
+    background: #e9c36e;
+    transform: translateY(-2px);
+}
+
+/* 4. BANNER TRANG CHU */
 .hero {
-  padding: 75px 0;
-  background: linear-gradient(115deg, #f4f8f2, #e7f0e7);
-  overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 30%, rgba(217, 173, 80, 0.18), transparent 28%),
+        linear-gradient(120deg, #0b4933, #126344 65%, #1c7652);
+    color: white;
+    overflow: hidden;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  align-items: center;
-  gap: 45px;
+.hero-content {
+    min-height: 520px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 55px;
+    padding-top: 45px;
+    padding-bottom: 45px;
 }
 
-.eyebrow {
-  color: var(--green);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2px;
+.hero-label {
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 13px;
 }
 
 .hero h1 {
-  font-size: 52px;
-  line-height: 1.25;
-  letter-spacing: -2px;
-  margin: 18px 0;
+    font-size: clamp(34px, 4.5vw, 54px);
+    line-height: 1.2;
+    margin: 20px 0;
+    font-weight: 900;
 }
 
-.hero h1 span { color: var(--green); }
+.hero h1 span {
+    color: var(--gold);
+}
 
-.hero-text > p {
-  max-width: 530px;
-  color: var(--muted);
-  font-size: 13px;
+.hero-text p {
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 16px;
+    max-width: 570px;
+    margin-bottom: 30px;
 }
 
 .hero-buttons {
-  display: flex;
-  gap: 12px;
-  margin: 27px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
 }
 
-.hero-points {
-  font-size: 10px;
-  color: var(--muted);
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero-art {
-  height: 365px;
-  display: grid;
-  place-items: center;
-  position: relative;
+.hero-image-box {
+    width: 100%;
+    max-width: 390px;
+    min-height: 320px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
-.art-card {
-  width: 78%;
-  height: 310px;
-  border-radius: 18px;
-  padding: 30px;
-  color: white;
-  background: linear-gradient(140deg, #1b7658, #0c4938);
-  box-shadow: 0 25px 50px #164d382b;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.hero-symbol {
+    width: 130px;
+    height: 130px;
+    border: 4px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 46px;
+    font-weight: 900;
+    margin-bottom: 20px;
 }
 
-.art-logo {
-  color: #e6c477;
-  font-size: 10px;
-  letter-spacing: 3px;
+.hero-image-box h3 {
+    font-size: 25px;
+    letter-spacing: 2px;
 }
 
-.art-symbol {
-  font-size: 65px;
-  color: #e6c477;
-  margin: 15px 0;
+.hero-image-box p {
+    color: var(--gold);
+    margin-top: 8px;
 }
 
-.art-card h2 {
-  font-size: 22px;
-  line-height: 1.5;
+/* 5. TIEU DE CAC SECTION */
+.section-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 45px;
 }
 
-.art-card p {
-  font-size: 9px;
-  letter-spacing: 2px;
-  margin-top: 15px;
+.section-heading span {
+    display: inline-block;
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-.float-card {
-  position: absolute;
-  background: white;
-  border-radius: 9px;
-  padding: 12px 17px;
-  box-shadow: 0 10px 30px #183f2b1c;
-  display: grid;
-  grid-template-columns: 25px auto;
-  align-items: center;
-  font-size: 12px;
+.section-heading h2 {
+    color: var(--green-dark);
+    font-size: clamp(26px, 3vw, 35px);
+    line-height: 1.3;
+    margin-bottom: 14px;
 }
 
-.float-card small {
-  grid-column: 2;
-  color: var(--muted);
-  font-size: 9px;
+.section-heading p {
+    color: var(--muted);
+    font-size: 15px;
 }
 
-.float-one { top: 35px; right: 0; }
-.float-two { bottom: 25px; left: 0; }
-
-/* HIGHLIGHTS */
-
-.highlights {
-  border-bottom: 1px solid var(--border);
+/* 6. GIOI THIEU */
+.about {
+    background: var(--white);
 }
 
-.highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 23px 0;
+.about-content {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+    align-items: center;
 }
 
-.highlight-grid div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  border-right: 1px solid var(--border);
-  font-size: 11px;
-  font-weight: 600;
+.about-text h3 {
+    color: var(--green);
+    font-size: 25px;
+    margin-bottom: 18px;
 }
 
-.highlight-grid div:last-child { border: 0; }
-
-.highlight-grid b {
-  color: var(--gold);
-  font-size: 23px;
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 17px;
 }
 
-/* GENERAL SECTIONS */
-
-.section { padding: 78px 0; }
-
-.soft { background: var(--soft); }
-
-.section-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 25px;
-  margin-bottom: 32px;
+.about-text .btn {
+    margin-top: 12px;
 }
 
-.section-title h2,
-.register-grid h2,
-.online-grid h2 {
-  font-size: 32px;
-  line-height: 1.35;
-  letter-spacing: -1px;
-  margin: 8px 0;
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
 }
 
-.section-title > p {
-  max-width: 400px;
-  color: var(--muted);
-  font-size: 11px;
+.info-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--background);
+    transition: 0.25s;
 }
 
-.grid {
-  display: grid;
-  gap: 20px;
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
 }
 
-.three { grid-template-columns: repeat(3, 1fr); }
-
-.card {
-  padding: 25px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  transition: .25s;
+.info-card strong {
+    color: var(--gold);
+    font-size: 30px;
 }
 
-.card:hover,
+.info-card h4 {
+    color: var(--green);
+    font-size: 17px;
+    margin: 8px 0;
+}
+
+.info-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* 7. TUYEN SINH */
+.admissions {
+    background: var(--background);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.program-card,
+.course-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 27px 23px;
+    transition: 0.25s;
+}
+
+.program-card:hover,
 .course-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 30px #173d2910;
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    border-color: var(--gold);
 }
 
 .card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 11px;
-  background: #edf5ef;
-  display: grid;
-  place-items: center;
-  font-size: 22px;
-  margin-bottom: 18px;
+    font-size: 35px;
+    margin-bottom: 18px;
 }
 
-.tag {
-  color: #b48632;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1px;
+.card-tag {
+    display: inline-block;
+    color: var(--green);
+    background: var(--green-light);
+    border-radius: 4px;
+    padding: 4px 9px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-.card h3,
-.course-content h3 {
-  font-size: 16px;
-  margin: 9px 0;
+.program-card h3,
+.course-card h3 {
+    font-size: 19px;
+    color: var(--green-dark);
+    margin: 14px 0 10px;
 }
 
-.card p,
-.course-content p {
-  font-size: 11px;
-  color: var(--muted);
-  margin-bottom: 16px;
+.program-card p,
+.course-card p {
+    color: var(--muted);
+    font-size: 13px;
+    min-height: 78px;
+    margin-bottom: 18px;
 }
 
-.card > a,
-.course-content > a,
-.more {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--green);
+.program-card a,
+.course-card a {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 800;
 }
 
-/* COURSES */
-
-.course-card {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: .25s;
+.program-card a:hover,
+.course-card a:hover {
+    color: var(--gold);
 }
 
-.course-art {
-  height: 155px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  font-size: 27px;
-  font-weight: 800;
-  letter-spacing: 1px;
+.section-action {
+    text-align: center;
+    margin-top: 35px;
 }
 
-.course-art small {
-  font-size: 8px;
-  letter-spacing: 3px;
+/* 8. KHOA HOC */
+.courses {
+    background: var(--white);
 }
 
-.gold { background: linear-gradient(135deg, #d3a54b, #8e6429); }
-.green { background: linear-gradient(135deg, #398568, #164e3c); }
-.blue { background: linear-gradient(135deg, #5689a1, #244e69); }
+.course-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    background: var(--green-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
 
-.course-content { padding: 20px; }
-
-/* NEWS */
+/* 9. TIN TUC */
+.news {
+    background: var(--background);
+}
 
 .news-grid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 35px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
-.news-main {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
+.news-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.25s;
 }
 
-.news-banner {
-  height: 205px;
-  background: linear-gradient(130deg, #1c6b50, #d1a24c);
-  color: white;
-  display: grid;
-  place-content: center;
-  text-align: center;
-  font-size: 32px;
-  font-weight: 800;
-  letter-spacing: 3px;
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
 }
 
-.news-banner span {
-  font-size: 9px;
-  letter-spacing: 4px;
+.news-placeholder {
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--green-dark), #34835e);
+    color: var(--gold);
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
-.news-content { padding: 22px; }
+.news-content {
+    padding: 23px;
+}
+
+.news-content span {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
 
 .news-content h3 {
-  font-size: 16px;
-  margin: 9px 0;
+    color: var(--green-dark);
+    font-size: 18px;
+    line-height: 1.45;
+    margin: 10px 0;
 }
 
-.news-content p,
-.news-content small {
-  color: var(--muted);
-  font-size: 10px;
+.news-content p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 15px;
 }
 
-.news-list article {
-  display: flex;
-  gap: 16px;
-  padding: 17px 0;
-  border-bottom: 1px solid var(--border);
+.news-content a {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 800;
 }
 
-.news-list h3 { font-size: 12px; }
-
-.news-list p {
-  font-size: 10px;
-  color: var(--muted);
+/* 10. HOC TRUC TUYEN */
+.online-learning {
+    background: white;
 }
 
-.date {
-  flex: none;
-  width: 53px;
-  height: 53px;
-  background: #f1f5ed;
-  color: var(--green);
-  display: grid;
-  align-content: center;
-  text-align: center;
-  border-radius: 8px;
-  font-size: 21px;
-  line-height: 1.1;
+.online-box {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 55px;
+    align-items: center;
+    padding: 55px;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #0b4933, #176c49);
+    color: white;
 }
 
-.date small {
-  font-size: 8px;
+.online-text > span {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
-/* ONLINE LEARNING */
-
-.online-section {
-  background: #123f33;
-  color: white;
+.online-text h2 {
+    font-size: 34px;
+    line-height: 1.3;
+    margin: 15px 0;
 }
 
-.online-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 65px;
+.online-text p {
+    color: rgba(255, 255, 255, 0.83);
+    margin-bottom: 25px;
 }
 
-.light { color: #e2bd6d; }
-
-.online-grid h2 {
-  font-size: 38px;
+.online-panel {
+    background: white;
+    color: var(--text);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.online-grid > div > p {
-  color: #d0dfd7;
-  font-size: 12px;
-  margin: 18px 0 25px;
+.online-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--green);
+    padding-bottom: 17px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
 }
 
-.learning-card {
-  background: white;
-  color: var(--text);
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 20px 50px #071f1933;
+.online-panel-header span {
+    background: var(--gold-light);
+    color: #946b1d;
+    padding: 4px 9px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 900;
 }
 
-.learning-top {
-  display: flex;
-  justify-content: space-between;
-  font-size: 9px;
-  color: var(--dark);
+.learning-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
 }
 
-.learning-top span { color: #b48632; }
-
-.play {
-  margin: 28px auto 15px;
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #eaf3ec;
-  color: var(--green);
-  font-size: 22px;
+.learning-item > span {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--green);
+    background: var(--green-light);
+    font-size: 18px;
 }
 
-.learning-card h3 { font-size: 17px; }
-
-.learning-card p {
-  font-size: 10px;
-  color: var(--muted);
+.learning-item div {
+    display: flex;
+    flex-direction: column;
 }
 
-.progress {
-  height: 6px;
-  background: #edf1ed;
-  border-radius: 10px;
-  margin: 20px 0 10px;
+.learning-item strong {
+    color: var(--green-dark);
+    font-size: 13px;
 }
 
-.progress span {
-  display: block;
-  height: 100%;
-  width: 28%;
-  background: var(--gold);
-  border-radius: 10px;
+.learning-item small {
+    color: var(--muted);
+    font-size: 11px;
 }
 
-.learning-card > small {
-  color: #87938b;
-  font-size: 9px;
+.demo-note {
+    color: #a17a2b;
+    background: var(--gold-light);
+    padding: 9px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 11px;
+    margin-top: 17px;
 }
 
-/* LOOKUP */
+/* 11. TRA CUU HO SO */
+.lookup {
+    background: var(--background);
+}
 
-.narrow { max-width: 760px; }
+.lookup-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+}
 
-.center { justify-content: center; text-align: center; }
-
-.center p {
-  margin: 10px auto 0;
-  max-width: 600px;
+.lookup-box .section-heading {
+    margin-bottom: 25px;
 }
 
 .lookup-form {
-  background: white;
-  padding: 25px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  box-shadow: 0 10px 30px #173d2908;
+    display: flex;
+    gap: 12px;
 }
 
-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 8px;
+.lookup-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
 }
 
-input, select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #dce5dd;
-  border-radius: 6px;
-  background: white;
-  font-family: inherit;
-  font-size: 11px;
-  color: var(--text);
-  outline: none;
+.lookup-form input:focus {
+    border-color: var(--green);
 }
 
-input:focus, select:focus, textarea:focus {
-  border-color: var(--green);
+.form-message {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 14px;
 }
 
-.input-line {
-  display: flex;
-  gap: 10px;
-}
-
-.input-line input { flex: 1; }
-
-.message {
-  color: var(--green);
-  font-size: 10px;
-  margin-top: 10px;
-  min-height: 16px;
-}
-
-/* REGISTRATION */
-
-.register-grid {
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 70px;
-  align-items: start;
-}
-
-.register-grid > div > p {
-  font-size: 12px;
-  color: var(--muted);
-  margin: 15px 0;
-}
-
-.contact {
-  color: var(--green);
-  font-size: 12px;
-  margin-top: 15px;
-}
-
-.register-form {
-  background: white;
-  border: 1px solid var(--border);
-  padding: 25px;
-  border-radius: 10px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.register-form label { margin-top: 12px; }
-
-.full {
-  width: 100%;
-  margin-top: 18px;
-}
-
-.note {
-  display: block;
-  text-align: center;
-  font-size: 9px;
-  color: #87938b;
-  margin-top: 10px;
-}
-
-/* PARTNERS */
-
-.partner-section {
-  background: linear-gradient(110deg, #176b50, #103f32);
-  color: white;
-  padding: 50px 0;
-}
-
-.partner-grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.partner-grid h2 {
-  font-size: 27px;
-  margin: 7px 0;
-}
-
-.partner-grid p {
-  color: #d1e0d7;
-  font-size: 11px;
-  max-width: 600px;
-}
-
-/* FOOTER */
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-  padding: 38px 0;
-}
-
-.footer-grid > div:not(:first-child) {
-  font-size: 10px;
-  color: var(--muted);
-}
-
-.footer-grid > div > b { color: var(--dark); }
-
-.footer-grid p { line-height: 2; }
-
-.copyright {
-  border-top: 1px solid var(--border);
-  padding: 15px 0 22px;
-  font-size: 9px;
-  color: #8b9890;
-}
-
-/* MOBILE */
-
-@media (max-width: 950px) {
-  nav { gap: 10px; }
-  nav a { font-size: 10px; }
-  .hero h1 { font-size: 43px; }
-}
-
-@media (max-width: 700px) {
-  .header { height: 70px; }
-  .menu-btn { display: block; }
-
-  nav {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
+/* 12. CONG TAC VIEN */
+.collaborators {
     background: white;
-    padding: 15px 22px;
-    box-shadow: 0 10px 20px #00000012;
+}
+
+.collaborator-box {
+    background: var(--gold-light);
+    border-left: 5px solid var(--gold);
+    border-radius: 10px;
+    padding: 38px 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.collaborator-box span {
+    color: #92702c;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.collaborator-box h2 {
+    color: var(--green-dark);
+    font-size: 26px;
+    margin: 8px 0;
+}
+
+.collaborator-box p {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 650px;
+}
+
+/* 13. DANG KY TU VAN */
+.registration {
+    background: var(--background);
+}
+
+.registration-content {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 55px;
+    align-items: start;
+}
+
+.registration-info {
+    padding-top: 25px;
+}
+
+.registration-info > span {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.registration-info h2 {
+    color: var(--green-dark);
+    font-size: 34px;
+    line-height: 1.3;
+    margin: 15px 0;
+}
+
+.registration-info > p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.contact-line {
+    margin: 14px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.contact-line strong {
+    color: var(--green);
+}
+
+.contact-line a {
+    color: var(--green);
+    font-weight: 800;
+}
+
+.registration-form {
+    background: white;
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.registration-form h3 {
+    color: var(--green-dark);
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.registration-form label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #46574c;
+    margin: 12px 0 6px;
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 13px;
+    outline: none;
+    background: white;
+    color: var(--text);
+}
+
+.registration-form input:focus,
+.registration-form select:focus,
+.registration-form textarea:focus {
+    border-color: var(--green);
+}
+
+.registration-form textarea {
+    resize: vertical;
+}
+
+.registration-form button {
+    width: 100%;
+    margin-top: 18px;
+}
+
+/* 14. LIEN HE */
+.contact {
+    background: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 15px;
+    background: var(--background);
+}
+
+.contact-card > span {
+    font-size: 30px;
+}
+
+.contact-card h3 {
+    color: var(--green);
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.contact-card p,
+.contact-card a {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.contact-card a {
+    color: var(--green);
+    font-weight: 800;
+}
+
+/* 15. FOOTER */
+.footer {
+    background: #093b2a;
+    color: white;
+    padding-top: 55px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 35px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+}
+
+.footer h3 {
+    color: var(--gold);
+    font-size: 15px;
+    margin-bottom: 17px;
+}
+
+.footer-links {
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
+    gap: 9px;
+}
 
-  nav.open { display: flex; }
-  nav a { padding: 11px 5px; font-size: 12px; }
-  .nav-button { text-align: center; margin-top: 8px; }
+.footer-links a,
+.footer-contact p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+}
 
-  .hero { padding: 50px 0; }
-  .hero-grid,
-  .online-grid,
-  .register-grid,
-  .news-grid { grid-template-columns: 1fr; }
+.footer-links a:hover {
+    color: var(--gold);
+}
 
-  .hero h1 { font-size: 39px; }
-  .hero-art { height: 310px; }
-  .art-card { height: 265px; width: 78%; }
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    padding: 18px 0;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 12px;
+}
 
-  .highlight-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
+/* 16. TABLET */
+@media (max-width: 1000px) {
+    .nav {
+        gap: 12px;
+    }
 
-  .highlight-grid div {
-    justify-content: flex-start;
-    border: 0;
-  }
+    .nav a {
+        font-size: 11px;
+    }
 
-  .section { padding: 55px 0; }
-  .section-title { display: block; }
-  .section-title > p { margin-top: 12px; }
-  .three { grid-template-columns: 1fr; }
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .online-grid { gap: 30px; }
-  .online-grid h2 { font-size: 32px; }
-  .register-grid { gap: 25px; }
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .form-row { grid-template-columns: 1fr; }
-  .input-line { flex-direction: column; }
-  .input-line button { width: 100%; }
+    .online-box {
+        padding: 35px;
+        gap: 30px;
+    }
+}
 
-  .partner-grid {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+/* 17. DIEN THOAI */
+@media (max-width: 760px) {
+    .section {
+        padding: 60px 0;
+    }
 
-  .footer-grid { grid-template-columns: 1fr; gap: 12px; }
+    .header-container {
+        min-height: 70px;
+    }
+
+    .logo-icon {
+        width: 43px;
+        height: 43px;
+    }
+
+    .logo-text strong {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 15px 4%;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 12px 8px;
+        border-bottom: 1px solid var(--border);
+        font-size: 14px;
+    }
+
+    .nav .nav-contact {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-image-box {
+        min-height: 260px;
+    }
+
+    .about-content,
+    .registration-content,
+    .online-box {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .online-box {
+        padding: 30px 22px;
+    }
+
+    .online-text h2 {
+        font-size: 27px;
+    }
+
+    .collaborator-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 25px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lookup-box {
+        padding: 28px 18px;
+    }
+
+    .lookup-form {
+        flex-direction: column;
+    }
+
+    .lookup-form button {
+        width: 100%;
+    }
+}
+
+/* 18. DIEN THOAI NHO */
+@media (max-width: 480px) {
+    .container {
+        width: 91%;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .about-cards,
+    .card-grid,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-form {
+        padding: 22px 17px;
+    }
+
+    .registration-info h2 {
+        font-size: 28px;
+    }
+
+    .collaborator-box h2 {
+        font-size: 23px;
+    }
 }
