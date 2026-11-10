@@ -222,3 +222,8 @@ button,input,select { font: inherit; }
   .register-grid { gap: 22px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 22px 12px; }
 }
+.logo-area p, .header p, .brand-text p, header p, .logo-text p, .brand p, .site-title + p {
+    color: #ff3333 !important;
+    font-weight: 800 !important;
+    font-size: 15px !important;
+}
