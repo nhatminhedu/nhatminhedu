@@ -1,648 +1,543 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Giáo dục Nhật Minh - Kết nối tri thức, kiến tạo tương lai. Thông tin tuyển sinh, chương trình đào tạo và tư vấn học tập.">
+  <meta name="theme-color" content="#78ad35">
+  <title>Giáo dục Nhật Minh | Kết nối tri thức – Kiến tạo tương lai</title>
 
-    <title>Nhật Minh Edu - Tuyển sinh và Đào tạo</title>
-
-    <meta name="description" content="Nhật Minh Edu - Tư vấn tuyển sinh, đào tạo trực tuyến và kết nối học tập. Vững bước tương lai.">
-
-    <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-<!-- HEADER -->
-<header class="header">
-    <div class="container header-container">
-
-        <a href="#trang-chu" class="logo">
-            <span class="logo-icon">NM</span>
-            <span class="logo-text">
-                <strong>NHẬT MINH</strong>
-                <small>EDUCATION & TRAINING</small>
-            </span>
-        </a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
-            ☰
-        </button>
-
-        <nav class="nav" id="mainNav">
-            <a href="#trang-chu">Trang chủ</a>
-            <a href="#gioi-thieu">Giới thiệu</a>
-            <a href="#tuyen-sinh">Tuyển sinh</a>
-            <a href="#khoa-hoc">Khóa học</a>
-            <a href="#tin-tuc">Tin tức</a>
-            <a href="#hoc-truc-tuyen">Học trực tuyến</a>
-            <a href="#lien-he" class="nav-contact">Liên hệ</a>
-        </nav>
-
+  <!-- Thanh thông tin -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Kết nối tri thức – Kiến tạo tương lai</span>
+      <a href="tel:0372484382">Hotline tư vấn: 0372.484.382</a>
     </div>
-</header>
+  </div>
 
+  <!-- Header và menu -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Giáo dục Nhật Minh - Trang chủ">
+        <span class="brand-icon">NM</span>
+        <span class="brand-copy">
+          <strong>GIÁO DỤC NHẬT MINH</strong>
+          <small>Kết nối tri thức – Kiến tạo tương lai</small>
+        </span>
+      </a>
 
-<!-- BANNER TRANG CHỦ -->
-<section class="hero" id="trang-chu">
-    <div class="container hero-content">
+      <button class="menu-toggle" id="menuToggle"
+              aria-label="Mở menu" aria-expanded="false"
+              aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
 
-        <div class="hero-text">
-            <span class="hero-label">NHẬT MINH EDUCATION</span>
+      <nav class="main-nav" id="mainNav">
+        <a class="nav-link active" href="#home">Trang chủ</a>
+        <a class="nav-link" href="#about">Giới thiệu</a>
+        <a class="nav-link" href="#courses">Khóa học</a>
+        <a class="nav-link" href="#news">Tin tức</a>
+        <a class="nav-link" href="#learning">Học trực tuyến</a>
+        <a class="nav-link" href="#utilities">Tiện ích</a>
+        <a class="nav-link" href="#contact">Liên hệ</a>
+        <a class="nav-cta" href="#register">Đăng ký tư vấn</a>
+      </nav>
+    </div>
+  </header>
 
-            <h1>
-                KẾT NỐI TRI THỨC<br>
-                <span>KIẾN TẠO TƯƠNG LAI</span>
+  <main>
+    <!-- Banner compact -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-panel">
+          <div class="hero-content">
+            <span class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              CỔNG THÔNG TIN TUYỂN SINH VÀ ĐÀO TẠO
+            </span>
+
+            <h1>Mở rộng tri thức.<br>
+              <span>Vững bước tương lai.</span>
             </h1>
 
             <p>
-                Đồng hành cùng người học trên hành trình nâng cao trình độ,
-                phát triển năng lực và mở rộng cơ hội nghề nghiệp.
+              Khám phá các chương trình đào tạo, văn bằng 2,
+              nghiệp vụ sư phạm và các khóa học bồi dưỡng chuyên môn.
             </p>
 
-            <div class="hero-buttons">
-                <a href="#tuyen-sinh" class="btn btn-primary">
-                    Khám phá chương trình
-                </a>
-
-                <a href="#dang-ky" class="btn btn-outline">
-                    Đăng ký tư vấn
-                </a>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#courses">Khám phá khóa học</a>
+              <a class="btn btn-outline" href="#register">Đăng ký tư vấn</a>
             </div>
-        </div>
 
-        <div class="hero-image">
-            <div class="hero-image-box">
-                <div class="hero-symbol">NM</div>
-                <h3>NHẬT MINH EDU</h3>
-                <p>Vững bước tương lai</p>
+            <div class="hero-note">
+              <span>✓</span> Thông tin chương trình rõ ràng
+              <span>✓</span> Hỗ trợ tư vấn hồ sơ
             </div>
+          </div>
+
+          <div class="hero-visual">
+            <img
+              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=85"
+              alt="Sinh viên trong môi trường học tập"
+            >
+            <div class="hero-float">
+              <span class="float-icon">✦</span>
+              <span>
+                <strong>Học tập và phát triển</strong>
+                <small>Chủ động xây dựng tương lai</small>
+              </span>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
+    <!-- Lối tắt -->
+    <section class="quick-section">
+      <div class="container quick-grid">
+        <a href="#courses" class="quick-item">
+          <span class="quick-icon">▤</span>
+          <span><strong>Chương trình đào tạo</strong><small>Khám phá khóa học</small></span>
+          <b>→</b>
+        </a>
+        <a href="#learning" class="quick-item">
+          <span class="quick-icon">▶</span>
+          <span><strong>Học trực tuyến</strong><small>Không gian học tập</small></span>
+          <b>→</b>
+        </a>
+        <a href="#utilities" class="quick-item">
+          <span class="quick-icon">⌕</span>
+          <span><strong>Tra cứu hồ sơ</strong><small>Tiện ích học viên</small></span>
+          <b>→</b>
+        </a>
+        <a href="#register" class="quick-item">
+          <span class="quick-icon">✎</span>
+          <span><strong>Đăng ký tư vấn</strong><small>Nhận thông tin khóa học</small></span>
+          <b>→</b>
+        </a>
+      </div>
+    </section>
 
-
-<!-- GIỚI THIỆU -->
-<section class="section about" id="gioi-thieu">
-    <div class="container">
-
+    <!-- Khóa học -->
+    <section class="section" id="courses">
+      <div class="container">
         <div class="section-heading">
-            <span>VỀ CHÚNG TÔI</span>
-            <h2>Chào mừng đến với Nhật Minh</h2>
-            <p>
-                Kết nối người học với các chương trình đào tạo phù hợp,
-                thuận tiện và linh hoạt.
-            </p>
+          <div>
+            <span class="section-kicker">KHÁM PHÁ CƠ HỘI HỌC TẬP</span>
+            <h2>Chương trình đào tạo</h2>
+            <p>Tìm kiếm chương trình phù hợp với nhu cầu học tập của bạn.</p>
+          </div>
+          <a class="text-link" href="#register">Nhận tư vấn khóa học <span>→</span></a>
         </div>
 
+        <div class="course-tools">
+          <label class="search-box">
+            <span>⌕</span>
+            <input type="search" id="courseSearch"
+                   placeholder="Tìm tên khóa học, ngành học..."
+                   aria-label="Tìm kiếm khóa học">
+          </label>
+
+          <div class="filter-list" id="courseFilters">
+            <button class="filter-btn active" data-filter="all">Tất cả</button>
+            <button class="filter-btn" data-filter="degree">Văn bằng 2</button>
+            <button class="filter-btn" data-filter="pedagogy">Nghiệp vụ</button>
+            <button class="filter-btn" data-filter="certificate">Chứng chỉ</button>
+            <button class="filter-btn" data-filter="other">Khóa học khác</button>
+          </div>
+        </div>
+
+        <div class="course-grid" id="courseGrid">
+          <article class="course-card" data-category="degree"
+                   data-search="văn bằng 2 ngôn ngữ anh tiếng anh đại học">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=800&q=80"
+                   alt="Sách học ngoại ngữ">
+              <span class="course-label">Văn bằng 2</span>
+            </div>
+            <div class="course-body">
+              <span class="course-type">CHƯƠNG TRÌNH ĐÀO TẠO</span>
+              <h3>Văn bằng 2 Ngôn ngữ Anh</h3>
+              <p>Thông tin chương trình, đối tượng dự tuyển và thời gian đào tạo.</p>
+              <button class="detail-link" data-title="Văn bằng 2 Ngôn ngữ Anh"
+                      data-description="Chương trình đào tạo dành cho người có nhu cầu học văn bằng thứ hai ngành Ngôn ngữ Anh. Vui lòng liên hệ Nhật Minh để được tư vấn thông tin tuyển sinh, điều kiện và hồ sơ theo thông báo hiện hành.">
+                Tìm hiểu chương trình <span>→</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="pedagogy"
+                   data-search="nghiệp vụ sư phạm giáo viên giảng dạy">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+                   alt="Giáo viên trong lớp học">
+              <span class="course-label">Bồi dưỡng</span>
+            </div>
+            <div class="course-body">
+              <span class="course-type">CHƯƠNG TRÌNH ĐÀO TẠO</span>
+              <h3>Nghiệp vụ sư phạm</h3>
+              <p>Thông tin khóa học và đối tượng tham gia chương trình bồi dưỡng.</p>
+              <button class="detail-link" data-title="Nghiệp vụ sư phạm"
+                      data-description="Thông tin về chương trình nghiệp vụ sư phạm, đối tượng tham gia, hình thức học và hồ sơ sẽ được cập nhật theo từng đợt tuyển sinh.">
+                Tìm hiểu chương trình <span>→</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="certificate"
+                   data-search="tư vấn tâm lý học đường học sinh giáo viên">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80"
+                   alt="Hoạt động tư vấn và hỗ trợ học sinh">
+              <span class="course-label">Chuyên đề</span>
+            </div>
+            <div class="course-body">
+              <span class="course-type">BỒI DƯỠNG CHUYÊN MÔN</span>
+              <h3>Tư vấn tâm lý học đường</h3>
+              <p>Chương trình bồi dưỡng kiến thức và kỹ năng hỗ trợ học sinh.</p>
+              <button class="detail-link" data-title="Tư vấn tâm lý học đường"
+                      data-description="Chương trình bồi dưỡng kiến thức và kỹ năng tư vấn, hỗ trợ tâm lý trong môi trường học đường. Thông tin lịch học và điều kiện tham gia được cập nhật theo từng khóa.">
+                Tìm hiểu chương trình <span>→</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="certificate"
+                   data-search="tin học ứng dụng công nghệ thông tin chứng chỉ">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+                   alt="Học tập và làm việc với máy tính">
+              <span class="course-label">Chứng chỉ</span>
+            </div>
+            <div class="course-body">
+              <span class="course-type">BỒI DƯỠNG CHUYÊN MÔN</span>
+              <h3>Tin học và kỹ năng số</h3>
+              <p>Cập nhật thông tin các chương trình bồi dưỡng kỹ năng công nghệ.</p>
+              <button class="detail-link" data-title="Tin học và kỹ năng số"
+                      data-description="Thông tin các chương trình bồi dưỡng tin học, kỹ năng số và ứng dụng công nghệ. Nội dung cụ thể tùy theo khóa học được thông báo.">
+                Tìm hiểu chương trình <span>→</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="other"
+                   data-search="đào tạo trực tuyến từ xa học online">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?auto=format&fit=crop&w=800&q=80"
+                   alt="Học tập trực tuyến">
+              <span class="course-label">Trực tuyến</span>
+            </div>
+            <div class="course-body">
+              <span class="course-type">HỌC TẬP LINH HOẠT</span>
+              <h3>Chương trình đào tạo từ xa</h3>
+              <p>Tìm hiểu các chương trình học trực tuyến và hình thức đào tạo.</p>
+              <button class="detail-link" data-title="Chương trình đào tạo từ xa"
+                      data-description="Nhật Minh cập nhật thông tin các chương trình đào tạo từ xa theo thông báo của đơn vị đào tạo. Hình thức, thời gian và điều kiện học tùy chương trình cụ thể.">
+                Tìm hiểu chương trình <span>→</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="other"
+                   data-search="đào tạo theo nhu cầu bồi dưỡng chuyên môn">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+                   alt="Hoạt động đào tạo và bồi dưỡng">
+              <span class="course-label">Theo nhu cầu</span>
+            </div>
+            <div class="course-body">
+              <span class="course-type">CHƯƠNG TRÌNH ĐÀO TẠO</span>
+              <h3>Đào tạo theo nhu cầu</h3>
+              <p>Các chương trình bồi dưỡng và cập nhật kiến thức chuyên môn.</p>
+              <button class="detail-link" data-title="Đào tạo theo nhu cầu"
+                      data-description="Liên hệ Nhật Minh để trao đổi nhu cầu đào tạo, bồi dưỡng và thông tin chương trình phù hợp.">
+                Tìm hiểu chương trình <span>→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <p class="empty-state" id="emptyState" hidden>
+          Chưa tìm thấy chương trình phù hợp. Anh/chị có thể thử từ khóa khác.
+        </p>
+      </div>
+    </section>
+
+    <!-- Học trực tuyến -->
+    <section class="section learning-section" id="learning">
+      <div class="container">
+        <div class="learning-panel">
+          <div class="learning-content">
+            <span class="section-kicker">KHÔNG GIAN HỌC TẬP SỐ</span>
+            <h2>Học tập trực tuyến<br>cùng Nhật Minh</h2>
+            <p>
+              Định hướng xây dựng hệ thống học tập trực tuyến,
+              hỗ trợ học viên tiếp cận bài giảng, tài liệu và bài kiểm tra.
+            </p>
+            <a href="#utilities" class="btn btn-primary">Khám phá tiện ích</a>
+            <span class="demo-note">Giao diện giới thiệu – hệ thống đang trong giai đoạn phát triển.</span>
+          </div>
+          <div class="learning-visual">
+            <div class="learning-screen">
+              <div class="screen-top"><i></i><i></i><i></i></div>
+              <div class="screen-content">
+                <div class="screen-play">▶</div>
+                <strong>KHÔNG GIAN HỌC TẬP</strong>
+                <span>Bài giảng · Tài liệu · Kiểm tra</span>
+              </div>
+            </div>
+            <div class="learning-bubble">✦ Học mọi lúc, chủ động tiến độ</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1000&q=85"
+               alt="Môi trường học tập và trao đổi kiến thức">
+          <div class="about-image-caption">
+            <strong>GIÁO DỤC NHẬT MINH</strong>
+            <span>Kết nối tri thức – Kiến tạo tương lai</span>
+          </div>
+        </div>
         <div class="about-content">
-            <div class="about-text">
-                <h3>Đồng hành trên hành trình học tập</h3>
-
-                <p>
-                    Nhật Minh hoạt động trong lĩnh vực tư vấn tuyển sinh,
-                    kết nối đào tạo và hỗ trợ người học tiếp cận các chương
-                    trình giáo dục.
-                </p>
-
-                <p>
-                    Chúng tôi hướng tới việc cung cấp thông tin rõ ràng,
-                    hỗ trợ tư vấn tận tình và đồng hành cùng học viên
-                    trong quá trình đăng ký học tập.
-                </p>
-
-                <a href="#lien-he" class="btn btn-primary">
-                    Tìm hiểu thêm
-                </a>
-            </div>
-
-            <div class="about-cards">
-                <div class="info-card">
-                    <strong>01</strong>
-                    <h4>Tư vấn tuyển sinh</h4>
-                    <p>Hỗ trợ tìm hiểu chương trình đào tạo.</p>
-                </div>
-
-                <div class="info-card">
-                    <strong>02</strong>
-                    <h4>Kết nối đào tạo</h4>
-                    <p>Kết nối người học với đơn vị đào tạo.</p>
-                </div>
-
-                <div class="info-card">
-                    <strong>03</strong>
-                    <h4>Hỗ trợ học viên</h4>
-                    <p>Đồng hành trong quá trình học tập.</p>
-                </div>
-
-                <div class="info-card">
-                    <strong>04</strong>
-                    <h4>Học tập trực tuyến</h4>
-                    <p>Hướng tới môi trường học tập linh hoạt.</p>
-                </div>
-            </div>
+          <span class="section-kicker">VỀ CHÚNG TÔI</span>
+          <h2>Đồng hành trên hành trình học tập</h2>
+          <p>
+            Giáo dục Nhật Minh hướng tới việc cung cấp thông tin tuyển sinh,
+            tư vấn chương trình đào tạo và hỗ trợ người học tìm hiểu
+            những cơ hội học tập phù hợp.
+          </p>
+          <p>
+            Website là nơi tổng hợp thông tin khóa học, thông báo tuyển sinh,
+            hướng dẫn đăng ký và các tiện ích dành cho học viên.
+          </p>
+          <a href="#contact" class="text-link">Tìm hiểu và liên hệ <span>→</span></a>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-
-<!-- TUYỂN SINH -->
-<section class="section admissions" id="tuyen-sinh">
-    <div class="container">
-
+    <!-- Tin tức -->
+    <section class="section news-section" id="news">
+      <div class="container">
         <div class="section-heading">
-            <span>CHƯƠNG TRÌNH ĐÀO TẠO</span>
-            <h2>Chương trình tuyển sinh</h2>
-            <p>
-                Cập nhật các chương trình tuyển sinh và đào tạo mới nhất.
-            </p>
-        </div>
-
-        <div class="card-grid">
-
-            <article class="program-card">
-                <div class="card-icon">🎓</div>
-                <span class="card-tag">ĐẠI HỌC</span>
-                <h3>Đào tạo đại học</h3>
-                <p>
-                    Tư vấn các chương trình đại học, văn bằng 2
-                    và các hình thức đào tạo phù hợp.
-                </p>
-                <a href="#dang-ky">Tìm hiểu chương trình →</a>
-            </article>
-
-            <article class="program-card">
-                <div class="card-icon">📚</div>
-                <span class="card-tag">BỒI DƯỠNG</span>
-                <h3>Nghiệp vụ sư phạm</h3>
-                <p>
-                    Cập nhật các chương trình bồi dưỡng,
-                    nghiệp vụ và kiến thức chuyên môn.
-                </p>
-                <a href="#dang-ky">Tìm hiểu chương trình →</a>
-            </article>
-
-            <article class="program-card">
-                <div class="card-icon">💻</div>
-                <span class="card-tag">TRỰC TUYẾN</span>
-                <h3>Đào tạo từ xa</h3>
-                <p>
-                    Tìm hiểu các chương trình học trực tuyến,
-                    học từ xa và học tập linh hoạt.
-                </p>
-                <a href="#dang-ky">Tìm hiểu chương trình →</a>
-            </article>
-
-            <article class="program-card">
-                <div class="card-icon">🌱</div>
-                <span class="card-tag">KỸ NĂNG</span>
-                <h3>Các khóa bồi dưỡng</h3>
-                <p>
-                    Các khóa học nâng cao kiến thức,
-                    kỹ năng và năng lực nghề nghiệp.
-                </p>
-                <a href="#dang-ky">Tìm hiểu chương trình →</a>
-            </article>
-
-        </div>
-
-        <div class="section-action">
-            <a href="#dang-ky" class="btn btn-primary">
-                Đăng ký nhận thông tin tuyển sinh
-            </a>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- KHÓA HỌC -->
-<section class="section courses" id="khoa-hoc">
-    <div class="container">
-
-        <div class="section-heading">
-            <span>HỌC TẬP VÀ PHÁT TRIỂN</span>
-            <h2>Các khóa học nổi bật</h2>
-            <p>
-                Khám phá những khóa học và chương trình bồi dưỡng
-                đang được quan tâm.
-            </p>
-        </div>
-
-        <div class="card-grid">
-
-            <article class="course-card">
-                <div class="course-icon">🌐</div>
-                <h3>Ngôn ngữ Anh</h3>
-                <p>
-                    Thông tin chương trình đào tạo và nâng cao
-                    trình độ tiếng Anh.
-                </p>
-                <a href="#dang-ky">Đăng ký tư vấn →</a>
-            </article>
-
-            <article class="course-card">
-                <div class="course-icon">👩‍🏫</div>
-                <h3>Nghiệp vụ sư phạm</h3>
-                <p>
-                    Các chương trình bồi dưỡng nghiệp vụ
-                    dành cho người học có nhu cầu.
-                </p>
-                <a href="#dang-ky">Đăng ký tư vấn →</a>
-            </article>
-
-            <article class="course-card">
-                <div class="course-icon">🧠</div>
-                <h3>Tâm lý học đường</h3>
-                <p>
-                    Bồi dưỡng kiến thức và kỹ năng hỗ trợ
-                    học sinh trong môi trường giáo dục.
-                </p>
-                <a href="#dang-ky">Đăng ký tư vấn →</a>
-            </article>
-
-            <article class="course-card">
-                <div class="course-icon">🤝</div>
-                <h3>Giáo dục hòa nhập</h3>
-                <p>
-                    Cập nhật kiến thức về giáo dục đặc biệt
-                    và hỗ trợ người học.
-                </p>
-                <a href="#dang-ky">Đăng ký tư vấn →</a>
-            </article>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- TIN TỨC -->
-<section class="section news" id="tin-tuc">
-    <div class="container">
-
-        <div class="section-heading">
-            <span>TIN TỨC VÀ THÔNG BÁO</span>
-            <h2>Tin tức mới nhất</h2>
-            <p>
-                Cập nhật thông tin tuyển sinh, giáo dục
-                và các chương trình đào tạo.
-            </p>
+          <div>
+            <span class="section-kicker">CẬP NHẬT THÔNG TIN</span>
+            <h2>Tin tức tuyển sinh</h2>
+            <p>Thông báo, hướng dẫn và thông tin giáo dục mới.</p>
+          </div>
+          <a class="text-link" href="#contact">Liên hệ để được tư vấn <span>→</span></a>
         </div>
 
         <div class="news-grid">
-
-            <article class="news-card">
-                <div class="news-placeholder">TIN TUYỂN SINH</div>
-                <div class="news-content">
-                    <span>THÔNG BÁO</span>
-                    <h3>Thông tin tuyển sinh các chương trình đào tạo</h3>
-                    <p>
-                        Cập nhật thông tin và hướng dẫn đăng ký
-                        các chương trình tuyển sinh.
-                    </p>
-                    <a href="#dang-ky">Xem chi tiết →</a>
-                </div>
-            </article>
-
-            <article class="news-card">
-                <div class="news-placeholder">THÔNG TIN ĐÀO TẠO</div>
-                <div class="news-content">
-                    <span>ĐÀO TẠO</span>
-                    <h3>Cập nhật các khóa học và chương trình bồi dưỡng</h3>
-                    <p>
-                        Thông tin các khóa học dành cho người học
-                        có nhu cầu nâng cao trình độ.
-                    </p>
-                    <a href="#khoa-hoc">Xem chi tiết →</a>
-                </div>
-            </article>
-
-            <article class="news-card">
-                <div class="news-placeholder">HOẠT ĐỘNG GIÁO DỤC</div>
-                <div class="news-content">
-                    <span>TIN TỨC</span>
-                    <h3>Thông tin và hoạt động giáo dục</h3>
-                    <p>
-                        Những thông tin hữu ích về học tập,
-                        đào tạo và phát triển nghề nghiệp.
-                    </p>
-                    <a href="#lien-he">Xem chi tiết →</a>
-                </div>
-            </article>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- HỌC TRỰC TUYẾN -->
-<section class="section online-learning" id="hoc-truc-tuyen">
-    <div class="container">
-
-        <div class="online-box">
-            <div class="online-text">
-                <span>NHẬT MINH E-LEARNING</span>
-                <h2>Không gian học tập trực tuyến</h2>
-                <p>
-                    Nhật Minh định hướng phát triển hệ thống học tập trực tuyến,
-                    nơi học viên có thể truy cập bài giảng, tài liệu,
-                    bài kiểm tra và theo dõi tiến độ học tập.
-                </p>
-
-                <a href="#dang-ky" class="btn btn-light">
-                    Tìm hiểu hệ thống học tập
-                </a>
+          <article class="news-card">
+            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80"
+                 alt="Sinh viên tham gia hoạt động học tập">
+            <div class="news-body">
+              <span class="news-category">THÔNG TIN TUYỂN SINH</span>
+              <h3>Thông tin tuyển sinh các chương trình đào tạo</h3>
+              <p>Cập nhật thông báo, đối tượng dự tuyển và hướng dẫn đăng ký.</p>
+              <a href="#register" class="text-link">Tìm hiểu thêm →</a>
             </div>
+          </article>
 
-            <div class="online-panel">
-                <div class="online-panel-header">
-                    <strong>NHẬT MINH LEARNING</strong>
-                    <span>DEMO</span>
-                </div>
-
-                <div class="learning-item">
-                    <span>▶</span>
-                    <div>
-                        <strong>Bài giảng trực tuyến</strong>
-                        <small>Không gian học tập</small>
-                    </div>
-                </div>
-
-                <div class="learning-item">
-                    <span>▤</span>
-                    <div>
-                        <strong>Tài liệu học tập</strong>
-                        <small>Thư viện tài liệu</small>
-                    </div>
-                </div>
-
-                <div class="learning-item">
-                    <span>✓</span>
-                    <div>
-                        <strong>Bài kiểm tra</strong>
-                        <small>Đánh giá kết quả học tập</small>
-                    </div>
-                </div>
-
-                <div class="learning-item">
-                    <span>◷</span>
-                    <div>
-                        <strong>Theo dõi tiến độ</strong>
-                        <small>Quản lý quá trình học</small>
-                    </div>
-                </div>
-
-                <p class="demo-note">
-                    Hệ thống đang trong giai đoạn giới thiệu DEMO.
-                </p>
+          <article class="news-card">
+            <img src="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?auto=format&fit=crop&w=800&q=80"
+                 alt="Tài liệu học tập">
+            <div class="news-body">
+              <span class="news-category">HƯỚNG DẪN HỒ SƠ</span>
+              <h3>Hướng dẫn chuẩn bị hồ sơ đăng ký học</h3>
+              <p>Những thông tin cần tìm hiểu trước khi đăng ký chương trình.</p>
+              <a href="#register" class="text-link">Tìm hiểu thêm →</a>
             </div>
-        </div>
+          </article>
 
-    </div>
-</section>
-
-
-<!-- TRA CỨU HỒ SƠ -->
-<section class="section lookup" id="tra-cuu">
-    <div class="container">
-
-        <div class="lookup-box">
-            <div class="section-heading">
-                <span>DỊCH VỤ HỌC VIÊN</span>
-                <h2>Tra cứu hồ sơ</h2>
-                <p>
-                    Hỗ trợ học viên tra cứu thông tin hồ sơ
-                    và tình trạng đăng ký.
-                </p>
+          <article class="news-card">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+                 alt="Ứng dụng công nghệ trong giáo dục">
+            <div class="news-body">
+              <span class="news-category">GIÁO DỤC VÀ CÔNG NGHỆ</span>
+              <h3>Xu hướng học tập và đào tạo trực tuyến</h3>
+              <p>Tìm hiểu những hình thức học tập linh hoạt trong thời đại số.</p>
+              <a href="#learning" class="text-link">Tìm hiểu thêm →</a>
             </div>
-
-            <form id="lookupForm" class="lookup-form">
-                <input
-                    type="text"
-                    id="lookupCode"
-                    placeholder="Nhập mã hồ sơ hoặc số điện thoại"
-                    required
-                >
-
-                <button type="submit" class="btn btn-primary">
-                    Tra cứu
-                </button>
-            </form>
-
-            <p id="lookupMessage" class="form-message">
-                Chức năng đang ở phiên bản DEMO.
-            </p>
+          </article>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-
-<!-- CỘNG TÁC VIÊN -->
-<section class="section collaborators" id="cong-tac-vien">
-    <div class="container">
-
-        <div class="collaborator-box">
-            <div>
-                <span>KẾT NỐI CÙNG NHẬT MINH</span>
-                <h2>Trở thành cộng tác viên tuyển sinh</h2>
-                <p>
-                    Cùng kết nối người học với các chương trình
-                    đào tạo phù hợp và phát triển mạng lưới cộng tác.
-                </p>
-            </div>
-
-            <a href="#dang-ky" class="btn btn-primary">
-                Đăng ký cộng tác viên
-            </a>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- ĐĂNG KÝ TƯ VẤN -->
-<section class="section registration" id="dang-ky">
-    <div class="container">
-
-        <div class="registration-content">
-
-            <div class="registration-info">
-                <span>ĐĂNG KÝ TƯ VẤN</span>
-                <h2>Bạn đang quan tâm chương trình nào?</h2>
-                <p>
-                    Để lại thông tin, Nhật Minh sẽ hỗ trợ
-                    tư vấn và cung cấp thông tin chương trình phù hợp.
-                </p>
-
-                <div class="contact-line">
-                    <strong>Hotline:</strong>
-                    <a href="tel:0372484382">0372.484.382</a>
-                </div>
-
-                <div class="contact-line">
-                    <strong>Đơn vị:</strong>
-                    <span>Nhật Minh Edu</span>
-                </div>
-            </div>
-
-            <form id="registerForm" class="registration-form">
-
-                <h3>Thông tin đăng ký</h3>
-
-                <label for="fullName">Họ và tên *</label>
-                <input
-                    type="text"
-                    id="fullName"
-                    placeholder="Nhập họ và tên"
-                    required
-                >
-
-                <label for="phone">Số điện thoại *</label>
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Nhập số điện thoại"
-                    required
-                >
-
-                <label for="email">Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Nhập địa chỉ email"
-                >
-
-                <label for="program">Chương trình quan tâm</label>
-                <select id="program">
-                    <option value="">-- Chọn chương trình --</option>
-                    <option>Đào tạo đại học</option>
-                    <option>Văn bằng 2 Ngôn ngữ Anh</option>
-                    <option>Nghiệp vụ sư phạm</option>
-                    <option>Tâm lý học đường</option>
-                    <option>Giáo dục hòa nhập</option>
-                    <option>Khóa học bồi dưỡng khác</option>
-                    <option>Đăng ký cộng tác viên</option>
-                </select>
-
-                <label for="message">Nội dung cần tư vấn</label>
-                <textarea
-                    id="message"
-                    rows="4"
-                    placeholder="Nhập nội dung cần tư vấn..."
-                ></textarea>
-
-                <button type="submit" class="btn btn-primary">
-                    Gửi thông tin đăng ký
-                </button>
-
-                <p id="registerMessage" class="form-message">
-                    Đây là biểu mẫu DEMO, chưa lưu dữ liệu đăng ký.
-                </p>
-
-            </form>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- LIÊN HỆ -->
-<section class="section contact" id="lien-he">
-    <div class="container">
-
+    <!-- Tiện ích -->
+    <section class="section utilities-section" id="utilities">
+      <div class="container">
         <div class="section-heading">
-            <span>KẾT NỐI VỚI CHÚNG TÔI</span>
-            <h2>Liên hệ Nhật Minh</h2>
+          <div>
+            <span class="section-kicker">DÀNH CHO HỌC VIÊN VÀ ĐỐI TÁC</span>
+            <h2>Tiện ích Nhật Minh</h2>
+            <p>Các chức năng được chuẩn bị để phát triển trong những giai đoạn tiếp theo.</p>
+          </div>
+        </div>
+
+        <div class="utilities-grid">
+          <article class="utility-card">
+            <div class="utility-icon">⌕</div>
+            <h3>Tra cứu hồ sơ</h3>
+            <p>Tra cứu tình trạng tiếp nhận và xử lý hồ sơ học viên.</p>
+            <span class="status-label">Đang phát triển</span>
+          </article>
+          <article class="utility-card">
+            <div class="utility-icon">♙</div>
+            <h3>Tài khoản học viên</h3>
+            <p>Đăng nhập để theo dõi khóa học, tài liệu và tiến độ học tập.</p>
+            <span class="status-label">Đang phát triển</span>
+          </article>
+          <article class="utility-card">
+            <div class="utility-icon">♧</div>
+            <h3>Cộng tác viên</h3>
+            <p>Định hướng quản lý thông tin cộng tác viên và hồ sơ giới thiệu.</p>
+            <span class="status-label">Đang phát triển</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Đăng ký -->
+    <section class="section register-section" id="register">
+      <div class="container">
+        <div class="register-panel">
+          <div class="register-intro">
+            <span class="section-kicker">BẮT ĐẦU HÀNH TRÌNH HỌC TẬP</span>
+            <h2>Đăng ký nhận tư vấn</h2>
             <p>
-                Chúng tôi sẵn sàng hỗ trợ và giải đáp
-                các thông tin bạn quan tâm.
+              Để lại thông tin và chương trình quan tâm.
+              Nhật Minh sẽ có cơ sở liên hệ tư vấn khi hệ thống được kết nối.
             </p>
-        </div>
+            <div class="contact-line">
+              <span>☎</span>
+              <div><small>Hotline tư vấn</small><strong>0372.484.382</strong></div>
+            </div>
+          </div>
 
-        <div class="contact-grid">
-
-            <div class="contact-card">
-                <span>☎</span>
-                <h3>Hotline tư vấn</h3>
-                <a href="tel:0372484382">0372.484.382</a>
+          <form class="register-form" id="registerForm">
+            <div class="form-row">
+              <label for="fullName">Họ và tên <span>*</span></label>
+              <input id="fullName" name="fullName" type="text"
+                     placeholder="Nhập họ và tên" required>
             </div>
 
-            <div class="contact-card">
-                <span>✉</span>
-                <h3>Thông tin tư vấn</h3>
-                <p>Liên hệ Nhật Minh Edu</p>
+            <div class="form-row">
+              <label for="phone">Số điện thoại <span>*</span></label>
+              <input id="phone" name="phone" type="tel"
+                     placeholder="Nhập số điện thoại" required>
             </div>
 
-            <div class="contact-card">
-                <span>📍</span>
-                <h3>Đơn vị</h3>
-                <p>Nhật Minh Edu</p>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email"
+                     placeholder="Nhập địa chỉ email">
             </div>
 
-        </div>
-
-    </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="container">
-
-        <div class="footer-content">
-
-            <div class="footer-brand">
-                <div class="footer-logo">NHẬT MINH EDU</div>
-                <p>
-                    Kết nối tri thức - Kiến tạo tương lai.
-                    Đồng hành cùng người học trên hành trình phát triển.
-                </p>
+            <div class="form-row">
+              <label for="program">Chương trình quan tâm</label>
+              <select id="program" name="program">
+                <option value="">-- Chọn chương trình --</option>
+                <option>Văn bằng 2 Ngôn ngữ Anh</option>
+                <option>Nghiệp vụ sư phạm</option>
+                <option>Tư vấn tâm lý học đường</option>
+                <option>Tin học và kỹ năng số</option>
+                <option>Đào tạo từ xa</option>
+                <option>Chương trình khác</option>
+              </select>
             </div>
 
-            <div class="footer-links">
-                <h3>Liên kết nhanh</h3>
-                <a href="#trang-chu">Trang chủ</a>
-                <a href="#tuyen-sinh">Tuyển sinh</a>
-                <a href="#khoa-hoc">Khóa học</a>
-                <a href="#tin-tuc">Tin tức</a>
+            <div class="form-row">
+              <label for="message">Nội dung cần tư vấn</label>
+              <textarea id="message" name="message" rows="3"
+                        placeholder="Nhập nội dung cần tư vấn (nếu có)"></textarea>
             </div>
 
-            <div class="footer-links">
-                <h3>Dịch vụ</h3>
-                <a href="#hoc-truc-tuyen">Học trực tuyến</a>
-                <a href="#tra-cuu">Tra cứu hồ sơ</a>
-                <a href="#cong-tac-vien">Cộng tác viên</a>
-                <a href="#dang-ky">Đăng ký tư vấn</a>
-            </div>
-
-            <div class="footer-contact">
-                <h3>Thông tin liên hệ</h3>
-                <p>Nhật Minh Edu</p>
-                <p>Hotline: 0372.484.382</p>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <p>
-                © <span id="currentYear"></span> Nhật Minh Edu.
-                All rights reserved.
+            <button class="btn btn-primary submit-btn" type="submit">
+              Gửi yêu cầu tư vấn
+            </button>
+            <p class="form-notice" id="formNotice" role="status">
+              Đây là biểu mẫu demo. Thông tin chưa được gửi hoặc lưu trên máy chủ.
             </p>
+          </form>
         </div>
+      </div>
+    </section>
+  </main>
 
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand footer-logo" href="#home">
+          <span class="brand-icon">NM</span>
+          <span class="brand-copy">
+            <strong>GIÁO DỤC NHẬT MINH</strong>
+            <small>Kết nối tri thức – Kiến tạo tương lai</small>
+          </span>
+        </a>
+        <p>Thông tin tuyển sinh, tư vấn chương trình đào tạo và hỗ trợ người học.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Liên kết</h3>
+        <a href="#about">Giới thiệu</a>
+        <a href="#courses">Chương trình đào tạo</a>
+        <a href="#news">Tin tức</a>
+        <a href="#learning">Học trực tuyến</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Tiện ích</h3>
+        <a href="#utilities">Tra cứu hồ sơ</a>
+        <a href="#utilities">Tài khoản học viên</a>
+        <a href="#utilities">Cộng tác viên</a>
+        <a href="#register">Đăng ký tư vấn</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Liên hệ tư vấn</h3>
+        <a href="tel:0372484382">Hotline: 0372.484.382</a>
+        <a href="#register">Gửi yêu cầu tư vấn</a>
+        <span>Thời gian hỗ trợ: Giờ hành chính</span>
+      </div>
     </div>
-</footer>
 
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 GIÁO DỤC NHẬT MINH. Nội dung website đang trong giai đoạn demo.
+      </div>
+    </div>
+  </footer>
 
-<!-- JAVASCRIPT -->
-<script src="script.js"></script>
+  <!-- Hộp xem chi tiết khóa học -->
+  <div class="modal" id="courseModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-box" role="dialog" aria-modal="true"
+         aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Đóng">×</button>
+      <span class="section-kicker">THÔNG TIN CHƯƠNG TRÌNH</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <a class="btn btn-primary" href="#register" id="modalRegister">
+        Đăng ký tư vấn
+      </a>
+    </div>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
