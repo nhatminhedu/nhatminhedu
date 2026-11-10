@@ -244,9 +244,14 @@ nav a:hover, [class*="menu"] a:hover, .nav-link:hover {
     color: #ffffff !important;
 }
 header, .site-header, header .main-header, .main-header {
-    background-color: #4ee44e !important;
+    background-color: #1b5e20 !important;
 }
 
 .logo-text h1 {
     color: #ffffff !important;
+}
+
+header p, .header p, [class*="logo"] p, [class*="brand"] p, .logo-text p {
+    color: #ffeb3b !important; 
+    font-weight: 800 !important;
 }
