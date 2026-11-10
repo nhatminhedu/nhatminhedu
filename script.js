@@ -1,67 +1,110 @@
 
-// ==============================
-// GIÁO DỤC NHẬT MINH
-// Các chức năng giao diện DEMO
-// ==============================
+// Menu trên điện thoại
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
 
-document.addEventListener("DOMContentLoaded", function () {
-  // MENU ĐIỆN THOẠI
-  const menuToggle = document.getElementById("menuToggle");
-  const navList = document.getElementById("navList");
-
-  if (menuToggle && navList) {
-    menuToggle.addEventListener("click", function () {
-      const isOpen = navList.classList.toggle("open");
-
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.innerHTML = isOpen
-        ? "✕ <span>Đóng danh mục</span>"
-        : "☰ <span>Danh mục</span>";
-    });
-
-    // Đóng menu sau khi chọn liên kết
-    navList.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navList.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.innerHTML = "☰ <span>Danh mục</span>";
-      });
-    });
-  }
-
-  // ĐÁNH DẤU MENU ĐANG ĐƯỢC CHỌN
-  const navLinks = document.querySelectorAll(".nav-list a");
-
-  navLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      navLinks.forEach(function (item) {
-        item.classList.remove("active");
-      });
-
-      link.classList.add("active");
-    });
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
-  // FORM ĐĂNG KÝ DEMO
-  const contactForm = document.getElementById("contactForm");
-  const formMessage = document.getElementById("formMessage");
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
-        return;
-      }
-
-      if (formMessage) {
-        formMessage.textContent =
-          "Đây là biểu mẫu DEMO, chưa lưu thông tin. Vui lòng gọi hotline 0372.484.382 để được tư vấn.";
-        formMessage.classList.add("form-warning");
-      }
-
-      contactForm.reset();
+  mainNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
     });
-  }
+  });
+}
+
+// Lọc khóa học
+const filterButtons = document.querySelectorAll(".filter-btn");
+const courseCards = document.querySelectorAll(".course-card");
+const courseSearch = document.getElementById("courseSearch");
+
+let activeCategory = "all";
+
+function filterCourses() {
+  const keyword = (courseSearch?.value || "").trim().toLowerCase();
+
+  courseCards.forEach(card => {
+    const category = card.dataset.category || "";
+    const searchableText = (
+      card.dataset.search + " " + card.textContent
+    ).toLowerCase();
+
+    const matchesCategory =
+      activeCategory === "all" || category === activeCategory;
+    const matchesKeyword = searchableText.includes(keyword);
+
+    card.classList.toggle(
+      "hidden",
+      !(matchesCategory && matchesKeyword)
+    );
+  });
+}
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    filterButtons.forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+    activeCategory = button.dataset.filter;
+    filterCourses();
+  });
 });
+
+courseSearch?.addEventListener("input", filterCourses);
+
+// Biểu mẫu tư vấn DEMO: không gửi dữ liệu lên máy chủ
+const consultForm = document.getElementById("consultForm");
+const formMessage = document.getElementById("formMessage");
+
+consultForm?.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const name = document.getElementById("fullName").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const program = document.getElementById("program").value;
+
+  const phonePattern = /^(0|\+84)[0-9\s.-]{8,13}$/;
+
+  if (!name || !phone || !program) {
+    formMessage.textContent = "Vui lòng điền đầy đủ thông tin.";
+    return;
+  }
+
+  if (!phonePattern.test(phone)) {
+    formMessage.textContent = "Vui lòng kiểm tra lại số điện thoại.";
+    return;
+  }
+
+  formMessage.textContent =
+    "Biểu mẫu DEMO đã kiểm tra thông tin. Website chưa kết nối hệ thống nhận đăng ký.";
+});
+
+// Năm hiện tại ở chân trang
+const currentYear = document.getElementById("currentYear");
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
+
+// Đánh dấu mục menu đang xem
+const sections = document.querySelectorAll("main section[id]");
+const navLinks = document.querySelectorAll(".main-nav a[href^='#']");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + entry.target.id
+          );
+        });
+      }
+    });
+  }, { rootMargin: "-35% 0px -55% 0px" });
+
+  sections.forEach(section => observer.observe(section));
+}
