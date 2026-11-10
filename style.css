@@ -243,28 +243,18 @@ nav *, [class*="nav"] *, [class*="menu"] *, header li a, .navbar-nav a, .nav-ite
 nav a:hover, [class*="menu"] a:hover, .nav-link:hover {
     color: #ffffff !important;
 }
-/* 1. Đổi nền xanh đậm toàn dải */
-header, .site-header, header .main-header, .main-header {
-    background-color: #1b5e20 !important;
-}
-
-/* 2. Cưỡng ép chữ tên thương hiệu sang màu trắng nổi bật */
-.logo-text h1, .logo-text a, header h1, header h1 a {
+/* 1. Phóng to hẳn tên thương hiệu và đổi sang màu TRẮNG SÁNG */
+.logo-text h1, .logo-text a, header h1, header h1 a, [class*="logo"] h1 {
     color: #ffffff !important;
+    font-size: 32px !important; /* Tăng cỡ chữ to vượt trội */
+    font-weight: 900 !important; /* Làm chữ cực kỳ dày và đậm nét */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) !important; /* Tạo khối bóng đổ giúp tên thương hiệu nổi bật hẳn lên */
 }
 
-/* 3. Dòng chữ khẩu hiệu sang màu vàng neon */
+/* 2. Làm dòng khẩu hiệu nhỏ lại và đổi sang màu VÀNG dể tôn tên thương hiệu lên */
 header p, .header p, [class*="logo"] p, [class*="brand"] p, .logo-text p {
     color: #ffeb3b !important; 
-    font-weight: 800 !important;
-}
-
-/* 4. Định hình lại khung hotline và nút bấm để không bị nhảy lệch */
-.header-right, .contact-info, .btn-nav-tuyen-sinh, [class*="hotline"] {
-    display: flex !important;
-    align-items: center !important;
-    color: #ffffff !important;
-}
-.contact-text strong {
-    color: #ffeb3b !important;
+    font-size: 13px !important; /* Giữ kích thước nhỏ gọn vừa phải */
+    font-weight: 600 !important; /* Nét chữ vừa phải, không lấn lướt tên chính */
+    margin-top: 5px !important; /* Tạo khoảng cách giãn dòng cho thoáng */
 }
