@@ -1,74 +1,67 @@
 
+// ==============================
+// GIÁO DỤC NHẬT MINH
+// Các chức năng giao diện DEMO
+// ==============================
+
 document.addEventListener("DOMContentLoaded", function () {
-
-  // MENU TRÊN ĐIỆN THOẠI
+  // MENU ĐIỆN THOẠI
   const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
+  const navList = document.getElementById("navList");
 
-  if (menuToggle && navLinks) {
+  if (menuToggle && navList) {
     menuToggle.addEventListener("click", function () {
-      navLinks.classList.toggle("show");
+      const isOpen = navList.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen
+        ? "✕ <span>Đóng danh mục</span>"
+        : "☰ <span>Danh mục</span>";
     });
 
-    navLinks.querySelectorAll("a").forEach(function (link) {
+    // Đóng menu sau khi chọn liên kết
+    navList.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        navLinks.classList.remove("show");
+        navList.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = "☰ <span>Danh mục</span>";
       });
     });
   }
 
-  // TÌM KIẾM KHÓA HỌC
-  const courseSearch = document.getElementById("courseSearch");
-  const courseCards = document.querySelectorAll(".course-card");
+  // ĐÁNH DẤU MENU ĐANG ĐƯỢC CHỌN
+  const navLinks = document.querySelectorAll(".nav-list a");
 
-  if (courseSearch) {
-    courseSearch.addEventListener("input", function () {
-      const keyword = this.value
-        .trim()
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/đ/g, "d");
-
-      courseCards.forEach(function (card) {
-        const name = (card.dataset.name + " " + card.innerText)
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .replace(/đ/g, "d");
-
-        card.style.display = name.includes(keyword) ? "" : "none";
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      navLinks.forEach(function (item) {
+        item.classList.remove("active");
       });
-    });
-  }
 
-  // FORM ĐĂNG KÝ TƯ VẤN DEMO
-  const consultForm = document.getElementById("consultForm");
+      link.classList.add("active");
+    });
+  });
+
+  // FORM ĐĂNG KÝ DEMO
+  const contactForm = document.getElementById("contactForm");
   const formMessage = document.getElementById("formMessage");
 
-  if (consultForm) {
-    consultForm.addEventListener("submit", function (event) {
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      const fullname = consultForm.elements.fullname.value.trim();
-      const phone = consultForm.elements.phone.value.trim();
-      const program = consultForm.elements.program.value;
-
-      if (!fullname || !phone || !program) {
-        formMessage.textContent = "Vui lòng điền đầy đủ thông tin.";
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
         return;
       }
 
-      if (!/^[0-9+\s().-]{9,15}$/.test(phone)) {
-        formMessage.textContent = "Số điện thoại chưa hợp lệ.";
-        return;
+      if (formMessage) {
+        formMessage.textContent =
+          "Đây là biểu mẫu DEMO, chưa lưu thông tin. Vui lòng gọi hotline 0372.484.382 để được tư vấn.";
+        formMessage.classList.add("form-warning");
       }
 
-      formMessage.textContent =
-        "Đăng ký demo đã được ghi nhận trên giao diện. Vui lòng liên hệ hotline 0372.484.382 để được hỗ trợ.";
-
-      consultForm.reset();
+      contactForm.reset();
     });
   }
-
 });
