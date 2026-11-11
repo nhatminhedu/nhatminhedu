@@ -25,22 +25,23 @@
         </div>
       </a>
 
-     <form class="search-box" id="searchForm">
-          <input id="searchInput" type="search" list="danh-sach-chuong-trinh" onclick="this.value=''; this.showPicker();" onchange="this.blur();" placeholder="Tìm kiếm chương trình đào tạo...">
-          <datalist id="danh-sach-chuong-trinh">
-            <option value="Văn bằng 2">
-            <option value="Nghiệp vụ sư phạm">
-            <option value="Chức danh nghề nghiệp">
-            <option value="Tin học và Ngoại ngữ">
-            <option value="Tâm lý học đường">
-            <option value="Chương trình khác">
-          </datalist>
-          <button type="submit" aria-label="Tìm kiếm" style="display: flex; align-items: center; justify-content: center;">
+     <form class="search-box" id="searchForm" style="display: flex; align-items: center; position: relative;">
+          <select id="searchInput" onchange="this.blur()" style="width: 100%; height: 100%; border: none; padding: 10px 40px 10px 15px; background: transparent; font-size: 16px; color: #333; outline: none; appearance: none; -webkit-appearance: none; cursor: pointer;">
+            <option value="" disabled selected hidden>Tìm kiếm chương trình đào tạo...</option>
+            <option value="Văn bằng 2">Văn bằng 2</option>
+            <option value="Nghiệp vụ sư phạm">Nghiệp vụ sư phạm</option>
+            <option value="Chức danh nghề nghiệp">Chức danh nghề nghiệp</option>
+            <option value="Tin học và Ngoại ngữ">Tin học và Ngoại ngữ</option>
+            <option value="Tâm lý học đường">Tâm lý học đường</option>
+            <option value="Chương trình khác">Chương trình khác</option>
+          </select>
+          <button type="submit" aria-label="Tìm kiếm" style="position: absolute; right: 0; top: 0; height: 100%; width: 40px; background: transparent; border: none; display: flex; align-items: center; justify-content: center; pointer-events: none;">
             <svg xmlns="http://w3.org" width="16" height="16" fill="white" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg>
           </button>
         </form>
+      
       <a class="hotline" href="tel:0372484382">
         <span class="phone-icon">☎</span>
         <span><small>Hotline tư vấn</small><strong>0372 484 382</strong></span>
