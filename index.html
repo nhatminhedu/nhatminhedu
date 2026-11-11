@@ -25,22 +25,22 @@
         </div>
       </a>
 
-     <form class="search-box" id="searchForm" style="display: flex; align-items: center; position: relative; background: #fff; border-radius: 4px; overflow: hidden;">
-          <select id="searchInput" onchange="this.blur()" style="width: 100%; height: 100%; border: none; padding: 10px 40px 10px 15px; background: transparent; font-size: 16px; color: #333; outline: none; appearance: none; -webkit-appearance: none; -moz-appearance: none; cursor: pointer;">
+    <div style="display: flex; align-items: center; position: relative; background: #fff; border: 1px solid #ccc; border-radius: 4px; width: 100%; max-width: 400px; height: 42px; margin: 0 auto; overflow: hidden;">
+          <select id="searchInput" onchange="if(this.value) { const element = document.getElementById(this.value); if(element) { element.scrollIntoView({ behavior: 'smooth' }); } else { window.location.hash = this.value; } this.blur(); }" style="width: 100%; height: 100%; border: none; padding: 0 45px 0 15px; background: transparent; font-size: 16px; color: #333; outline: none; appearance: none; -webkit-appearance: none; -moz-appearance: none; cursor: pointer; font-family: inherit;">
             <option value="" disabled selected hidden>Tìm kiếm chương trình đào tạo...</option>
-            <option value="Văn bằng 2">Văn bằng 2</option>
-            <option value="Nghiệp vụ sư phạm">Nghiệp vụ sư phạm</option>
-            <option value="Chức danh nghề nghiệp">Chức danh nghề nghiệp</option>
-            <option value="Tin học và Ngoại ngữ">Tin học và Ngoại ngữ</option>
-            <option value="Tâm lý học đường">Tâm lý học đường</option>
-            <option value="Chương trình khác">Chương trình khác</option>
+            <option value="van-bang-2">Văn bằng 2</option>
+            <option value="chuong-trinh">Nghiệp vụ sư phạm</option>
+            <option value="chuc-danh-nghe-nghiep">Chức danh nghề nghiệp</option>
+            <option value="tin-hoc-ngoai-ngu">Tin học và Ngoại ngữ</option>
+            <option value="tam-ly-hoc-duong">Tâm lý học đường</option>
+            <option value="chuong-trinh-khac">Chương trình khác</option>
           </select>
-          <button type="submit" aria-label="Tìm kiếm" style="position: absolute; right: 0; top: 0; bottom: 0; width: 40px; background: #2d3748; border: none; display: flex; align-items: center; justify-content: center; pointer-events: none; border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
+          <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 40px; background: #1b4332; display: flex; align-items: center; justify-content: center; pointer-events: none;">
             <svg xmlns="http://w3.org" width="16" height="16" fill="white" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg>
-          </button>
-        </form>
+          </div>
+        </div>
       
       <a class="hotline" href="tel:0372484382">
         <span class="phone-icon">☎</span>
