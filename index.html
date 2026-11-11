@@ -26,7 +26,7 @@
       </a>
 
      <form class="search-box" id="searchForm">
-          <input id="searchInput" type="search" list="danh-sach-chuong-trinh" onclick="this.showPicker()" oninput="this.blur()" placeholder="Tìm kiếm chương trình đào tạo...">
+          <input id="searchInput" type="search" list="danh-sach-chuong-trinh" onclick="this.value=''; this.showPicker();" onchange="this.blur();" placeholder="Tìm kiếm chương trình đào tạo...">
           <datalist id="danh-sach-chuong-trinh">
             <option value="Văn bằng 2">
             <option value="Nghiệp vụ sư phạm">
@@ -41,7 +41,6 @@
             </svg>
           </button>
         </form>
-
       <a class="hotline" href="tel:0372484382">
         <span class="phone-icon">☎</span>
         <span><small>Hotline tư vấn</small><strong>0372 484 382</strong></span>
