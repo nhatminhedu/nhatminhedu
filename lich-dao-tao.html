@@ -9,9 +9,6 @@
     * {
       box-sizing: border-box;
     }
-    html {
-      scroll-behavior: smooth;
-    }
     body {
       margin: 0;
       background-color: #f8fafc;
@@ -57,12 +54,12 @@
       font-size: 15px;
     }
 
-    /* Lưới 7 thẻ chương trình căn chỉnh vừa khít màn hình */
+    /* Lưới 7 thẻ chương trình căn chỉnh cân đối */
     .program-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 14px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
     .program-card-btn {
       background: #ffffff;
@@ -101,21 +98,23 @@
       line-height: 1.35;
     }
 
-    /* Các bảng biểu hiển thị đầy đủ bên dưới */
+    /* Ẩn mặc định, chỉ xổ ra bảng lịch của chương trình được nhấp */
     .schedule-detail-box {
-      display: block;
+      display: none;
       background: #ffffff;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-      border: 1px solid #cbd5e1;
+      border: 2px solid #137333;
       overflow: hidden;
       margin-bottom: 28px;
-      scroll-margin-top: 25px;
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      animation: fadeIn 0.25s ease;
     }
-    .schedule-detail-box.highlight {
-      border: 2px solid #137333;
-      box-shadow: 0 8px 24px rgba(19, 115, 51, 0.16);
+    .schedule-detail-box.show {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .table-responsive {
       width: 100%;
@@ -229,49 +228,49 @@
     
     <div class="schedule-header">
       <h1>LỊCH ĐÀO TẠO & KHAI GIẢNG</h1>
-      <p>Nhấp chọn vào từng chương trình bên dưới để đi nhanh tới bảng lịch học chi tiết tương ứng.</p>
+      <p>Nhấp chọn vào từng chương trình bên dưới để xem bảng lịch học chi tiết.</p>
     </div>
 
     <!-- 7 THẺ CHƯƠNG TRÌNH -->
     <div class="program-grid">
-      <button type="button" id="btn-nvsp" class="program-card-btn active" onclick="chonChuongTrinh('lich-nvsp', this, 'nvsp')">
+      <button type="button" id="btn-nvsp" class="program-card-btn active" onclick="xoLichChuongTrinh('lich-nvsp', this, 'nvsp')">
         <div class="prog-num">Chương trình 01</div>
         <div class="prog-name">Nghiệp vụ Sư phạm</div>
       </button>
 
-      <button type="button" id="btn-cdnn" class="program-card-btn" onclick="chonChuongTrinh('lich-cdnn', this, 'cdnn')">
+      <button type="button" id="btn-cdnn" class="program-card-btn" onclick="xoLichChuongTrinh('lich-cdnn', this, 'cdnn')">
         <div class="prog-num">Chương trình 02</div>
         <div class="prog-name">Chức danh nghề nghiệp</div>
       </button>
 
-      <button type="button" id="btn-vb2" class="program-card-btn" onclick="chonChuongTrinh('lich-vb2', this, 'vb2')">
+      <button type="button" id="btn-vb2" class="program-card-btn" onclick="xoLichChuongTrinh('lich-vb2', this, 'vb2')">
         <div class="prog-num">Chương trình 03</div>
         <div class="prog-name">Văn bằng 2</div>
       </button>
 
-      <button type="button" id="btn-ketoan" class="program-card-btn" onclick="chonChuongTrinh('lich-ketoan', this, 'ketoan')">
+      <button type="button" id="btn-ketoan" class="program-card-btn" onclick="xoLichChuongTrinh('lich-ketoan', this, 'ketoan')">
         <div class="prog-num">Chương trình 04</div>
         <div class="prog-name">Nghiệp vụ Kế toán</div>
       </button>
 
-      <button type="button" id="btn-tinhoc" class="program-card-btn" onclick="chonChuongTrinh('lich-tinhoc', this, 'tinhoc')">
+      <button type="button" id="btn-tinhoc" class="program-card-btn" onclick="xoLichChuongTrinh('lich-tinhoc', this, 'tinhoc')">
         <div class="prog-num">Chương trình 05</div>
         <div class="prog-name">Tin học và Ngoại ngữ</div>
       </button>
 
-      <button type="button" id="btn-tamly" class="program-card-btn" onclick="chonChuongTrinh('lich-tamly', this, 'tamly')">
+      <button type="button" id="btn-tamly" class="program-card-btn" onclick="xoLichChuongTrinh('lich-tamly', this, 'tamly')">
         <div class="prog-num">Chương trình 06</div>
         <div class="prog-name">Tâm lý học đường</div>
       </button>
 
-      <button type="button" id="btn-khac" class="program-card-btn" onclick="chonChuongTrinh('lich-khac', this, 'khac')">
+      <button type="button" id="btn-khac" class="program-card-btn" onclick="xoLichChuongTrinh('lich-khac', this, 'khac')">
         <div class="prog-num">Chương trình 07</div>
         <div class="prog-name">Các khóa học khác</div>
       </button>
     </div>
 
     <!-- 1. BẢNG NGHIỆP VỤ SƯ PHẠM -->
-    <div id="lich-nvsp" class="schedule-detail-box highlight">
+    <div id="lich-nvsp" class="schedule-detail-box show">
       <div class="table-responsive">
         <table class="schedule-table">
           <thead>
@@ -319,3 +318,4 @@
     </div>
 
     <!-- 2. BẢNG CHỨC DANH NGHỀ NGHIỆP -->
+    <div id="lich-cdnn" class="schedule-detail-box">
