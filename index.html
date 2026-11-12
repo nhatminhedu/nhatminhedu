@@ -96,40 +96,32 @@
           <li>Hỗ trợ người học trong quá trình đăng ký</li>
           <li>Kết nối cơ hội học tập linh hoạt</li>
         </ul>
-.about-expand-card h3, .about-expand-values h3 {
-    color: #137333;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 19px;
-  }
-  .about-expand-values {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-  .about-expand-values ul {
-    padding-left: 20px;
-    margin: 0;
-  }
-  .about-expand-values li {
-    margin-bottom: 10px;
-  }
-</style>
+<button type="button" onclick="var b=document.getElementById('noiDungMoRong'); if(b.style.display==='none'){b.style.display='block'; this.innerText='Thu gọn ↑';}else{b.style.display='none'; this.innerText='Tìm hiểu thêm →';}" class="btn btn-green" style="border:none; cursor:pointer;">
+  Tìm hiểu thêm →
+</button>
 
-<script>
-  function toggleGioiThieu() {
-    var box = document.getElementById("noiDungGioiThieuMoRong");
-    var btn = document.getElementById("btnTimHieuThem");
-    if (box.style.display === "none") {
-      box.style.display = "block";
-      btn.innerHTML = "Thu gọn ↑";
-    } else {
-      box.style.display = "none";
-      btn.innerHTML = "Tìm hiểu thêm →";
-    }
-  }
-</script>
+<div id="noiDungMoRong" class="about-expand-box" style="display: none;">
+  <div class="about-expand-grid">
+    <div class="about-expand-card">
+      <h3>🎯 Tầm nhìn</h3>
+      <p>Trở thành đơn vị tư vấn và kết nối đào tạo hàng đầu Việt Nam, tiên phong ứng dụng công nghệ để xóa bỏ rào cản địa lý trong học tập. Giáo dục Nhật Minh hướng tới xây dựng một hệ sinh thái giáo dục mở hiện đại, nơi mọi người học đều có thể chủ động tiếp cận tri thức mọi lúc, mọi nơi.</p>
+    </div>
+    <div class="about-expand-card">
+      <h3>🚀 Sứ mệnh</h3>
+      <p>Đồng hành cùng người học từ những bước định hướng đầu tiên đến khi chạm tay vào tấm bằng và chứng chỉ mơ ước. Chúng tôi cam kết kết nối học viên với các cơ sở đào tạo uy tín, cung cấp thông tin chính xác và tạo điều kiện học tập thuận lợi nhất để không ai bị bỏ lại phía sau trên hành trình phát triển sự nghiệp.</p>
+    </div>
+  </div>
+  <div class="about-expand-values">
+    <h3>💎 Giá trị cốt lõi</h3>
+    <ul>
+      <li><strong>Chính trực và Minh bạch:</strong> Mọi thông tin về chương trình đào tạo, điều kiện xét tuyển, lịch học và giá trị pháp lý của văn bằng đều được công khai rõ ràng, chuẩn xác theo quy định hiện hành.</li>
+      <li><strong>Tận tâm Phụng sự:</strong> Đặt lợi ích và sự tiến bộ của học viên làm kim chỉ nam, luôn lắng nghe và hỗ trợ kịp thời từng hồ sơ cá nhân trong suốt quá trình học tập.</li>
+      <li><strong>Linh hoạt và Thực tiễn:</strong> Chú trọng các mô hình học tập trực tuyến thông minh, tối ưu hóa thời gian và chi phí cho cán bộ, giáo viên và người đang đi làm.</li>
+      <li><strong>Chất lượng Bền vững:</strong> Lấy sự thành công và hài lòng của học viên làm thước đo uy tín, không ngừng nâng cao chất lượng dịch vụ để xứng đáng với niềm tin của cộng đồng.</li>
+    </ul>
+  </div>
+</div>
+
       </div>
     </section>
 
