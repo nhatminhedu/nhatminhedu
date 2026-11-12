@@ -363,3 +363,19 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<script>
+  (function() {
+    var track = document.getElementById('introTrack');
+    if (!track) return;
+    var slides = track.getElementsByTagName('img');
+    var index = 0;
+    setInterval(function() {
+      index++;
+      if (index >= slides.length) {
+        index = 0;
+      }
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    }, 3000);
+  })();
+</script>
