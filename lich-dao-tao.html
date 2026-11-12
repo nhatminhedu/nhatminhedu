@@ -434,7 +434,50 @@
       color: #fef08a !important;
     }
   </style>
- 
+   <script>
+    function chonChuongTrinh(maId) {
+      var danhSach = ['box-nvsp', 'box-cdnn', 'box-vb2', 'box-ketoan', 'box-tinhoc', 'box-tamly', 'box-khac'];
+      var viTri = danhSach.indexOf(maId);
+      if (viTri === -1) viTri = 0;
+
+      danhSach.forEach(function(id, idx) {
+        var bang = document.getElementById(id);
+        if (bang) bang.style.display = (idx === viTri) ? 'block' : 'none';
+      });
+
+      var tatCaNut = document.querySelectorAll('.program-card-btn');
+      tatCaNut.forEach(function(btn, idx) {
+        btn.classList.remove('active');
+        var soThuTu = btn.querySelector('.prog-num');
+        if (idx === viTri) {
+          btn.classList.add('active');
+          btn.style.setProperty('background-color', '#137333', 'important');
+          btn.style.setProperty('border-color', '#137333', 'important');
+          btn.style.setProperty('color', '#ffffff', 'important');
+          if (soThuTu) soThuTu.style.setProperty('color', '#fef08a', 'important');
+        } else {
+          btn.style.setProperty('background-color', '#ffffff', 'important');
+          btn.style.setProperty('border-color', '#e2e8f0', 'important');
+          btn.style.setProperty('color', '#2d3748', 'important');
+          if (soThuTu) soThuTu.style.setProperty('color', '#b7791f', 'important');
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      var hash = window.location.hash.replace('#', '') || 'box-nvsp';
+      chonChuongTrinh(hash);
+
+      var danhSach = ['box-nvsp', 'box-cdnn', 'box-vb2', 'box-ketoan', 'box-tinhoc', 'box-tamly', 'box-khac'];
+      var tatCaNut = document.querySelectorAll('.program-card-btn');
+      tatCaNut.forEach(function(btn, idx) {
+        btn.onclick = function() {
+          chonChuongTrinh(danhSach[idx]);
+        };
+      });
+    });
+  </script>
+
 </body>
 </html>
 
