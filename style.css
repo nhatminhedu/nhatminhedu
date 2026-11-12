@@ -1059,3 +1059,36 @@ button, input, select {
 #gioi-thieu.intro-section {
   padding-top: 20px !important;
 }
+
+/* Ép sát tối đa khoảng cách Banner và phần Giới thiệu */
+header {
+  margin-bottom: 0 !important;
+}
+#trang-chu.hero {
+  padding-top: 10px !important;
+  padding-bottom: 12px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+#trang-chu .hero-kicker {
+  margin-bottom: 2px !important;
+  display: inline-block !important;
+}
+#trang-chu .hero-copy h1 {
+  margin-top: 0 !important;
+  margin-bottom: 2px !important;
+  line-height: 1.15 !important;
+}
+#trang-chu .hero-copy h2 {
+  margin-top: 0 !important;
+  margin-bottom: 4px !important;
+  line-height: 1.2 !important;
+}
+#trang-chu .hero-copy p {
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+}
+#gioi-thieu.intro-section {
+  padding-top: 12px !important;
+  margin-top: 0 !important;
+}
