@@ -1105,3 +1105,18 @@ header {
   margin-top: 12px !important;
   transform: none !important;
 }
+
+/* Đổi nhãn "Đồng hành - Phát triển - Thành công" thành chữ xanh, nền trắng, viền xanh nổi bật */
+.intro-image .image-label {
+  position: static !important;
+  display: inline-block !important;
+  margin-top: 12px !important;
+  background-color: #ffffff !important;
+  color: #137333 !important;
+  border: 2px solid #137333 !important;
+  outline: 2px solid #ffffff !important;
+  padding: 6px 18px !important;
+  border-radius: 25px !important;
+  font-weight: bold !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1) !important;
+}
