@@ -86,15 +86,49 @@
     <!-- GIỚI THIỆU -->
     <section class="section container intro-section" id="gioi-thieu">
      <div class="intro-image">
-  <div style="width: 100%; overflow: hidden; border-radius: 16px; position: relative; box-shadow: 0 10px 28px rgba(19, 115, 51, 0.15); border: 3px solid #ffffff;">
-    <div id="introTrack">
-      <img src="anh1.jpg" alt="Giáo dục Nhật Minh 1" style="height: 310px; object-fit: cover; object-position: center 15%; display: block;">
-      <img src="anh2.jpg" alt="Giáo dục Nhật Minh 2" style="height: 310px; object-fit: cover; object-position: center 25%; display: block;">
-      <img src="anh3.jpg" alt="Giáo dục Nhật Minh 3" style="height: 310px; object-fit: cover; object-position: center 20%; display: block;">
+  <style>
+    @keyframes truotNgang3Anh {
+      0%, 28% { transform: translateX(0%); }
+      33%, 61% { transform: translateX(-100%); }
+      66%, 94% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+    .hop-truot-anh {
+      width: 100% !important;
+      overflow: hidden !important;
+      border-radius: 16px !important;
+      box-shadow: 0 10px 28px rgba(19, 115, 51, 0.15) !important;
+      border: 3px solid #ffffff !important;
+    }
+    .day-anh-ngang {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      width: 100% !important;
+      animation: truotNgang3Anh 10s infinite ease-in-out !important;
+    }
+    .day-anh-ngang img {
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      flex-shrink: 0 !important;
+      height: 310px !important;
+      object-fit: cover !important;
+      display: block !important;
+      margin: 0 !important;
+    }
+  </style>
+
+  <div class="hop-truot-anh">
+    <div class="day-anh-ngang">
+      <img src="anh1.jpg" alt="Giáo dục Nhật Minh 1" style="object-position: center 15%;">
+      <img src="anh2.jpg" alt="Giáo dục Nhật Minh 2" style="object-position: center 25%;">
+      <img src="anh3.jpg" alt="Giáo dục Nhật Minh 3" style="object-position: center 20%;">
     </div>
   </div>
   <span class="image-label">Đồng hành - Phát triển - Thành công</span>
 </div>
+
 
       <div class="intro-content">
         <span class="section-tag">VỀ CHÚNG TÔI</span>
