@@ -1018,3 +1018,24 @@ button, input, select {
   padding-top: 40px !important;
   margin-top: 0 !important;
 }
+
+/* Ghi đè lại khoảng cách trên và dưới Banner đầu trang cho cân đối */
+#trang-chu.hero {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-top: 35px !important;
+  padding-bottom: 35px !important;
+  display: block !important;
+}
+#trang-chu .hero-content {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+#gioi-thieu.intro-section {
+  padding-top: 35px !important;
+  margin-top: 0 !important;
+}
