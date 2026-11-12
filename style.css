@@ -973,3 +973,21 @@ button, input, select {
 .about-expand-values li {
   margin-bottom: 10px;
 }
+
+/* Căn thẳng hàng ngang tất cả các nút Tìm hiểu ở thẻ khóa học */
+.course-card {
+  display: flex;
+  flex-direction: column;
+}
+.course-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.course-body p {
+  flex-grow: 1;
+}
+.course-body .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
