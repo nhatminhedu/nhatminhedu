@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lịch đào tạo chi tiết - Giáo dục Nhật Minh</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     * {
       box-sizing: border-box;
@@ -54,51 +53,51 @@
       font-size: 15px;
     }
 
-    /* Lưới 7 thẻ chương trình căn chỉnh cân đối */
+    /* Lưới 7 thẻ chương trình dạng liên kết trực tiếp */
     .program-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 14px;
       margin-bottom: 28px;
     }
-    .program-card-btn {
+    .program-card-link {
+      display: block;
       background: #ffffff;
       border: 2px solid #e2e8f0;
       border-radius: 10px;
       padding: 15px 16px;
-      text-align: left;
-      cursor: pointer;
+      text-decoration: none;
+      color: #1e293b;
       transition: all 0.2s ease;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-      width: 100%;
     }
-    .program-card-btn:hover {
+    .program-card-link:hover {
       border-color: #137333;
       transform: translateY(-2px);
     }
-    .program-card-btn.active {
+    .program-card-link.active {
       background-color: #137333;
       border-color: #137333;
       color: #ffffff;
       box-shadow: 0 5px 12px rgba(19, 115, 51, 0.22);
     }
-    .program-card-btn .prog-num {
+    .program-card-link .prog-num {
       font-size: 11px;
       font-weight: bold;
       text-transform: uppercase;
       color: #b7791f;
       margin-bottom: 4px;
     }
-    .program-card-btn.active .prog-num {
+    .program-card-link.active .prog-num {
       color: #fef08a;
     }
-    .program-card-btn .prog-name {
+    .program-card-link .prog-name {
       font-size: 15.5px;
       font-weight: bold;
       line-height: 1.35;
     }
 
-    /* Ẩn mặc định, chỉ xổ ra bảng lịch của chương trình được nhấp */
+    /* Khung bảng biểu xổ ra */
     .schedule-detail-box {
       display: none;
       background: #ffffff;
@@ -107,14 +106,9 @@
       border: 2px solid #137333;
       overflow: hidden;
       margin-bottom: 28px;
-      animation: fadeIn 0.25s ease;
     }
     .schedule-detail-box.show {
       display: block;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
     }
     .table-responsive {
       width: 100%;
@@ -191,7 +185,6 @@
       font-size: 13px;
       font-weight: bold;
       white-space: nowrap;
-      transition: background 0.2s;
     }
     .btn-reg-small:hover {
       background-color: #975a16;
@@ -218,7 +211,6 @@
 </head>
 <body>
 
-  <!-- Thanh điều hướng trên cùng -->
   <div class="top-nav-bar">
     <a href="index.html">← Quay lại Trang chủ Giáo dục Nhật Minh</a>
     <a href="hoctructuyen.html" style="color: #fef08a; font-size: 14px;">🎥 Vào Phòng học trực tuyến →</a>
@@ -233,44 +225,44 @@
 
     <!-- 7 THẺ CHƯƠNG TRÌNH -->
     <div class="program-grid">
-      <button type="button" id="btn-nvsp" class="program-card-btn active" onclick="xoLichChuongTrinh('lich-nvsp', this, 'nvsp')">
+      <a href="#nvsp" id="tab-nvsp" class="program-card-link active" onclick="chonTab('nvsp')">
         <div class="prog-num">Chương trình 01</div>
         <div class="prog-name">Nghiệp vụ Sư phạm</div>
-      </button>
+      </a>
 
-      <button type="button" id="btn-cdnn" class="program-card-btn" onclick="xoLichChuongTrinh('lich-cdnn', this, 'cdnn')">
+      <a href="#cdnn" id="tab-cdnn" class="program-card-link" onclick="chonTab('cdnn')">
         <div class="prog-num">Chương trình 02</div>
         <div class="prog-name">Chức danh nghề nghiệp</div>
-      </button>
+      </a>
 
-      <button type="button" id="btn-vb2" class="program-card-btn" onclick="xoLichChuongTrinh('lich-vb2', this, 'vb2')">
+      <a href="#vb2" id="tab-vb2" class="program-card-link" onclick="chonTab('vb2')">
         <div class="prog-num">Chương trình 03</div>
         <div class="prog-name">Văn bằng 2</div>
-      </button>
+      </a>
 
-      <button type="button" id="btn-ketoan" class="program-card-btn" onclick="xoLichChuongTrinh('lich-ketoan', this, 'ketoan')">
+      <a href="#ketoan" id="tab-ketoan" class="program-card-link" onclick="chonTab('ketoan')">
         <div class="prog-num">Chương trình 04</div>
         <div class="prog-name">Nghiệp vụ Kế toán</div>
-      </button>
+      </a>
 
-      <button type="button" id="btn-tinhoc" class="program-card-btn" onclick="xoLichChuongTrinh('lich-tinhoc', this, 'tinhoc')">
+      <a href="#tinhoc" id="tab-tinhoc" class="program-card-link" onclick="chonTab('tinhoc')">
         <div class="prog-num">Chương trình 05</div>
         <div class="prog-name">Tin học và Ngoại ngữ</div>
-      </button>
+      </a>
 
-      <button type="button" id="btn-tamly" class="program-card-btn" onclick="xoLichChuongTrinh('lich-tamly', this, 'tamly')">
+      <a href="#tamly" id="tab-tamly" class="program-card-link" onclick="chonTab('tamly')">
         <div class="prog-num">Chương trình 06</div>
         <div class="prog-name">Tâm lý học đường</div>
-      </button>
+      </a>
 
-      <button type="button" id="btn-khac" class="program-card-btn" onclick="xoLichChuongTrinh('lich-khac', this, 'khac')">
+      <a href="#khac" id="tab-khac" class="program-card-link" onclick="chonTab('khac')">
         <div class="prog-num">Chương trình 07</div>
         <div class="prog-name">Các khóa học khác</div>
-      </button>
+      </a>
     </div>
 
     <!-- 1. BẢNG NGHIỆP VỤ SƯ PHẠM -->
-    <div id="lich-nvsp" class="schedule-detail-box show">
+    <div id="box-nvsp" class="schedule-detail-box show">
       <div class="table-responsive">
         <table class="schedule-table">
           <thead>
@@ -318,4 +310,20 @@
     </div>
 
     <!-- 2. BẢNG CHỨC DANH NGHỀ NGHIỆP -->
-    <div id="lich-cdnn" class="schedule-detail-box">
+    <div id="box-cdnn" class="schedule-detail-box">
+      <div class="table-responsive">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>02. Chức danh nghề nghiệp</th>
+              <th>Thời lượng</th>
+              <th>Khai giảng</th>
+              <th>Lịch học chi tiết</th>
+              <th>Hình thức</th>
+              <th>Trạng thái</th>
+              <th>Đăng ký</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="course-code">CDNN-GV</span><br><strong>Bồi dưỡng Tiêu chuẩn Chức danh nghề nghiệp Giáo viên Mầm non, Tiểu học, THCS, THPT</strong></td>
