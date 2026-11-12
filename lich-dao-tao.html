@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lịch đào tạo & Khai giảng - Giáo dục Nhật Minh</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .schedule-wrapper {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: Arial, sans-serif;
+      color: #2d3748;
+    }
+    .schedule-header {
+      background: linear-gradient(135deg, #f0f9f4 0%, #e6f4ea 100%);
+      padding: 35px 30px;
+      border-radius: 12px;
+      border-left: 6px solid #137333;
+      margin-bottom: 30px;
+    }
+    .schedule-header h1 {
+      color: #137333;
+      margin: 0 0 10px 0;
+      font-size: 28px;
+    }
+    .schedule-header p {
+      margin: 0;
+      color: #4a5568;
+      font-size: 15px;
+    }
+    .schedule-group {
+      margin-bottom: 35px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .group-title {
+      background-color: #137333;
+      color: #ffffff;
+      padding: 14px 20px;
+      margin: 0;
+      font-size: 18px;
+    }
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+    table.schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+    }
+    table.schedule-table th, table.schedule-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid #edf2f7;
+      font-size: 15px;
+    }
+    table.schedule-table th {
+      background-color: #f8fafc;
+      color: #1a202c;
+      font-weight: bold;
+    }
+    table.schedule-table tr:hover {
+      background-color: #f9fbf9;
+    }
+    .badge-online {
+      display: inline-block;
+      background: #e6f4ea;
+      color: #137333;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .btn-reg-small {
+      display: inline-block;
+      background-color: #b7791f;
+      color: #ffffff;
+      padding: 7px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .btn-reg-small:hover {
+      background-color: #975a16;
+    }
+    .zalo-float-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 55px;
+      height: 55px;
+      background-color: #0068ff;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 15px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 104, 255, 0.4);
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Thanh quay về trang chủ -->
+  <div style="background: #137333; padding: 15px 25px;">
+    <a href="index.html" style="color: #fff; text-decoration: none; font-weight: bold;">
+      ← Quay lại Trang chủ Giáo dục Nhật Minh
+    </a>
+  </div>
+
+  <div class="schedule-wrapper">
+    
+    <!-- Tiêu đề trang lịch đào tạo -->
+    <div class="schedule-header">
+      <h1>LỊCH ĐÀO TẠO & KHAI GIẢNG KHÓA MỚI</h1>
+      <p>Cập nhật kế hoạch học tập, lịch khai giảng định kỳ và thời gian học linh hoạt dành cho học viên trên toàn quốc.</p>
+    </div>
+
+    <!-- Nhóm 1: Nghiệp vụ Sư phạm & Chức danh nghề nghiệp -->
+    <div class="schedule-group">
+      <h2 class="group-title">1. Khối Nghiệp vụ Sư phạm & Chức danh nghề nghiệp</h2>
+      <div class="table-responsive">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Tên chương trình / Khóa học</th>
+              <th>Khai giảng</th>
+              <th>Lịch học trong tuần</th>
+              <th>Hình thức</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nghiệp vụ Sư phạm Giảng viên ĐH, CĐ</strong></td>
+              <td>Hàng tuần</td>
+              <td>Tối Thứ 3, Thứ 5, Thứ 7 (19h30 - 21h30)</td>
+              <td><span class="badge-online">Trực tuyến Zoom</span></td>
+              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
+            </tr>
+            <tr>
+              <td><strong>Nghiệp vụ Sư phạm Giáo viên Mầm non, Tiểu học, THCS, THPT</strong></td>
+              <td>20/11/2026</td>
+              <td>Ngày Thứ 7 & Chủ Nhật (Sáng / Chiều)</td>
+              <td><span class="badge-online">Trực tuyến Zoom</span></td>
+              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
+            </tr>
+            <tr>
+              <td><strong>Bồi dưỡng Tiêu chuẩn Chức danh nghề nghiệp Giáo viên</strong></td>
+              <td>25/11/2026</td>
+              <td>Tối Thứ 2, Thứ 4, Thứ 6 (19h30 - 21h30)</td>
+              <td><span class="badge-online">Trực tuyến Zoom</span></td>
+              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nhóm 2: Nghiệp vụ Kế toán, Tin học & Kỹ năng -->
+    <div class="schedule-group">
+      <h2 class="group-title">2. Khối Nghiệp vụ Kế toán, Tin học & Kỹ năng</h2>
+      <div class="table-responsive">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Tên chương trình / Khóa học</th>
+              <th>Khai giảng</th>
+              <th>Lịch học trong tuần</th>
+              <th>Hình thức</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bồi dưỡng Nghiệp vụ Kế toán trưởng / Kế toán Hành chính sự nghiệp</strong></td>
+              <td>22/11/2026</td>
+              <td>Ngày Thứ 7 & Chủ Nhật</td>
+              <td><span class="badge-online">Trực tuyến Zoom</span></td>
+              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
+            </tr>
+            <tr>
+              <td><strong>Chứng chỉ Ứng dụng Công nghệ Thông tin cơ bản & nâng cao</strong></td>
+              <td>Liên tục</td>
+              <td>Ôn tập tối Thứ 4 & Thứ 6</td>
+              <td><span class="badge-online">Trực tuyến Zoom</span></td>
+              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
+            </tr>
+            <tr>
+              <td><strong>Bồi dưỡng Tâm lý học đường</strong></td>
+              <td>28/11/2026</td>
+              <td>Tối Thứ 3 & Thứ 5 (19h30 - 21h30)</td>
+              <td><span class="badge-online">Trực tuyến Zoom</span></td>
+              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Nút Chat Zalo nổi -->
+  <a href="https://zalo.me" target="_blank" class="zalo-float-btn" title="Chat Zalo tư vấn">
+    Zalo
+  </a>
+
+</body>
+</html>
