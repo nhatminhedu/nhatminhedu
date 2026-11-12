@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lịch đào tạo & Khai giảng - Giáo dục Nhật Minh</title>
+  <title>Lịch đào tạo chi tiết - Giáo dục Nhật Minh</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .schedule-wrapper {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 40px auto;
       padding: 0 20px;
       font-family: Arial, sans-serif;
@@ -15,35 +15,108 @@
     }
     .schedule-header {
       background: linear-gradient(135deg, #f0f9f4 0%, #e6f4ea 100%);
-      padding: 35px 30px;
+      padding: 32px 28px;
       border-radius: 12px;
       border-left: 6px solid #137333;
       margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
     }
     .schedule-header h1 {
       color: #137333;
-      margin: 0 0 10px 0;
-      font-size: 28px;
+      margin: 0 0 8px 0;
+      font-size: 26px;
     }
     .schedule-header p {
       margin: 0;
       color: #4a5568;
       font-size: 15px;
+      line-height: 1.6;
     }
-    .schedule-group {
-      margin-bottom: 35px;
+
+    /* Lưới 7 thẻ chương trình con để nhấp chọn */
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .program-card-btn {
       background: #ffffff;
+      border: 2px solid #e2e8f0;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-      overflow: hidden;
-      border: 1px solid #e2e8f0;
+      padding: 18px 20px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .group-title {
+    .program-card-btn:hover {
+      border-color: #137333;
+      transform: translateY(-2px);
+    }
+    .program-card-btn.active {
+      background-color: #137333;
+      border-color: #137333;
+      color: #ffffff;
+      box-shadow: 0 6px 15px rgba(19, 115, 51, 0.25);
+    }
+    .program-card-btn .prog-num {
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #b7791f;
+      margin-bottom: 6px;
+    }
+    .program-card-btn.active .prog-num {
+      color: #fef08a;
+    }
+    .program-card-btn .prog-name {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    .program-card-btn .prog-hint {
+      font-size: 13px;
+      margin-top: 10px;
+      color: #64748b;
+    }
+    .program-card-btn.active .prog-hint {
+      color: #e2e8f0;
+    }
+
+    /* Khung hiển thị bảng lịch chi tiết của chương trình đang chọn */
+    .schedule-detail-box {
+      display: none;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+      border: 1px solid #cbd5e1;
+      overflow: hidden;
+      animation: fadeIn 0.3s ease;
+    }
+    .schedule-detail-box.show {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .detail-header {
       background-color: #137333;
       color: #ffffff;
-      padding: 14px 20px;
-      margin: 0;
-      font-size: 18px;
+      padding: 16px 22px;
+      font-size: 19px;
+      font-weight: bold;
+    }
+    .detail-note {
+      background-color: #fffbeb;
+      padding: 12px 22px;
+      border-bottom: 1px solid #fde68a;
+      font-size: 14px;
+      color: #92400e;
     }
     .table-responsive {
       width: 100%;
@@ -52,40 +125,75 @@
     table.schedule-table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 650px;
+      min-width: 820px;
     }
     table.schedule-table th, table.schedule-table td {
-      padding: 14px 18px;
+      padding: 15px 18px;
       text-align: left;
       border-bottom: 1px solid #edf2f7;
-      font-size: 15px;
+      font-size: 14.5px;
+      line-height: 1.5;
+      vertical-align: middle;
     }
     table.schedule-table th {
       background-color: #f8fafc;
       color: #1a202c;
       font-weight: bold;
+      white-space: nowrap;
     }
     table.schedule-table tr:hover {
       background-color: #f9fbf9;
     }
+    .course-code {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: bold;
+      color: #137333;
+      background: #e6f4ea;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+    }
     .badge-online {
       display: inline-block;
-      background: #e6f4ea;
-      color: #137333;
+      background: #e0f2fe;
+      color: #0369a1;
       padding: 4px 10px;
       border-radius: 15px;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: bold;
+      white-space: nowrap;
+    }
+    .badge-open {
+      display: inline-block;
+      background: #dcfce7;
+      color: #15803d;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 12.5px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .badge-wait {
+      display: inline-block;
+      background: #fef3c7;
+      color: #b7791f;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 12.5px;
+      font-weight: bold;
+      white-space: nowrap;
     }
     .btn-reg-small {
       display: inline-block;
       background-color: #b7791f;
       color: #ffffff;
-      padding: 7px 14px;
+      padding: 8px 14px;
       border-radius: 6px;
       text-decoration: none;
       font-size: 13px;
       font-weight: bold;
+      white-space: nowrap;
       transition: background 0.2s;
     }
     .btn-reg-small:hover {
@@ -113,109 +221,109 @@
 </head>
 <body>
 
-  <!-- Thanh quay về trang chủ -->
-  <div style="background: #137333; padding: 15px 25px;">
+  <!-- Thanh điều hướng quay về trang chủ -->
+  <div style="background: #137333; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
     <a href="index.html" style="color: #fff; text-decoration: none; font-weight: bold;">
       ← Quay lại Trang chủ Giáo dục Nhật Minh
+    </a>
+    <a href="hoctructuyen.html" style="color: #fef08a; text-decoration: none; font-weight: bold; font-size: 14px;">
+      🎥 Vào Phòng học trực tuyến →
     </a>
   </div>
 
   <div class="schedule-wrapper">
     
-    <!-- Tiêu đề trang lịch đào tạo -->
+    <!-- Tiêu đề trang -->
     <div class="schedule-header">
-      <h1>LỊCH ĐÀO TẠO & KHAI GIẢNG KHÓA MỚI</h1>
-      <p>Cập nhật kế hoạch học tập, lịch khai giảng định kỳ và thời gian học linh hoạt dành cho học viên trên toàn quốc.</p>
+      <h1>LỊCH ĐÀO TẠO & KHAI GIẢNG CHI TIẾT</h1>
+      <p>Vui lòng nhấp chọn vào từng chương trình đào tạo bên dưới để xem thông tin khóa học, thời lượng, ngày khai giảng dự kiến và lịch học hàng tuần.</p>
     </div>
 
-    <!-- Nhóm 1: Nghiệp vụ Sư phạm & Chức danh nghề nghiệp -->
-    <div class="schedule-group">
-      <h2 class="group-title">1. Khối Nghiệp vụ Sư phạm & Chức danh nghề nghiệp</h2>
+    <!-- DANH SÁCH 7 THẺ CHƯƠNG TRÌNH CON -->
+    <div class="program-grid">
+      <button type="button" class="program-card-btn active" onclick="moLichChuongTrinh('lich-nvsp', this)">
+        <div>
+          <div class="prog-num">Chương trình 01</div>
+          <div class="prog-name">Nghiệp vụ Sư phạm</div>
+        </div>
+        <div class="prog-hint">Nhấp xem lịch chi tiết →</div>
+      </button>
+
+      <button type="button" class="program-card-btn" onclick="moLichChuongTrinh('lich-cdnn', this)">
+        <div>
+          <div class="prog-num">Chương trình 02</div>
+          <div class="prog-name">Chức danh nghề nghiệp</div>
+        </div>
+        <div class="prog-hint">Nhấp xem lịch chi tiết →</div>
+      </button>
+
+      <button type="button" class="program-card-btn" onclick="moLichChuongTrinh('lich-vb2', this)">
+        <div>
+          <div class="prog-num">Chương trình 03</div>
+          <div class="prog-name">Văn bằng 2</div>
+        </div>
+        <div class="prog-hint">Nhấp xem lịch chi tiết →</div>
+      </button>
+
+      <button type="button" class="program-card-btn" onclick="moLichChuongTrinh('lich-ketoan', this)">
+        <div>
+          <div class="prog-num">Chương trình 04</div>
+          <div class="prog-name">Nghiệp vụ Kế toán</div>
+        </div>
+        <div class="prog-hint">Nhấp xem lịch chi tiết →</div>
+      </button>
+
+      <button type="button" class="program-card-btn" onclick="moLichChuongTrinh('lich-tinhoc-nn', this)">
+        <div>
+          <div class="prog-num">Chương trình 05</div>
+          <div class="prog-name">Tin học và Ngoại ngữ</div>
+        </div>
+        <div class="prog-hint">Nhấp xem lịch chi tiết →</div>
+      </button>
+
+      <button type="button" class="program-card-btn" onclick="moLichChuongTrinh('lich-tamly', this)">
+        <div>
+          <div class="prog-num">Chương trình 06</div>
+          <div class="prog-name">Tâm lý học đường</div>
+        </div>
+        <div class="prog-hint">Nhấp xem lịch chi tiết →</div>
+      </button>
+
+      <button type="button" class="program-card-btn" onclick="moLichChuongTrinh('lich-khac', this)">
+        <div>
+          <div class="prog-num">Chương trình 07</div>
+          <div class="prog-name">Các khóa học khác</div>
+        </div>
+        <div class="prog-hint">Nhấp xem lịch chi tiết →</div>
+      </button>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- KHU VỰC HIỂN THỊ LỊCH CHI TIẾT CỦA TỪNG CHƯƠNG TRÌNH CON -->
+    <!-- ========================================================== -->
+
+    <!-- 1. LỊCH NGHIỆP VỤ SƯ PHẠM -->
+    <div id="lich-nvsp" class="schedule-detail-box show">
+      <div class="detail-header">📅 Lịch đào tạo chi tiết: Nghiệp vụ Sư phạm</div>
+      <div class="detail-note">💡 <strong>Ghi chú:</strong> Chứng chỉ bồi dưỡng Nghiệp vụ Sư phạm do các trường Đại học Sư phạm uy tín cấp, có giá trị sử dụng trên toàn quốc.</div>
       <div class="table-responsive">
         <table class="schedule-table">
           <thead>
             <tr>
-              <th>Tên chương trình / Khóa học</th>
+              <th>Tên khóa học</th>
+              <th>Thời lượng</th>
               <th>Khai giảng</th>
-              <th>Lịch học trong tuần</th>
+              <th>Lịch học chi tiết</th>
               <th>Hình thức</th>
-              <th>Thao tác</th>
+              <th>Trạng thái</th>
+              <th>Đăng ký</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Nghiệp vụ Sư phạm Giảng viên ĐH, CĐ</strong></td>
+              <td>
+                <span class="course-code">NVSP-ĐH</span><br>
+                <strong>Nghiệp vụ Sư phạm Giảng viên Đại học, Cao đẳng</strong>
+              </td>
+              <td>1.5 – 2 tháng</td>
               <td>Hàng tuần</td>
-              <td>Tối Thứ 3, Thứ 5, Thứ 7 (19h30 - 21h30)</td>
-              <td><span class="badge-online">Trực tuyến Zoom</span></td>
-              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
-            </tr>
-            <tr>
-              <td><strong>Nghiệp vụ Sư phạm Giáo viên Mầm non, Tiểu học, THCS, THPT</strong></td>
-              <td>20/11/2026</td>
-              <td>Ngày Thứ 7 & Chủ Nhật (Sáng / Chiều)</td>
-              <td><span class="badge-online">Trực tuyến Zoom</span></td>
-              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
-            </tr>
-            <tr>
-              <td><strong>Bồi dưỡng Tiêu chuẩn Chức danh nghề nghiệp Giáo viên</strong></td>
-              <td>25/11/2026</td>
-              <td>Tối Thứ 2, Thứ 4, Thứ 6 (19h30 - 21h30)</td>
-              <td><span class="badge-online">Trực tuyến Zoom</span></td>
-              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Nhóm 2: Nghiệp vụ Kế toán, Tin học & Kỹ năng -->
-    <div class="schedule-group">
-      <h2 class="group-title">2. Khối Nghiệp vụ Kế toán, Tin học & Kỹ năng</h2>
-      <div class="table-responsive">
-        <table class="schedule-table">
-          <thead>
-            <tr>
-              <th>Tên chương trình / Khóa học</th>
-              <th>Khai giảng</th>
-              <th>Lịch học trong tuần</th>
-              <th>Hình thức</th>
-              <th>Thao tác</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Bồi dưỡng Nghiệp vụ Kế toán trưởng / Kế toán Hành chính sự nghiệp</strong></td>
-              <td>22/11/2026</td>
-              <td>Ngày Thứ 7 & Chủ Nhật</td>
-              <td><span class="badge-online">Trực tuyến Zoom</span></td>
-              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
-            </tr>
-            <tr>
-              <td><strong>Chứng chỉ Ứng dụng Công nghệ Thông tin cơ bản & nâng cao</strong></td>
-              <td>Liên tục</td>
-              <td>Ôn tập tối Thứ 4 & Thứ 6</td>
-              <td><span class="badge-online">Trực tuyến Zoom</span></td>
-              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
-            </tr>
-            <tr>
-              <td><strong>Bồi dưỡng Tâm lý học đường</strong></td>
-              <td>28/11/2026</td>
-              <td>Tối Thứ 3 & Thứ 5 (19h30 - 21h30)</td>
-              <td><span class="badge-online">Trực tuyến Zoom</span></td>
-              <td><a href="index.html#tu-van" class="btn-reg-small">Đăng ký</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Nút Chat Zalo nổi -->
-  <a href="https://zalo.me" target="_blank" class="zalo-float-btn" title="Chat Zalo tư vấn">
-    Zalo
-  </a>
-
-</body>
-</html>
