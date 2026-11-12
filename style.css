@@ -991,3 +991,13 @@ button, input, select {
   align-self: flex-start;
   margin-top: auto;
 }
+
+/* Thu hẹp khoảng trống giữa nút Khám phá chương trình đào tạo và phần Giới thiệu */
+.hero, header + section {
+  padding-bottom: 30px !important;
+  min-height: auto !important;
+}
+#gioi-thieu {
+  padding-top: 35px !important;
+  margin-top: 0 !important;
+}
