@@ -96,7 +96,46 @@
           <li>Hỗ trợ người học trong quá trình đăng ký</li>
           <li>Kết nối cơ hội học tập linh hoạt</li>
         </ul>
-        <a class="btn btn-green" href="#lien-he">Tìm hiểu thêm →</a>
+        .about-expand-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .about-expand-card h3, .about-expand-values h3 {
+    color: #137333;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 19px;
+  }
+  .about-expand-values {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .about-expand-values ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+  .about-expand-values li {
+    margin-bottom: 10px;
+  }
+</style>
+
+<script>
+  function toggleGioiThieu() {
+    var box = document.getElementById("noiDungGioiThieuMoRong");
+    var btn = document.getElementById("btnTimHieuThem");
+    if (box.style.display === "none") {
+      box.style.display = "block";
+      btn.innerHTML = "Thu gọn ↑";
+    } else {
+      box.style.display = "none";
+      btn.innerHTML = "Tìm hiểu thêm →";
+    }
+  }
+</script>
       </div>
     </section>
 
