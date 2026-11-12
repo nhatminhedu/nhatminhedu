@@ -53,7 +53,7 @@
       font-size: 15px;
     }
 
-    /* Lưới 7 thẻ chương trình cân đối */
+    /* Lưới 7 thẻ chương trình */
     .program-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -97,7 +97,7 @@
       line-height: 1.35;
     }
 
-    /* Khung bảng biểu xổ ra bên dưới */
+    /* Khung bảng biểu xổ ra */
     .schedule-detail-box {
       display: none;
       background: #ffffff;
@@ -106,14 +106,9 @@
       border: 2px solid #137333;
       overflow: hidden;
       margin-bottom: 28px;
-      animation: fadeIn 0.25s ease;
     }
     .schedule-detail-box.show {
       display: block;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
     }
     .table-responsive {
       width: 100%;
@@ -217,7 +212,6 @@
 </head>
 <body>
 
-  <!-- Thanh điều hướng trên cùng -->
   <div class="top-nav-bar">
     <a href="index.html">← Quay lại Trang chủ Giáo dục Nhật Minh</a>
     <a href="hoctructuyen.html" style="color: #fef08a; font-size: 14px;">🎥 Vào Phòng học trực tuyến →</a>
@@ -268,7 +262,9 @@
       </button>
     </div>
 
+    <!-- ========================================================== -->
     <!-- 1. BẢNG NGHIỆP VỤ SƯ PHẠM -->
+    <!-- ========================================================== -->
     <div id="box-nvsp" class="schedule-detail-box show">
       <div class="table-responsive">
         <table class="schedule-table">
@@ -316,7 +312,9 @@
       </div>
     </div>
 
+    <!-- ========================================================== -->
     <!-- 2. BẢNG CHỨC DANH NGHỀ NGHIỆP -->
+    <!-- ========================================================== -->
     <div id="box-cdnn" class="schedule-detail-box">
       <div class="table-responsive">
         <table class="schedule-table">
@@ -325,4 +323,3 @@
               <th>02. Chức danh nghề nghiệp</th>
               <th>Thời lượng</th>
               <th>Khai giảng</th>
-              <th>Lịch học chi tiết</th>
