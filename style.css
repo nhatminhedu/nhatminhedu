@@ -1001,3 +1001,20 @@ button, input, select {
   padding-top: 35px !important;
   margin-top: 0 !important;
 }
+
+/* Cân chỉnh lại khung Banner đầu trang và thu hẹp khoảng trống */
+#trang-chu.hero {
+  min-height: unset !important;
+  height: auto !important;
+  padding-top: 120px !important;
+  padding-bottom: 45px !important;
+}
+#trang-chu .hero-content {
+  min-height: unset !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+#gioi-thieu.intro-section {
+  padding-top: 40px !important;
+  margin-top: 0 !important;
+}
