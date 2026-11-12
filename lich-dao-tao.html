@@ -389,3 +389,34 @@
         </table>
       </div>
     </div>
+  </div>
+
+  <a href="https://zalo.me" target="_blank" class="zalo-float-btn" title="Chat Zalo tư vấn">Zalo</a>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var maChuongTrinh = window.location.hash.replace('#', '');
+      if (maChuongTrinh && document.getElementById(maChuongTrinh)) {
+        var tatCaBang = ['box-nvsp','box-cdnn','box-vb2','box-ketoan','box-tinhoc','box-tamly','box-khac'];
+        tatCaBang.forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.style.display = 'none';
+        });
+        document.getElementById(maChuongTrinh).style.display = 'block';
+
+        var tatCaNut = document.querySelectorAll('.program-card-btn');
+        tatCaNut.forEach(function(btn) {
+          btn.classList.remove('active');
+          var lenhClick = btn.getAttribute('onclick') || '';
+          if (lenhClick.indexOf(maChuongTrinh) !== -1) {
+            btn.classList.add('active');
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+    
