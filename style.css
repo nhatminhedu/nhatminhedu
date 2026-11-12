@@ -1092,3 +1092,16 @@ header {
   padding-top: 12px !important;
   margin-top: 0 !important;
 }
+
+/* Đưa nhãn "Đồng hành - Phát triển - Thành công" xuống phía dưới bức ảnh */
+.intro-image {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.intro-image .image-label {
+  position: static !important;
+  display: inline-block !important;
+  margin-top: 12px !important;
+  transform: none !important;
+}
