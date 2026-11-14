@@ -499,6 +499,33 @@
     });
   });
 </script>
+<style>
+  .course-card, .news-card, .post-card, .blog-card, article {
+    cursor: pointer !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  }
+  .course-card:hover, .news-card:hover, .post-card:hover, .blog-card:hover, article:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 24px rgba(19, 115, 51, 0.15) !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var tatCaThe = document.querySelectorAll('article, .course-card, .news-card, .post-card, .blog-card');
+    tatCaThe.forEach(function(the) {
+      var nutLink = the.querySelector('a.btn') || the.querySelector('a');
+      if (nutLink && nutLink.getAttribute('href')) {
+        the.style.cursor = 'pointer';
+        the.addEventListener('click', function(e) {
+          if (e.target.tagName.toLowerCase() !== 'a') {
+            window.location.href = nutLink.getAttribute('href');
+          }
+        });
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
