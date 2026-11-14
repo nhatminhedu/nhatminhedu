@@ -131,142 +131,18 @@
         </ol>
 
         <div class="cta-banner">
-            <h2>Nâng tầm nghiệp vụ – Vững bước tương lai nghề giáo!</h2>
-            <p>Liên hệ ngay với Giáo dục Nhật Minh (Hotline/Zalo: 0372.484.382) để được kiểm tra điều kiện hồ sơ miễn phí và nhận thông báo lịch khai giảng gần nhất.</p>
-            <div class="cta-buttons">
-                <button type="button" class="btn-orange" onclick="openModal('modal-dang-ky')">Đăng ký tư vấn ngay</button>
-                <button type="button" class="btn-white" onclick="openModal('modal-lich-hoc')">Xem lịch khai giảng chi tiết</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-dang-ky" class="modal-overlay" onclick="closeOnOutside(event, 'modal-dang-ky')">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3>Đăng ký Tư vấn &amp; Xét tuyển Hồ sơ</h3>
-                <button type="button" class="btn-close" onclick="closeModal('modal-dang-ky')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="form-tu-van" onsubmit="submitDangKy(event)">
-                    <div class="form-group">
-                        <label>Họ và tên học viên *</label>
-                        <input type="text" id="ho-ten" required placeholder="Nhập họ và tên đầy đủ...">
-                    </div>
-                    <div class="form-group">
-                        <label>Số điện thoại / Zalo liên hệ *</label>
-                        <input type="tel" id="so-dien-thoai" required placeholder="Ví dụ: 0987 654 321">
-                    </div>
-                    <div class="form-group">
-                        <label>Chương trình quan tâm *</label>
-                        <select id="khoa-hoc" required>
-                            <option value="Quản lý Giáo dục Mầm non">Nghiệp vụ Quản lý Giáo dục Mầm non</option>
-                            <option value="Quản lý Trường Phổ thông">Bồi dưỡng Cán bộ Quản lý Trường Phổ thông</option>
-                            <option value="Nghiệp vụ Tiền tiểu học">Nghiệp vụ Sư phạm &amp; Dạy Tiền tiểu học</option>
-                            <option value="Tư vấn Tâm lý Học đường">Nghiệp vụ Tư vấn Tâm lý Học đường</option>
-                            <option value="Giáo dục Giá trị sống &amp; Kỹ năng sống">Giáo dục Giá trị sống &amp; Kỹ năng sống</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-submit">Gửi thông tin đăng ký</button>
-                    <p style="text-align: center; margin-top: 12px; font-size: 14px;">
-                        Hoặc nhắn Zalo trực tiếp: <a href="https://zalo.me" target="_blank" style="color: #244a38; font-weight: bold;">0372.484.382</a>
-                    </p>
-                </form>
-                <div id="thong-bao-thanh-cong" style="display: none; text-align: center; padding: 15px;">
-                    <h4 style="color: #244a38; margin-bottom: 8px;">Đăng ký thành công!</h4>
-                    <p style="margin-bottom: 15px;">Cảm ơn bạn <strong id="ten-da-nhap"></strong>. Giáo dục Nhật Minh sẽ liên hệ tư vấn qua số điện thoại của bạn sớm nhất.</p>
-                    <a href="https://zalo.me" target="_blank" class="btn-orange">Kết nối Zalo ngay</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-lich-hoc" class="modal-overlay" onclick="closeOnOutside(event, 'modal-lich-hoc')">
-        <div class="modal-box modal-wide">
-            <div class="modal-header">
-                <h3>Lịch Khai Giảng Dự Kiến</h3>
-                <button type="button" class="btn-close" onclick="closeModal('modal-lich-hoc')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="table-wrapper" style="margin: 0 0 15px 0;">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Tên khóa học</th>
-                                <th>Lịch học</th>
-                                <th>Hình thức</th>
-                                <th>Trạng thái</th>
-                                <th>Đăng ký</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Quản lý Giáo dục Mầm non</strong></td>
-                                <td>Thứ 7 &amp; Chủ nhật</td>
-                                <td>Online qua Zoom</td>
-                                <td><span class="badge-status">Đang nhận hồ sơ</span></td>
-                                <td><button type="button" class="btn-orange" style="padding: 6px 12px; font-size: 13px;" onclick="chuyenSangDangKy('Quản lý Giáo dục Mầm non')">Giữ chỗ</button></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Quản lý Trường Phổ thông</strong></td>
-                                <td>Tối Thứ 3, 5, 7 (19h30 – 21h30)</td>
-                                <td>Online / Trực tiếp</td>
-                                <td><span class="badge-status">Đang nhận hồ sơ</span></td>
-                                <td><button type="button" class="btn-orange" style="padding: 6px 12px; font-size: 13px;" onclick="chuyenSangDangKy('Quản lý Trường Phổ thông')">Giữ chỗ</button></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Nghiệp vụ Tiền tiểu học</strong></td>
-                                <td>Cuối tuần (Thứ 7 &amp; CN)</td>
-                                <td>Online / Trực tiếp</td>
-                                <td><span class="badge-status">Sắp khai giảng</span></td>
-                                <td><button type="button" class="btn-orange" style="padding: 6px 12px; font-size: 13px;" onclick="chuyenSangDangKy('Nghiệp vụ Tiền tiểu học')">Giữ chỗ</button></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tư vấn Tâm lý Học đường</strong></td>
-                                <td>Tối Thứ 2, 4, 6 (19h30 – 21h30)</td>
-                                <td>Online qua Zoom</td>
-                                <td><span class="badge-status">Đang nhận hồ sơ</span></td>
-                                <td><button type="button" class="btn-orange" style="padding: 6px 12px; font-size: 13px;" onclick="chuyenSangDangKy('Tư vấn Tâm lý Học đường')">Giữ chỗ</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                   <div style="text-align: center; margin-top: 10px; font-size: 14px; color: #4b5563;">
-            Cần xếp lịch học riêng cho tập thể trường/nhóm lớp? Gọi ngay <strong>0372.484.382</strong>.
-        </div>
+             <h3>Bắt kịp quy định mới – Vững vàng chuyên môn nghề giáo</h3>
+      <p>Liên hệ ngay với Giáo dục Nhật Minh (Hotline/Zalo: <strong>0372.484.382</strong>) để được kiểm tra điều kiện hồ sơ miễn phí và nhận thông báo lịch khai giảng gần nhất.</p>
+      <div class="cta-buttons">
+        <a href="index.html#tu-van" class="btn-cta-gold">Đăng ký tư vấn ngay</a>
+        <a href="lich-dao-tao.html#box-ketoan" class="btn-cta-white">Xem lịch khai giảng chi tiết</a>
       </div>
     </div>
   </div>
 
-  <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-    function closeOnOutside(event, id) {
-      if (event.target.id === id) {
-        closeModal(id);
-      }
-    }
-    function chuyenSangDangKy(tenKhoaHoc) {
-      closeModal('modal-lich-hoc');
-      document.getElementById('khoa-hoc').value = tenKhoaHoc;
-      document.getElementById('form-tu-van').style.display = 'block';
-      document.getElementById('thong-bao-thanh-cong').style.display = 'none';
-      openModal('modal-dang-ky');
-    }
-    function submitDangKy(event) {
-      event.preventDefault();
-      var ten = document.getElementById('ho-ten').value;
-      document.getElementById('ten-da-nhap').innerText = ten;
-      document.getElementById('form-tu-van').style.display = 'none';
-      document.getElementById('thong-bao-thanh-cong').style.display = 'block';
-    }
-  </script>
+  <a href="https://zalo.me" target="_blank" class="zalo-float-btn" title="Chat Zalo tư vấn">
+    Zalo
+  </a>
 
 </body>
-</html>
-
-
-       
+</html>       
