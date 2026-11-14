@@ -478,6 +478,20 @@
     });
   </script>
 
+  <script>
+window.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash === '#box-kinang') {
+        var box = document.getElementById('box-kinang');
+        if (box) {
+            box.style.display = 'block';
+            setTimeout(function() {
+                box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        }
+    }
+});
+</script>
+
 </body>
 </html>
 
