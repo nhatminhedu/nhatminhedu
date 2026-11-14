@@ -6,9 +6,9 @@
     <title>Nghiệp vụ và Kĩ năng Giáo dục - Giáo dục Nhật Minh</title>
     <style>
         :root {
-            --primary: #244a38;       /* Xanh rêu chuẩn Nhật Minh */
+            --primary: #244a38;
             --primary-light: #356850;
-            --accent: #e67e22;        /* Cam nút Đăng ký */
+            --accent: #e67e22;
             --bg-body: #f4f6f5;
             --bg-card: #ffffff;
             --text-main: #1f2937;
@@ -233,7 +233,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- CẤU TRÚC POPUP (MODAL) ĐĂNG KÝ & LỊCH KHAI GIẢNG --- */
+        /* Popup Modal Đăng ký & Lịch khai giảng */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -246,7 +246,6 @@
             justify-content: center;
             align-items: center;
             padding: 16px;
-            animation: fadeIn 0.2s ease;
         }
 
         .modal-box {
@@ -281,10 +280,10 @@
             background: none;
             border: none;
             color: #ffffff;
-            font-size: 24px;
+            font-size: 26px;
             line-height: 1;
             cursor: pointer;
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         .btn-close:hover {
@@ -297,7 +296,6 @@
             overflow-y: auto;
         }
 
-        /* Form đăng ký */
         .form-group {
             margin-bottom: 16px;
             text-align: left;
@@ -311,17 +309,16 @@
             color: var(--text-main);
         }
 
-        .form-group input, .form-group select, .form-group textarea {
+        .form-group input, .form-group select {
             width: 100%;
             padding: 11px 14px;
             border: 1px solid #cbd5e1;
             border-radius: 8px;
             font-size: 14.5px;
             outline: none;
-            transition: border-color 0.2s;
         }
 
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+        .form-group input:focus, .form-group select:focus {
             border-color: var(--primary);
         }
 
@@ -377,11 +374,6 @@
             border-radius: 12px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         @media (max-width: 600px) {
             .container { margin: 15px; padding: 25px 20px; }
             h1.article-title { font-size: 21px; }
@@ -391,10 +383,15 @@
 </head>
 <body>
 
-    <!-- Thanh điều hướng -->
     <div class="top-bar">
         <div class="top-bar-inner">
             <a href="index.html" class="btn-back">← Quay lại Trang chủ Giáo dục Nhật Minh</a>
         </div>
     </div>
 
+    <div class="container">
+        <span class="category-badge">NGHIỆP VỤ &amp; KĨ NĂNG GIÁO DỤC</span>
+        <h1 class="article-title">Đào tạo &amp; Bồi dưỡng Nghiệp vụ và Kĩ năng Giáo dục – Vững bước nghề giáo</h1>
+        
+        <div class="intro-box">
+            <p>
