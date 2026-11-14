@@ -481,6 +481,13 @@
   <script>
 window.addEventListener('DOMContentLoaded', function() {
     if (window.location.hash === '#box-kinang') {
+        // 1. Ẩn tất cả các bảng lịch khác (bao gồm bảng 01 mặc định)
+        var allBoxes = document.querySelectorAll('.schedule-detail-box');
+        allBoxes.forEach(function(item) {
+            item.style.display = 'none';
+        });
+
+        // 2. Chỉ bật duy nhất bảng 06 (Nghiệp vụ và Kĩ năng Giáo dục)
         var box = document.getElementById('box-kinang');
         if (box) {
             box.style.display = 'block';
