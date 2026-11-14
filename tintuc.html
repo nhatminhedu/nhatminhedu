@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cập nhật thông tin các chương trình đào tạo - Giáo dục Nhật Minh</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background-color: #f8fafc;
+      font-family: Arial, sans-serif;
+      color: #2d3748;
+      line-height: 1.7;
+    }
+    .top-nav-bar {
+      background-color: #137333;
+      padding: 14px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .top-nav-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .article-container {
+      max-width: 900px;
+      margin: 35px auto;
+      background: #ffffff;
+      padding: 40px 45px;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+    .article-badge {
+      display: inline-block;
+      background: #e6f4ea;
+      color: #137333;
+      font-weight: bold;
+      font-size: 13px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .article-container h1 {
+      color: #137333;
+      font-size: 28px;
+      line-height: 1.35;
+      margin: 0 0 18px 0;
+    }
+    .article-lead {
+      font-size: 16.5px;
+      color: #4a5568;
+      background: #f0f9f4;
+      padding: 18px 22px;
+      border-left: 5px solid #137333;
+      border-radius: 8px;
+      margin-bottom: 28px;
+    }
+    .article-container h2 {
+      color: #137333;
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e6f4ea;
+    }
+    .article-container p {
+      font-size: 15.5px;
+      margin-bottom: 14px;
+    }
+    .article-container ul {
+      padding-left: 22px;
+      margin-bottom: 18px;
+    }
+    .article-container li {
+      font-size: 15.5px;
+      margin-bottom: 10px;
+    }
+    .cta-box {
+      background: linear-gradient(135deg, #137333 0%, #0d5c28 100%);
+      color: #ffffff;
+      padding: 28px 30px;
+      border-radius: 12px;
+      margin-top: 35px;
+      text-align: center;
+    }
+    .cta-box h3 {
+      margin: 0 0 10px 0;
+      font-size: 21px;
+      color: #fef08a;
+    }
+    .cta-box p {
+      margin: 0 0 20px 0;
+      font-size: 15.5px;
+      color: #f0fdf4;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-cta-gold {
+      background-color: #d97706;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .btn-cta-white {
+      background-color: #ffffff;
+      color: #137333;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .nm-clean-contact {
+      position: fixed !important;
+      bottom: 22px !important;
+      right: 22px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      z-index: 99999 !important;
+    }
+    .nm-clean-phone {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      color: #0068ff !important;
+      text-decoration: none !important;
+      padding: 4px 6px !important;
+      font-weight: bold !important;
+      font-size: 16.5px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95) !important;
+    }
+    .nm-clean-zalo {
+      width: 50px !important;
+      height: 50px !important;
+      background-color: #0068ff !important;
+      color: #ffffff !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-weight: bold !important;
+      font-size: 14px !important;
+      text-decoration: none !important;
+      box-shadow: 0 4px 12px rgba(0, 104, 255, 0.4) !important;
+    }
+    @media (max-width: 600px) {
+      .article-container { margin: 15px; padding: 24px 20px; }
+      .article-container h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-nav-bar">
+    <a href="index.html">← Quay lại Trang chủ Giáo dục Nhật Minh</a>
+    <a href="lich-dao-tao.html" style="color: #fef08a; font-size: 14px;">📅 Xem Lịch khai giảng →</a>
+  </div>
+
+  <div class="article-container">
+    <span class="article-badge">Tin tức giáo dục</span>
+    <h1>CẬP NHẬT THÔNG TIN CÁC CHƯƠNG TRÌNH ĐÀO TẠO & BỒI DƯỠNG CHUẨN HÓA MỚI NHẤT</h1>
+
+    <div class="article-lead">
+      Nhằm đáp ứng kịp thời nhu cầu hoàn thiện văn bằng, chứng chỉ theo các quy định mới của Bộ Giáo dục & Đào tạo và Bộ Tài chính, <strong>Giáo dục Nhật Minh</strong> trân trọng gửi tới quý thầy cô, cán bộ và học viên bản tin tổng hợp các chương trình tuyển sinh trọng điểm đang mở lớp liên tục.
+    </div>
+
+    <h2>1. Những điểm mới nổi bật trong lộ trình chuẩn hóa bằng cấp</h2>
+    <p>Việc lựa chọn đúng khóa học ngay từ đầu giúp học viên tiết kiệm tối đa thời gian, chi phí và đảm bảo chứng chỉ có giá trị sử dụng lâu dài trên toàn quốc:</p>
+    <ul>
+      <li><strong>Chuẩn hóa Nghiệp vụ Sư phạm theo Thông tư 91/2026/TT-BGDĐT:</strong> Dành cho người tốt nghiệp đại học chuyên ngành ngoài sư phạm có nguyện vọng trở thành giáo viên phổ thông, cập nhật khung chương trình thực hành giảng dạy hiện đại.</li>
+      <li><strong>Bồi dưỡng Tiêu chuẩn Chức danh nghề nghiệp:</strong> Áp dụng chung một chứng chỉ duy nhất cho các hạng trong cùng bậc học từ Mầm non, Tiểu học, THCS, THPT đến Giảng viên Cao đẳng, Đại học.</li>
+      <li><strong>Cập nhật Chế độ Kế toán & Chứng chỉ Kế toán trưởng mới:</strong> Triển khai đào tạo bám sát Thông tư 24/2024/TT-BTC và Thông tư 101/2026/TT-BTC dành cho kế toán trường học, cơ quan hành chính sự nghiệp và doanh nghiệp.</li>
+    </ul>
+
+    <h2>2. Danh mục các khóa học đang nhận hồ sơ khai giảng sớm</h2>
+    <ul>
+      <li><strong>Đại học Văn bằng 2 (Hệ Từ xa & Vừa làm vừa học):</strong> Tuyển sinh các ngành Ngôn ngữ Anh, Giáo dục Tiểu học, Giáo dục Mầm non, Kế toán, Luật kinh tế với thời gian học rút gọn chỉ từ 18 – 24 tháng.</li>
+      <li><strong>Luyện thi Chứng chỉ Tin học & Ngoại ngữ:</strong> Khai giảng hàng tuần các lớp ôn tập Tin học Cơ bản/Nâng cao, MOS, IC3 và Tiếng Anh VSTEP (B1, B2), TOEIC, IELTS, HSK.</li>
+      <li><strong>Bồi dưỡng Tâm lý học đường & Quản lý giáo dục:</strong> Trang bị kỹ năng tư vấn tâm lý học sinh và nghiệp vụ quản lý trường học theo chuẩn mới.</li>
+    </ul>
+
+    <h2>3. Lưu ý dành cho học viên khi đăng ký xét tuyển</h2>
+    <p>Để tránh đăng ký nhầm chương trình không phù hợp với vị trí việc làm hiện tại, học viên nên liên hệ trực tiếp bộ phận tuyển sinh của <strong>Giáo dục Nhật Minh</strong> để được kiểm tra văn bằng gốc và tư vấn miễn phí lộ trình học tối ưu nhất.</p>
+
+    <div class="cta-box">
+      <h3>Bạn cần kiểm tra tiêu chuẩn bằng cấp theo vị trí công việc?</h3>
+      <p>Liên hệ ngay Giáo dục Nhật Minh (Hotline/Zalo: <strong>0372.484.382</strong>) để được tư vấn 1-1 miễn phí và nhận lịch khai giảng mới nhất.</p>
+      <div class="cta-buttons">
+        <a href="index.html#tu-van" class="btn-cta-gold">Đăng ký tư vấn ngay</a>
+        <a href="lich-dao-tao.html" class="btn-cta-white">Xem toàn bộ lịch đào tạo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nm-clean-contact">
+    <a href="tel:0372484382" class="nm-clean-phone" title="Bấm để gọi trực tiếp 0372.484.382">📞 0372.484.382</a>
+    <a href="https://zalo.me" target="_blank" rel="noopener noreferrer" class="nm-clean-zalo" title="Chat Zalo tư vấn">Zalo</a>
+  </div>
+
+</body>
+</html>
