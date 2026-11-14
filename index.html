@@ -396,6 +396,43 @@
     </div>
     <div class="copyright">© 2020 Giáo dục Nhật Minh. Nội dung website luôn được cập nhật thường xuyên.</div>
   </footer>
+<!-- Nút Zalo nổi góc dưới bên phải Trang chủ -->
+<style>
+    .zalo-float-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 56px;
+        height: 56px;
+        background-color: #0068ff;
+        color: #ffffff !important;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgba(0, 104, 255, 0.45);
+        z-index: 9999;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+        animation: zaloPulse 2s infinite;
+    }
+    .zalo-float-btn:hover {
+        background-color: #0054cc;
+        transform: scale(1.08);
+    }
+    @keyframes zaloPulse {
+        0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.6); }
+        70% { box-shadow: 0 0 0 12px rgba(0, 104, 255, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
+    }
+</style>
+
+<a href="https://zalo.me" target="_blank" rel="noopener noreferrer" class="zalo-float-btn" title="Chat Zalo với Giáo dục Nhật Minh">
+    Zalo
+</a>
 
   <script src="script.js"></script>
 </body>
