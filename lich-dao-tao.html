@@ -317,7 +317,7 @@
     </div>
 
     <!-- 6. BẢNG Nghiệp vụ và Kĩ năng Giáo Dục -->
-    <div id="box-kinang" class="schedule-detail-box" style="display: none;">
+    <div id="box-tamly" class="schedule-detail-box" style="display: none;">
       <div id="lich-giao-duc" class="table-responsive">
         <table class="schedule-table">
           <thead>
@@ -520,34 +520,37 @@
   </script>
 
   <script>
-window.addEventListener('load', function() {
-    if (window.location.hash === '#box-kinang') {
-        setTimeout(function() {
-            var allElements = document.querySelectorAll('*');
-            var targetCard = null;
-            for (var i = 0; i < allElements.length; i++) {
-                var el = allElements[i];
-                if (el.textContent && el.textContent.includes('CHƯƠNG TRÌNH 06') && el.children.length <= 2) {
-                    targetCard = el;
-                }
-            }
-            if (targetCard) {
-                targetCard.click();
-            }
+window.addEventListener('DOMContentLoaded', function() {
+    var hash = window.location.hash.replace('#', '');
+    // Nếu đường link trỏ tới box-tamly (hoặc box-kinang)
+    if (hash === 'box-tamly' || hash === 'box-kinang') {
+        var targetBox = document.getElementById('box-tamly');
+        if (targetBox) {
+            // 1. Ẩn tất cả 7 bảng
+            ['box-nvsp','box-cdnn','box-vb2','box-ketoan','box-tinhoc','box-tamly','box-khac'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.style.display = 'none';
+            });
+            // 2. Mở đúng bảng 06 (box-tamly)
+            targetBox.style.display = 'block';
 
-            var allBoxes = document.querySelectorAll('.schedule-detail-box');
-            allBoxes.forEach(function(b) { b.style.display = 'none'; });
-            
-            var box06 = document.getElementById('box-kinang');
-            if (box06) {
-                box06.style.display = 'block';
-                box06.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }, 400);
+            // 3. Đổi màu xanh đậm sang ô Chương trình 06
+            var btns = document.querySelectorAll('.program-card-btn');
+            btns.forEach(function(b) {
+                b.classList.remove('active');
+                if (b.textContent.includes('Chương trình 06')) {
+                    b.classList.add('active');
+                }
+            });
+
+            // 4. Cuộn mượt xuống bảng 06
+            setTimeout(function() {
+                targetBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 200);
+        }
     }
 });
 </script>
-
 
 </body>
 </html>
