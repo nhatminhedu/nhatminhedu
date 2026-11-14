@@ -520,25 +520,34 @@
   </script>
 
   <script>
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
     if (window.location.hash === '#box-kinang') {
-        // 1. Ẩn tất cả các bảng lịch khác (bao gồm bảng 01 mặc định)
-        var allBoxes = document.querySelectorAll('.schedule-detail-box');
-        allBoxes.forEach(function(item) {
-            item.style.display = 'none';
-        });
+        setTimeout(function() {
+            var allElements = document.querySelectorAll('*');
+            var targetCard = null;
+            for (var i = 0; i < allElements.length; i++) {
+                var el = allElements[i];
+                if (el.textContent && el.textContent.includes('CHƯƠNG TRÌNH 06') && el.children.length <= 2) {
+                    targetCard = el;
+                }
+            }
+            if (targetCard) {
+                targetCard.click();
+            }
 
-        // 2. Chỉ bật duy nhất bảng 06 (Nghiệp vụ và Kĩ năng Giáo dục)
-        var box = document.getElementById('box-kinang');
-        if (box) {
-            box.style.display = 'block';
-            setTimeout(function() {
-                box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 300);
-        }
+            var allBoxes = document.querySelectorAll('.schedule-detail-box');
+            allBoxes.forEach(function(b) { b.style.display = 'none'; });
+            
+            var box06 = document.getElementById('box-kinang');
+            if (box06) {
+                box06.style.display = 'block';
+                box06.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 400);
     }
 });
 </script>
+
 
 </body>
 </html>
