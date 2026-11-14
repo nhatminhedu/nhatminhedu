@@ -3,217 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nghiệp vụ và Kĩ năng Giáo dục - Giáo dục Nhật Minh</title>
+    <title>Nghiep vu va Ki nang Giao duc - Giao duc Nhat Minh</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
-
         body {
-            background-color: #f4f6f5 !important;
-            color: #1f2937 !important;
+            background-color: #f4f6f5;
+            color: #1f2937;
             line-height: 1.7;
         }
-
-        /* Thanh điều hướng đầu trang */
         .top-bar {
-            background-color: #244a38 !important;
+            background-color: #244a38;
             padding: 15px 20px;
         }
-
         .top-bar-inner {
             max-width: 960px;
             margin: 0 auto;
         }
-
         .btn-back {
-            color: #ffffff !important;
+            color: #ffffff;
             text-decoration: none;
             font-size: 15px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            font-weight: bold;
         }
-
-        /* Khung bài viết chính */
         .container {
             max-width: 960px;
             margin: 30px auto;
-            background-color: #ffffff !important;
-            border-radius: 14px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            padding: 40px 45px;
-            color: #1f2937 !important;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            padding: 35px 40px;
         }
-
         .category-badge {
             display: inline-block;
-            background-color: #e6efe9 !important;
-            color: #244a38 !important;
-            font-weight: 700;
-            font-size: 12.5px;
+            background-color: #e6efe9;
+            color: #244a38;
+            font-weight: bold;
+            font-size: 13px;
             padding: 5px 14px;
             border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
             margin-bottom: 14px;
         }
-
         h1.article-title {
-            font-size: 27px;
-            color: #244a38 !important;
+            font-size: 26px;
+            color: #244a38;
             line-height: 1.35;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            font-weight: 700;
         }
-
         .intro-box {
-            background-color: #f7faf8 !important;
+            background-color: #f7faf8;
             border-left: 4px solid #244a38;
-            border-radius: 0 10px 10px 0;
-            padding: 20px 24px;
-            margin-bottom: 32px;
+            padding: 18px 22px;
+            margin-bottom: 28px;
             font-size: 15.5px;
-            color: #374151 !important;
+            color: #374151;
         }
-
         .intro-box p {
-            margin-bottom: 12px;
-            color: #374151 !important;
-            opacity: 1 !important;
+            margin-bottom: 10px;
         }
-
         .intro-box p:last-child {
             margin-bottom: 0;
         }
-
-        .intro-box strong {
-            color: #244a38 !important;
-        }
-
         h2.section-heading {
             font-size: 20px;
-            color: #244a38 !important;
-            margin-top: 32px;
-            margin-bottom: 14px;
-            font-weight: 700;
+            color: #244a38;
+            margin-top: 28px;
+            margin-bottom: 12px;
         }
-
         ul.styled-list, ol.styled-list {
             padding-left: 22px;
             margin-bottom: 20px;
-            color: #374151 !important;
+            color: #374151;
             font-size: 15.5px;
         }
-
         ul.styled-list li, ol.styled-list li {
             margin-bottom: 10px;
-            color: #374151 !important;
-            opacity: 1 !important;
         }
-
-        ul.styled-list li strong, ol.styled-list li strong {
-            color: #111827 !important;
-        }
-
-        /* Bảng danh mục khóa học */
         .table-wrapper {
             overflow-x: auto;
-            margin: 18px 0 30px;
-            border-radius: 8px;
+            margin: 16px 0 28px;
             border: 1px solid #e5e7eb;
+            border-radius: 8px;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             min-width: 650px;
-            background-color: #ffffff !important;
         }
-
         th {
-            background-color: #244a38 !important;
-            color: #ffffff !important;
+            background-color: #244a38;
+            color: #ffffff;
             text-align: left;
-            padding: 13px 16px;
+            padding: 12px 15px;
             font-size: 14.5px;
         }
-
         td {
-            padding: 14px 16px;
+            padding: 13px 15px;
             border-bottom: 1px solid #e5e7eb;
             font-size: 14.5px;
-            color: #374151 !important;
+            color: #374151;
             vertical-align: top;
         }
-
         tr:nth-child(even) {
-            background-color: #f9fbfa !important;
+            background-color: #f9fbfa;
         }
-
-        td strong {
-            color: #244a38 !important;
-        }
-
-        /* Khung CTA xanh rêu */
         .cta-banner {
-            background-color: #244a38 !important;
-            color: #ffffff !important;
+            background-color: #244a38;
+            color: #ffffff;
             border-radius: 12px;
-            padding: 36px 30px;
+            padding: 32px 25px;
             text-align: center;
-            margin-top: 36px;
+            margin-top: 32px;
         }
-
         .cta-banner h2 {
             font-size: 22px;
-            font-weight: 700;
             margin-bottom: 12px;
-            color: #ffffff !important;
         }
-
         .cta-banner p {
             font-size: 15px;
-            max-width: 720px;
-            margin: 0 auto 24px;
-            color: #ffffff !important;
-            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 22px;
         }
-
         .cta-buttons {
             display: flex;
             justify-content: center;
-            gap: 16px;
+            gap: 15px;
             flex-wrap: wrap;
         }
-
         .btn-orange, .btn-white {
             border: none;
             cursor: pointer;
-            font-weight: 700;
+            font-weight: bold;
             font-size: 15px;
-            padding: 13px 26px;
+            padding: 12px 24px;
             border-radius: 8px;
             text-decoration: none;
             display: inline-block;
         }
-
         .btn-orange {
-            background-color: #e67e22 !important;
-            color: #ffffff !important;
+            background-color: #e67e22;
+            color: #ffffff;
         }
-
         .btn-white {
-            background-color: #ffffff !important;
-            color: #244a38 !important;
+            background-color: #ffffff;
+            color: #244a38;
         }
-
-        /* Popup Modal */
+        /* Popup */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -225,128 +165,65 @@
             z-index: 1000;
             justify-content: center;
             align-items: center;
-            padding: 16px;
+            padding: 15px;
         }
-
         .modal-box {
-            background: #ffffff !important;
+            background: #ffffff;
             width: 100%;
-            max-width: 540px;
-            border-radius: 14px;
+            max-width: 520px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
         }
-
         .modal-box.modal-wide {
-            max-width: 780px;
+            max-width: 760px;
         }
-
         .modal-header {
-            background-color: #244a38 !important;
-            color: #ffffff !important;
-            padding: 18px 24px;
+            background-color: #244a38;
+            color: #ffffff;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
-        .modal-header h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #ffffff !important;
-        }
-
         .btn-close {
             background: none;
             border: none;
-            color: #ffffff !important;
-            font-size: 26px;
-            line-height: 1;
+            color: #ffffff;
+            font-size: 24px;
             cursor: pointer;
         }
-
         .modal-body {
-            padding: 24px;
+            padding: 20px;
             max-height: 80vh;
             overflow-y: auto;
-            color: #1f2937 !important;
         }
-
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             text-align: left;
         }
-
         .form-group label {
             display: block;
-            font-weight: 600;
+            font-weight: bold;
             font-size: 14px;
-            margin-bottom: 6px;
-            color: #1f2937 !important;
+            margin-bottom: 5px;
         }
-
         .form-group input, .form-group select {
             width: 100%;
-            padding: 11px 14px;
+            padding: 10px 12px;
             border: 1px solid #cbd5e1;
-            border-radius: 8px;
+            border-radius: 6px;
             font-size: 14.5px;
-            color: #1f2937 !important;
-            background: #ffffff !important;
         }
-
         .btn-submit {
             width: 100%;
-            background-color: #e67e22 !important;
-            color: #ffffff !important;
+            background-color: #e67e22;
+            color: #ffffff;
             border: none;
-            padding: 13px;
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 6px;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: bold;
             cursor: pointer;
-            margin-top: 6px;
-        }
-
-        .zalo-quick {
-            margin-top: 14px;
-            text-align: center;
-            font-size: 13.5px;
-            color: #4b5563 !important;
-        }
-
-        .zalo-quick a {
-            color: #244a38 !important;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .success-msg {
-            display: none;
-            text-align: center;
-            padding: 20px 10px;
-        }
-
-        .success-msg h4 {
-            color: #244a38 !important;
-            font-size: 19px;
-            margin-bottom: 10px;
-        }
-
-        .badge-status {
-            display: inline-block;
-            background: #dcfce7;
-            color: #166534;
-            font-weight: 700;
-            font-size: 12px;
-            padding: 3px 10px;
-            border-radius: 12px;
-        }
-
-        @media (max-width: 600px) {
-            .container { margin: 15px; padding: 25px 20px; }
-            h1.article-title { font-size: 21px; }
-            .cta-banner { padding: 28px 18px; }
         }
     </style>
 </head>
@@ -354,16 +231,51 @@
 
     <div class="top-bar">
         <div class="top-bar-inner">
-            <a href="index.html" class="btn-back">← Quay lại Trang chủ Giáo dục Nhật Minh</a>
+            <a href="index.html" class="btn-back">&larr; Quay lại Trang chủ Giáo dục Nhật Minh</a>
         </div>
     </div>
 
     <div class="container">
         <span class="category-badge">NGHIỆP VỤ &amp; KĨ NĂNG GIÁO DỤC</span>
-        <h1 class="article-title">Đào tạo &amp; Bồi dưỡng Nghiệp vụ và Kĩ năng Giáo dục – Vững bước nghề giáo</h1>
+        <h1 class="article-title">Đào tạo &amp; Bồi dưỡng Nghiệp vụ và Kĩ năng Giáo dục - Vững bước nghề giáo</h1>
         
         <div class="intro-box">
-            <p>
-                Trong bối cảnh giáo dục hiện đại không ngừng đổi mới, năng lực của người làm giáo dục không chỉ dừng lại ở kiến thức chuyên môn mà còn nằm ở <strong>nghệ thuật quản trị, dẫn dắt tâm lý và kiến tạo môi trường học tập hạnh phúc</strong>.
-            </p>
-            <p>
+            <p>Trong bối cảnh giáo dục hiện đại không ngừng đổi mới, năng lực của người làm giáo dục không chỉ dừng lại ở kiến thức chuyên môn mà còn nằm ở <strong>nghệ thuật quản trị, dẫn dắt tâm lý và kiến tạo môi trường học tập hạnh phúc</strong>.</p>
+            <p>Hệ thống chương trình <strong>Đào tạo &amp; Bồi dưỡng Nghiệp vụ và Kĩ năng Giáo dục</strong> tại Giáo dục Nhật Minh được thiết kế theo phương châm thực tiễn - chuẩn pháp lý, trang bị đầy đủ năng lực từ cấp quản lý cơ sở đến kỹ năng sư phạm chuyên sâu.</p>
+        </div>
+
+        <h2 class="section-heading">1. Nhóm chương trình Quản lý Giáo dục &amp; Chuyển tiếp Cấp học</h2>
+        <ul class="styled-list">
+            <li><strong>Quản lý Giáo dục Mầm non:</strong> Trang bị tư duy quản trị hiện đại để mở và vận hành trường mầm non, nhóm trẻ độc lập, quản lý chất lượng chăm sóc - nuôi dưỡng và đảm bảo an toàn học đường.</li>
+            <li><strong>Quản lý Giáo dục Phổ thông:</strong> Tập trung vào năng lực lãnh đạo nhà trường, quản trị nhân sự sư phạm, hoạch định tài chính - cơ sở vật chất và kiểm định chất lượng giáo dục.</li>
+            <li><strong>Nghiệp vụ Tiền tiểu học (Hành trang vào Lớp 1):</strong> Hướng dẫn cách rèn nề nếp học tập, phát triển ngôn ngữ, tư duy logic và chuẩn bị tâm thế vững vàng giúp trẻ 5 - 6 tuổi tự tin bước vào lớp 1.</li>
+        </ul>
+
+        <h2 class="section-heading">2. Nhóm chương trình Kĩ năng Giáo dục &amp; Hỗ trợ Học đường Chuyên sâu</h2>
+        <ul class="styled-list">
+            <li><strong>Nghệ thuật Chủ nhiệm lớp và Kỷ luật Tích cực:</strong> Kỹ thuật xây dựng lớp học tự quản, khơi gợi động lực nội tại và hóa giải xung đột học đường một cách nhân văn.</li>
+            <li><strong>Tư vấn Tâm lý Học đường và Giáo dục Hòa nhập:</strong> Nhận diện sớm các dấu hiệu bất ổn tinh thần ở học sinh và phương pháp tiếp cận chuyên biệt để hỗ trợ trẻ có nhu cầu đặc biệt.</li>
+            <li><strong>Tổ chức Hoạt động Trải nghiệm và Hướng nghiệp:</strong> Kỹ năng thiết kế dự án cộng đồng, sân chơi trí tuệ và định hướng nghề nghiệp bám sát năng lực từng cá nhân.</li>
+            <li><strong>Kỹ năng Kết nối Gia đình - Nhà trường - Xã hội:</strong> Nâng cao nghệ thuật giao tiếp sư phạm với phụ huynh và huy động nguồn lực xã hội hóa giáo dục.</li>
+        </ul>
+
+        <h2 class="section-heading">3. Danh mục các Khóa học Bồi dưỡng Tiêu biểu</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên khóa học</th>
+                        <th>Nội dung trọng tâm</th>
+                        <th>Đối tượng phù hợp</th>
+                        <th>Đơn vị cấp chứng chỉ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Nghiệp vụ Quản lý Giáo dục Mầm non</strong></td>
+                        <td>Pháp luật giáo dục mầm non, quy trình mở và vận hành cơ sở mầm non tư thục, quản lý dinh dưỡng và an toàn trường học.</td>
+                        <td>Hiệu trưởng, phó hiệu trưởng, chủ nhóm trẻ và giáo viên nguồn.</td>
+                        <td>Các trường CĐ/ĐH Sư phạm uy tín.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bồi dưỡng Cán bộ Quản lý Trường Phổ thông</strong></td>
