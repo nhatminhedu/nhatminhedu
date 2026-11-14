@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương trình Nghiệp vụ & Kĩ năng Giáo dục</title>
+    <style>
+        :root {
+            --primary: #0f4c81;
+            --primary-light: #1e6fb8;
+            --accent: #e67e22;
+            --bg-body: #f4f7f9;
+            --bg-card: #ffffff;
+            --text-main: #2c3e50;
+            --text-muted: #5a6c7d;
+            --border: #e1e8ed;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.65;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #ffffff;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            line-height: 1.35;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            max-width: 820px;
+            margin: 0 auto 12px;
+            opacity: 0.95;
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            color: var(--primary);
+            border-left: 5px solid var(--accent);
+            padding-left: 14px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        /* Grid for Pillar Cards */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 24px;
+            margin-bottom: 45px;
+        }
+
+        .pillar-box {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .pillar-box h3 {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dbe4ec;
+        }
+
+        .pillar-list {
+            list-style: none;
+        }
+
+        .pillar-list li {
+            margin-bottom: 16px;
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        .pillar-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .pillar-list strong {
+            color: var(--text-main);
+            display: block;
+            font-size: 15.5px;
+            margin-bottom: 4px;
+        }
+
+        /* Course Table */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 45px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: #ffffff;
+            text-align: left;
+            padding: 15px 18px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14.5px;
+            vertical-align: top;
+            color: var(--text-muted);
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fbfd;
+        }
+
+        tr:hover {
+            background-color: #f1f6fa;
+        }
+
+        td strong {
+            color: var(--primary);
+            font-size: 15px;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, #fff8f1, #ffeedb);
+            border: 2px solid #fbd3a8;
+            border-radius: 14px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            color: #c05621;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .cta-subtitle {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .cta-info {
+            display: inline-block;
+            text-align: left;
+            background: #ffffff;
+            padding: 18px 28px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 20px;
+        }
+
+        .cta-info p {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .cta-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 14px 36px;
+            border-radius: 30px;
+            transition: background-color 0.25s ease, transform 0.2s ease;
+            box-shadow: 0 4px 14px rgba(230, 126, 34, 0.35);
+        }
+
+        .btn-cta:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        .cta-closing {
+            margin-top: 18px;
+            font-style: italic;
+            font-size: 14.5px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 35px 20px; }
+            .hero h1 { font-size: 22px; }
+            .content { padding: 25px 20px; }
+            .pillars-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Phần Mở Đầu -->
+    <header class="hero">
+        <h1>Kiến tạo năng lực sư phạm & Quản trị giáo dục: Chìa khóa dẫn dắt tương lai</h1>
+        <p>Trong bối cảnh giáo dục hiện đại không ngừng đổi mới, năng lực của người làm giáo dục không chỉ dừng lại ở kiến thức chuyên môn mà còn nằm ở <strong>nghệ thuật quản trị, dẫn dắt tâm lý và kiến tạo môi trường học tập hạnh phúc</strong>.</p>
+        <p>Hệ thống các chương trình <strong>Nghiệp vụ và Kĩ năng Giáo dục</strong> được thiết kế toàn diện từ cấp quản lý đến thực hành chuyên sâu, giúp nhà giáo, cán bộ quản lý và người khởi nghiệp giáo dục tự tin làm chủ lớp học, vận hành cơ sở hiệu quả và đồng hành trọn vẹn cùng sự phát triển của người học.</p>
+    </header>
+
+    <main class="content">
+        <!-- Phần 1 -->
+        <h2 class="section-title">Phần 1: Các chương trình Nghiệp vụ & Kĩ năng Giáo dục Trọng điểm</h2>
+        
+        <div class="pillars-grid">
+            <!-- Trụ cột 1 -->
+            <div class="pillar-box">
+                <h3>1. Trụ cột Quản lý Giáo dục & Chuyển tiếp Cấp học</h3>
+                <ul class="pillar-list">
+                    <li>
+                        <strong>Quản lý Giáo dục Mầm non</strong>
+                        Trang bị tư duy quản trị hiện đại để mở và vận hành trường mầm non, nhóm trẻ độc lập. Chương trình đi sâu vào quản lý chất lượng chăm sóc – nuôi dưỡng, đảm bảo an toàn học đường và xây dựng môi trường giáo dục lấy trẻ làm trung tâm.
+                    </li>
+                    <li>
+                        <strong>Quản lý Giáo dục Phổ thông</strong>
+                        Tập trung vào năng lực lãnh đạo nhà trường, quản trị nhân sự sư phạm, hoạch định tài chính – cơ sở vật chất và kiểm định chất lượng giáo dục. Học viên được rèn luyện tư duy đổi mới để dẫn dắt tập thể thích ứng với các chương trình giáo dục mới.
+                    </li>
+                    <li>
+                        <strong>Nghiệp vụ Tiền tiểu học (Hành trang vào Lớp 1)</strong>
+                        Cầu nối tâm lý và tri thức quan trọng cho trẻ 5 – 6 tuổi. Chương trình hướng dẫn cách rèn nề nếp học tập, phát triển ngôn ngữ, tư duy logic và chuẩn bị tâm thế vững vàng giúp trẻ tự tin vượt qua giai đoạn chuyển cấp.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Trụ cột 2 -->
+            <div class="pillar-box">
+                <h3>2. Trụ cột Kĩ năng Giáo dục & Hỗ trợ Học đường Chuyên sâu</h3>
+                <ul class="pillar-list">
+                    <li>
+                        <strong>Nghệ thuật Chủ nhiệm lớp và Kỷ luật Tích cực</strong>
+                        Thay thế sự áp đặt bằng phương pháp dẫn dắt thấu cảm. Người học nắm vững kỹ thuật xây dựng lớp học tự quản, khơi gợi động lực nội tại và hóa giải xung đột học đường một cách nhân văn.
+                    </li>
+                    <li>
+                        <strong>Tư vấn Tâm lý Học đường và Giáo dục Hòa nhập</strong>
+                        Trang bị "la bàn tâm lý" giúp nhận diện sớm các dấu hiệu bất ổn tinh thần ở học sinh (lo âu, áp lực, bạo lực học đường). Đồng thời, cung cấp phương pháp tiếp cận chuyên biệt để hỗ trợ trẻ có nhu cầu đặc biệt hòa nhập hiệu quả.
+                    </li>
+                    <li>
+                        <strong>Tổ chức Hoạt động Trải nghiệm và Hướng nghiệp</strong>
+                        Biến lý thuyết thành thực tiễn sinh động thông qua kỹ năng thiết kế dự án cộng đồng, sân chơi trí tuệ và định hướng nghề nghiệp bám sát năng lực, sở trường của từng cá nhân.
+                    </li>
+                    <li>
+                        <strong>Kỹ năng Kết nối Gia đình – Nhà trường – Xã hội</strong>
+                        Nâng cao nghệ thuật giao tiếp sư phạm với phụ huynh, biến các buổi họp phụ huynh thành diễn đàn đồng hành tích cực và huy động hiệu quả các nguồn lực xã hội hóa.
+                    </li>
+                </ul>
