@@ -3,228 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nghiep vu va Ki nang Giao duc - Giao duc Nhat Minh</title>
+    <title>Nghiệp vụ và Kĩ năng Giáo dục - Giáo dục Nhật Minh</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        body {
-            background-color: #f4f6f5;
-            color: #1f2937;
-            line-height: 1.7;
-        }
-        .top-bar {
-            background-color: #244a38;
-            padding: 15px 20px;
-        }
-        .top-bar-inner {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        .btn-back {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: bold;
-        }
-        .container {
-            max-width: 960px;
-            margin: 30px auto;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            padding: 35px 40px;
-        }
-        .category-badge {
-            display: inline-block;
-            background-color: #e6efe9;
-            color: #244a38;
-            font-weight: bold;
-            font-size: 13px;
-            padding: 5px 14px;
-            border-radius: 20px;
-            margin-bottom: 14px;
-        }
-        h1.article-title {
-            font-size: 26px;
-            color: #244a38;
-            line-height: 1.35;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        .intro-box {
-            background-color: #f7faf8;
-            border-left: 4px solid #244a38;
-            padding: 18px 22px;
-            margin-bottom: 28px;
-            font-size: 15.5px;
-            color: #374151;
-        }
-        .intro-box p {
-            margin-bottom: 10px;
-        }
-        .intro-box p:last-child {
-            margin-bottom: 0;
-        }
-        h2.section-heading {
-            font-size: 20px;
-            color: #244a38;
-            margin-top: 28px;
-            margin-bottom: 12px;
-        }
-        ul.styled-list, ol.styled-list {
-            padding-left: 22px;
-            margin-bottom: 20px;
-            color: #374151;
-            font-size: 15.5px;
-        }
-        ul.styled-list li, ol.styled-list li {
-            margin-bottom: 10px;
-        }
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 16px 0 28px;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 650px;
-        }
-        th {
-            background-color: #244a38;
-            color: #ffffff;
-            text-align: left;
-            padding: 12px 15px;
-            font-size: 14.5px;
-        }
-        td {
-            padding: 13px 15px;
-            border-bottom: 1px solid #e5e7eb;
-            font-size: 14.5px;
-            color: #374151;
-            vertical-align: top;
-        }
-        tr:nth-child(even) {
-            background-color: #f9fbfa;
-        }
-        .cta-banner {
-            background-color: #244a38;
-            color: #ffffff;
-            border-radius: 12px;
-            padding: 32px 25px;
-            text-align: center;
-            margin-top: 32px;
-        }
-        .cta-banner h2 {
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-        .cta-banner p {
-            font-size: 15px;
-            max-width: 700px;
-            margin: 0 auto 22px;
-        }
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .btn-orange, .btn-white {
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 15px;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-orange {
-            background-color: #e67e22;
-            color: #ffffff;
-        }
-        .btn-white {
-            background-color: #ffffff;
-            color: #244a38;
-        }
-        /* Popup */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-        }
-        .modal-box {
-            background: #ffffff;
-            width: 100%;
-            max-width: 520px;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .modal-box.modal-wide {
-            max-width: 760px;
-        }
-        .modal-header {
-            background-color: #244a38;
-            color: #ffffff;
-            padding: 16px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .btn-close {
-            background: none;
-            border: none;
-            color: #ffffff;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .modal-body {
-            padding: 20px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-        .form-group {
-            margin-bottom: 14px;
-            text-align: left;
-        }
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 14.5px;
-        }
-        .btn-submit {
-            width: 100%;
-            background-color: #e67e22;
-            color: #ffffff;
-            border: none;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Arial, sans-serif; }
+        body { background-color: #f4f6f5; color: #1f2937; line-height: 1.7; }
+        .top-bar { background-color: #244a38; padding: 15px 20px; }
+        .top-bar-inner { max-width: 960px; margin: 0 auto; }
+        .btn-back { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 600; }
+        .container { max-width: 960px; margin: 30px auto; background: #ffffff; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); padding: 40px 45px; }
+        .category-badge { display: inline-block; background: #e6efe9; color: #244a38; font-weight: 700; font-size: 12.5px; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; margin-bottom: 14px; }
+        h1.article-title { font-size: 26px; color: #244a38; line-height: 1.35; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; }
+        .intro-box { background: #f7faf8; border-left: 4px solid #244a38; border-radius: 0 10px 10px 0; padding: 20px 24px; margin-bottom: 30px; font-size: 15.5px; color: #374151; }
+        .intro-box p { margin-bottom: 10px; }
+        .intro-box p:last-child { margin-bottom: 0; }
+        h2.section-heading { font-size: 20px; color: #244a38; margin-top: 30px; margin-bottom: 14px; font-weight: 700; }
+        ul.styled-list, ol.styled-list { padding-left: 22px; margin-bottom: 20px; color: #374151; font-size: 15.5px; }
+        ul.styled-list li, ol.styled-list li { margin-bottom: 10px; }
+        .table-wrapper { overflow-x: auto; margin: 18px 0 30px; border-radius: 8px; border: 1px solid #e5e7eb; }
+        table { width: 100%; border-collapse: collapse; min-width: 650px; }
+        th { background-color: #244a38; color: #ffffff; text-align: left; padding: 13px 16px; font-size: 14.5px; }
+        td { padding: 14px 16px; border-bottom: 1px solid #e5e7eb; font-size: 14.5px; color: #374151; vertical-align: top; }
+        tr:nth-child(even) { background-color: #f9fbfa; }
+        td strong { color: #244a38; }
+        .cta-banner { background-color: #244a38; color: #ffffff; border-radius: 12px; padding: 36px 30px; text-align: center; margin-top: 36px; }
+        .cta-banner h2 { font-size: 22px; margin-bottom: 12px; }
+        .cta-banner p { font-size: 15px; max-width: 720px; margin: 0 auto 24px; line-height: 1.6; }
+        .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .btn-orange, .btn-white { border: none; cursor: pointer; font-weight: 700; font-size: 15px; padding: 13px 26px; border-radius: 8px; text-decoration: none; display: inline-block; }
+        .btn-orange { background-color: #e67e22; color: #ffffff; }
+        .btn-white { background-color: #ffffff; color: #244a38; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 16px; }
+        .modal-box { background: #ffffff; width: 100%; max-width: 540px; border-radius: 14px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.25); }
+        .modal-box.modal-wide { max-width: 780px; }
+        .modal-header { background-color: #244a38; color: #ffffff; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; }
+        .btn-close { background: none; border: none; color: #ffffff; font-size: 26px; cursor: pointer; }
+        .modal-body { padding: 24px; max-height: 80vh; overflow-y: auto; }
+        .form-group { margin-bottom: 16px; text-align: left; }
+        .form-group label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+        .form-group input, .form-group select { width: 100%; padding: 11px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14.5px; }
+        .btn-submit { width: 100%; background-color: #e67e22; color: #ffffff; border: none; padding: 13px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; }
+        .badge-status { display: inline-block; background: #dcfce7; color: #166534; font-weight: 700; font-size: 12px; padding: 3px 10px; border-radius: 12px; }
+        @media (max-width: 600px) { .container { margin: 15px; padding: 25px 20px; } h1.article-title { font-size: 21px; } }
     </style>
 </head>
 <body>
@@ -237,18 +56,18 @@
 
     <div class="container">
         <span class="category-badge">NGHIỆP VỤ &amp; KĨ NĂNG GIÁO DỤC</span>
-        <h1 class="article-title">Đào tạo &amp; Bồi dưỡng Nghiệp vụ và Kĩ năng Giáo dục - Vững bước nghề giáo</h1>
+        <h1 class="article-title">Đào tạo &amp; Bồi dưỡng Nghiệp vụ và Kĩ năng Giáo dục – Vững bước nghề giáo</h1>
         
         <div class="intro-box">
             <p>Trong bối cảnh giáo dục hiện đại không ngừng đổi mới, năng lực của người làm giáo dục không chỉ dừng lại ở kiến thức chuyên môn mà còn nằm ở <strong>nghệ thuật quản trị, dẫn dắt tâm lý và kiến tạo môi trường học tập hạnh phúc</strong>.</p>
-            <p>Hệ thống chương trình <strong>Đào tạo &amp; Bồi dưỡng Nghiệp vụ và Kĩ năng Giáo dục</strong> tại Giáo dục Nhật Minh được thiết kế theo phương châm thực tiễn - chuẩn pháp lý, trang bị đầy đủ năng lực từ cấp quản lý cơ sở đến kỹ năng sư phạm chuyên sâu.</p>
+            <p>Hệ thống chương trình <strong>Đào tạo &amp; Bồi dưỡng Nghiệp vụ và Kĩ năng Giáo dục</strong> tại Giáo dục Nhật Minh được thiết kế theo phương châm thực tiễn – chuẩn pháp lý, trang bị đầy đủ năng lực từ cấp quản lý cơ sở đến kỹ năng sư phạm chuyên sâu.</p>
         </div>
 
         <h2 class="section-heading">1. Nhóm chương trình Quản lý Giáo dục &amp; Chuyển tiếp Cấp học</h2>
         <ul class="styled-list">
-            <li><strong>Quản lý Giáo dục Mầm non:</strong> Trang bị tư duy quản trị hiện đại để mở và vận hành trường mầm non, nhóm trẻ độc lập, quản lý chất lượng chăm sóc - nuôi dưỡng và đảm bảo an toàn học đường.</li>
-            <li><strong>Quản lý Giáo dục Phổ thông:</strong> Tập trung vào năng lực lãnh đạo nhà trường, quản trị nhân sự sư phạm, hoạch định tài chính - cơ sở vật chất và kiểm định chất lượng giáo dục.</li>
-            <li><strong>Nghiệp vụ Tiền tiểu học (Hành trang vào Lớp 1):</strong> Hướng dẫn cách rèn nề nếp học tập, phát triển ngôn ngữ, tư duy logic và chuẩn bị tâm thế vững vàng giúp trẻ 5 - 6 tuổi tự tin bước vào lớp 1.</li>
+            <li><strong>Quản lý Giáo dục Mầm non:</strong> Trang bị tư duy quản trị hiện đại để mở và vận hành trường mầm non, nhóm trẻ độc lập, quản lý chất lượng chăm sóc – nuôi dưỡng và đảm bảo an toàn học đường.</li>
+            <li><strong>Quản lý Giáo dục Phổ thông:</strong> Tập trung vào năng lực lãnh đạo nhà trường, quản trị nhân sự sư phạm, hoạch định tài chính – cơ sở vật chất và kiểm định chất lượng giáo dục.</li>
+            <li><strong>Nghiệp vụ Tiền tiểu học (Hành trang vào Lớp 1):</strong> Hướng dẫn cách rèn nề nếp học tập, phát triển ngôn ngữ, tư duy logic và chuẩn bị tâm thế vững vàng giúp trẻ 5 – 6 tuổi tự tin bước vào lớp 1.</li>
         </ul>
 
         <h2 class="section-heading">2. Nhóm chương trình Kĩ năng Giáo dục &amp; Hỗ trợ Học đường Chuyên sâu</h2>
@@ -256,18 +75,16 @@
             <li><strong>Nghệ thuật Chủ nhiệm lớp và Kỷ luật Tích cực:</strong> Kỹ thuật xây dựng lớp học tự quản, khơi gợi động lực nội tại và hóa giải xung đột học đường một cách nhân văn.</li>
             <li><strong>Tư vấn Tâm lý Học đường và Giáo dục Hòa nhập:</strong> Nhận diện sớm các dấu hiệu bất ổn tinh thần ở học sinh và phương pháp tiếp cận chuyên biệt để hỗ trợ trẻ có nhu cầu đặc biệt.</li>
             <li><strong>Tổ chức Hoạt động Trải nghiệm và Hướng nghiệp:</strong> Kỹ năng thiết kế dự án cộng đồng, sân chơi trí tuệ và định hướng nghề nghiệp bám sát năng lực từng cá nhân.</li>
-            <li><strong>Kỹ năng Kết nối Gia đình - Nhà trường - Xã hội:</strong> Nâng cao nghệ thuật giao tiếp sư phạm với phụ huynh và huy động nguồn lực xã hội hóa giáo dục.</li>
-        </ul>
-
-        <h2 class="section-heading">3. Danh mục các Khóa học Bồi dưỡng Tiêu biểu</h2>
+            <li><strong>Kỹ năng Kết nối Gia đình – Nhà trường – Xã hội:</strong> Nâng cao nghệ thuật giao tiếp sư phạm với phụ huynh và huy động nguồn lực xã hội hóa giáo dục.</li>
+                    <h2 class="section-heading">3. Danh mục các Khóa học Bồi dưỡng Tiêu biểu</h2>
         <div class="table-wrapper">
             <table>
                 <thead>
                     <tr>
-                        <th>Tên khóa học</th>
-                        <th>Nội dung trọng tâm</th>
-                        <th>Đối tượng phù hợp</th>
-                        <th>Đơn vị cấp chứng chỉ</th>
+                        <th style="width: 25%;">Tên khóa học</th>
+                        <th style="width: 35%;">Nội dung trọng tâm</th>
+                        <th style="width: 22%;">Đối tượng phù hợp</th>
+                        <th style="width: 18%;">Đơn vị cấp chứng chỉ</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -279,3 +96,140 @@
                     </tr>
                     <tr>
                         <td><strong>Bồi dưỡng Cán bộ Quản lý Trường Phổ thông</strong></td>
+                        <td>Lãnh đạo chiến lược, quản trị chuyên môn, quản lý sự thay đổi và kiểm định chất lượng cơ sở giáo dục phổ thông.</td>
+                        <td>Ban giám hiệu, tổ trưởng chuyên môn và cán bộ quy hoạch.</td>
+                        <td>Học viện Quản lý Giáo dục.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nghiệp vụ Sư phạm &amp; Dạy Tiền tiểu học</strong></td>
+                        <td>Tâm lý trẻ 5 – 6 tuổi; phương pháp dạy làm quen chữ viết, toán tư duy, rèn tư thế ngồi và kỹ năng tự phục vụ.</td>
+                        <td>Giáo viên mầm non, tiểu học, người mở lớp tiền tiểu học.</td>
+                        <td>Các trung tâm bồi dưỡng khối ĐH Sư phạm.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nghiệp vụ Tư vấn Tâm lý Học đường</strong></td>
+                        <td>Kỹ thuật tham vấn cá nhân, sàng lọc tâm lý lứa tuổi, phòng ngừa bạo lực học đường và sơ cứu tâm lý.</td>
+                        <td>Giáo viên kiêm nhiệm tư vấn, cán bộ Đoàn – Đội.</td>
+                        <td>ĐH KHXH&amp;NV / ĐH Giáo dục.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Giáo dục Giá trị sống &amp; Kỹ năng sống</strong></td>
+                        <td>Phương pháp tổ chức trò chơi giáo dục, dẫn dắt cảm xúc và rèn luyện kỹ năng giải quyết vấn đề cho học sinh.</td>
+                        <td>Giáo viên các cấp, giảng viên kỹ năng mềm.</td>
+                        <td>Các trường ĐH Sư phạm được cấp phép.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-heading">4. Hồ sơ đăng ký xét tuyển</h2>
+        <ol class="styled-list">
+            <li><strong>Phiếu đăng ký học</strong> (theo mẫu chuẩn của đơn vị đào tạo).</li>
+            <li><strong>Bản sao công chứng Bằng tốt nghiệp</strong> Trung cấp, Cao đẳng, Đại học hoặc giấy xác nhận sinh viên.</li>
+            <li><strong>Bản sao công chứng Căn cước công dân (CCCD)</strong> còn thời hạn sử dụng.</li>
+            <li><strong>02 ảnh thẻ cỡ 3x4</strong> (chụp không quá 06 tháng, ghi rõ họ tên, ngày sinh phía sau ảnh).</li>
+        </ol>
+
+        <div class="cta-banner">
+            <h2>Nâng tầm nghiệp vụ – Vững bước tương lai nghề giáo!</h2>
+            <p>Liên hệ ngay với Giáo dục Nhật Minh (Hotline/Zalo: 0372.484.382) để được kiểm tra điều kiện hồ sơ miễn phí và nhận thông báo lịch khai giảng gần nhất.</p>
+            <div class="cta-buttons">
+                <button type="button" class="btn-orange" onclick="openModal('modal-dang-ky')">Đăng ký tư vấn ngay</button>
+                <button type="button" class="btn-white" onclick="openModal('modal-lich-hoc')">Xem lịch khai giảng chi tiết</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-dang-ky" class="modal-overlay" onclick="closeOnOutside(event, 'modal-dang-ky')">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Đăng ký Tư vấn &amp; Xét tuyển Hồ sơ</h3>
+                <button type="button" class="btn-close" onclick="closeModal('modal-dang-ky')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="form-tu-van" onsubmit="submitDangKy(event)">
+                    <div class="form-group">
+                        <label>Họ và tên học viên *</label>
+                        <input type="text" id="ho-ten" required placeholder="Nhập họ và tên đầy đủ...">
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại / Zalo liên hệ *</label>
+                        <input type="tel" id="so-dien-thoai" required placeholder="Ví dụ: 0987 654 321">
+                    </div>
+                    <div class="form-group">
+                        <label>Chương trình quan tâm *</label>
+                        <select id="khoa-hoc" required>
+                            <option value="Quản lý Giáo dục Mầm non">Nghiệp vụ Quản lý Giáo dục Mầm non</option>
+                            <option value="Quản lý Trường Phổ thông">Bồi dưỡng Cán bộ Quản lý Trường Phổ thông</option>
+                            <option value="Nghiệp vụ Tiền tiểu học">Nghiệp vụ Sư phạm &amp; Dạy Tiền tiểu học</option>
+                            <option value="Tư vấn Tâm lý Học đường">Nghiệp vụ Tư vấn Tâm lý Học đường</option>
+                            <option value="Giáo dục Giá trị sống &amp; Kỹ năng sống">Giáo dục Giá trị sống &amp; Kỹ năng sống</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Gửi thông tin đăng ký</button>
+                    <p style="text-align: center; margin-top: 12px; font-size: 14px;">
+                        Hoặc nhắn Zalo trực tiếp: <a href="https://zalo.me" target="_blank" style="color: #244a38; font-weight: bold;">0372.484.382</a>
+                    </p>
+                </form>
+                <div id="thong-bao-thanh-cong" style="display: none; text-align: center; padding: 15px;">
+                    <h4 style="color: #244a38; margin-bottom: 8px;">Đăng ký thành công!</h4>
+                    <p style="margin-bottom: 15px;">Cảm ơn bạn <strong id="ten-da-nhap"></strong>. Giáo dục Nhật Minh sẽ liên hệ tư vấn qua số điện thoại của bạn sớm nhất.</p>
+                    <a href="https://zalo.me" target="_blank" class="btn-orange">Kết nối Zalo ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-lich-hoc" class="modal-overlay" onclick="closeOnOutside(event, 'modal-lich-hoc')">
+        <div class="modal-box modal-wide">
+            <div class="modal-header">
+                <h3>Lịch Khai Giảng Dự Kiến</h3>
+                <button type="button" class="btn-close" onclick="closeModal('modal-lich-hoc')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrapper" style="margin: 0 0 15px 0;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tên khóa học</th>
+                                <th>Lịch học</th>
+                                <th>Hình thức</th>
+                                <th>Trạng thái</th>
+                                <th>Đăng ký</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Quản lý Giáo dục Mầm non</strong></td>
+                                <td>Thứ 7 &amp; Chủ nhật</td>
+                                <td>Online qua Zoom</td>
+                                <td><span class="badge-status">Đang nhận hồ sơ</span></td>
+                                <td><button type="button" class="btn-orange" style="padding: 6px 12px; font-size: 13px;" onclick="chuyenSangDangKy('Quản lý Giáo dục Mầm non')">Giữ chỗ</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quản lý Trường Phổ thông</strong></td>
+                                <td>Tối Thứ 3, 5, 7 (19h30 – 21h30)</td>
+                                <td>Online / Trực tiếp</td>
+                                <td><span class="badge-status">Đang nhận hồ sơ</span></td>
+                                <td><button type="button" class="btn-orange" style="padding: 6px 12px; font-size: 13px;" onclick="chuyenSangDangKy('Quản lý Trường Phổ thông')">Giữ chỗ</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nghiệp vụ Tiền tiểu học</strong></td>
+                                <td>Cuối tuần (Thứ 7 &amp; CN)</td>
+                                <td>Online / Trực tiếp</td>
+                                <td><span class="badge-status">Sắp khai giảng</span></td>
+                                <td><button type="button" class="btn-orange" style="padding: 6px 12px; font-size: 13px;" onclick="chuyenSangDangKy('Nghiệp vụ Tiền tiểu học')">Giữ chỗ</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tư vấn Tâm lý Học đường</strong></td>
+                                <td>Tối Thứ 2, 4, 6 (19h30 – 21h30)</td>
+                                <td>Online qua Zoom</td>
+                                <td><span class="badge-status">Đang nhận hồ sơ</span></td>
+                                <td><button type="button" class="btn-orange" style="padding: 6px 12px; font-size: 13px;" onclick="chuyenSangDangKy('Tư vấn Tâm lý Học đường')">Giữ chỗ</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </ul>
