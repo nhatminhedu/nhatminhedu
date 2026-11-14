@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chuyên mục Tin tức & Thông tin Đào tạo - Giáo dục Nhật Minh</title>
+  <title>Chuyên mục Tin tức Giáo dục & Thông tin Đào tạo - Giáo dục Nhật Minh</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -33,7 +33,7 @@
     }
     .page-wrapper {
       max-width: 960px;
-      margin: 30px auto 70px auto;
+      margin: 30px auto 80px auto;
       padding: 0 15px;
     }
     .page-header {
@@ -165,6 +165,30 @@
       color: #78350f;
       font-size: 15.5px;
     }
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 22px 0 28px 0;
+    }
+    .pillar-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-top: 4px solid #137333;
+      border-radius: 10px;
+      padding: 18px;
+    }
+    .pillar-card h4 {
+      margin: 0 0 8px 0;
+      color: #137333;
+      font-size: 16px;
+    }
+    .pillar-card p {
+      margin: 0;
+      font-size: 14.5px;
+      line-height: 1.6;
+      text-align: left;
+    }
     .article-detail-box h3 {
       color: #137333;
       font-size: 19.5px;
@@ -182,6 +206,15 @@
     }
     .article-detail-box li {
       margin-bottom: 12px;
+    }
+    .policy-note-box {
+      background: #f0fdf4;
+      border: 1px dashed #137333;
+      padding: 18px 22px;
+      border-radius: 10px;
+      margin-top: 26px;
+      font-size: 15.5px;
+      color: #14532d;
     }
     .cta-box {
       background: linear-gradient(135deg, #137333 0%, #0d5c28 100%);
@@ -251,6 +284,9 @@
       gap: 5px !important;
       text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95) !important;
     }
+    .nm-clean-phone:hover {
+      color: #d97706 !important;
+    }
     .nm-clean-zalo {
       width: 50px !important;
       height: 50px !important;
@@ -281,7 +317,7 @@
   <div class="page-wrapper">
     <div class="page-header">
       <h1>Chuyên mục Tin tức & Thông tin Đào tạo</h1>
-      <p>Chọn một trong hai chuyên mục bên dưới để xem nội dung chi tiết</p>
+      <p>Nhấp vào một trong hai thẻ chuyên mục bên dưới để xem nội dung chi tiết</p>
     </div>
 
     <!-- 2 THẺ CON BẤM CHUYỂN BÀI VIẾT -->
@@ -289,7 +325,7 @@
       <div id="tab-giaoduc" class="subcard-item active" onclick="moBaiViet('giaoduc')">
         <img src="https://unsplash.com" alt="Tin tức giáo dục">
         <div class="subcard-body">
-          <span class="subcard-tag">Tin tức giáo dục</span>
+          <span class="subcard-tag">01. Tin tức giáo dục</span>
           <h2>Bức tranh Giáo dục & Nguồn nhân lực 2026: Đẩy mạnh chuẩn hóa đội ngũ</h2>
           <p>Toàn cảnh các chủ trương mới của Nhà nước về chuẩn hóa vị trí việc làm và xây dựng xã hội học tập trong kỷ nguyên số.</p>
           <span class="subcard-action">Đang hiển thị bài viết ↓</span>
@@ -299,7 +335,7 @@
       <div id="tab-daotao" class="subcard-item" onclick="moBaiViet('daotao')">
         <img src="https://unsplash.com" alt="Thông tin đào tạo">
         <div class="subcard-body">
-          <span class="subcard-tag">Thông tin đào tạo</span>
+          <span class="subcard-tag">02. Thông tin đào tạo</span>
           <h2>Cập nhật kế hoạch tuyển sinh & Các chương trình bồi dưỡng chuẩn hóa 2026</h2>
           <p>Tổng hợp các lớp Nghiệp vụ Sư phạm, Chức danh nghề nghiệp, Văn bằng 2, Kế toán, Tin học – Ngoại ngữ khai giảng mới.</p>
           <span class="subcard-action">Nhấp để xem bài viết →</span>
@@ -307,17 +343,9 @@
       </div>
     </div>
 
-    <!-- BÀI 1: TIN TỨC GIÁO DỤC -->
+    <!-- BÀI 1: TIN TỨC GIÁO DỤC (MANG TÍNH XÃ HỘI & CHÍNH SÁCH NHÀ NƯỚC) -->
     <article id="bai-giaoduc" class="article-detail-box">
       <span class="subcard-tag" style="background:#e6f4ea; color:#137333;">Tin tức Giáo dục & Xã hội</span>
       <h2 class="article-title">BỨC TRANH GIÁO DỤC & NGUỒN NHÂN LỰC 2026: CHUẨN HÓA ĐỘI NGŨ, LAN TỎA TINH THẦN HỌC TẬP SUỐT ĐỜI TRONG KỶ NGUYÊN SỐ</h2>
 
       <div class="article-lead">
-        Trong dòng chảy mạnh mẽ của công cuộc chuyển đổi số quốc gia, cải cách hành chính và hội nhập quốc tế sâu rộng, năm 2026 ghi nhận những bước chuyển mình mang tính bước ngoặt của nền giáo dục Việt Nam. Xu hướng chuẩn hóa trình độ chuyên môn theo các quy định mới của Nhà nước kết hợp với phong trào "học tập suốt đời" của người trưởng thành đang kiến tạo nên một diện mạo xã hội tri thức năng động, kỷ cương và giàu sức sống.
-      </div>
-
-      <div class="highlight-quote">
-        <strong>Thông điệp cốt lõi năm 2026:</strong> "Chuẩn hóa bằng cấp không chỉ là hoàn thiện thủ tục hành chính, mà là thước đo năng lực thực chất và tinh thần chủ động thích ứng của người lao động trong kỷ nguyên số."
-      </div>
-
-      <h3>1. Chuẩn hóa vị trí việc làm: Ba trụ cột nâng tầm chất lượng nhân lực</h3>
