@@ -230,6 +230,43 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+                   <div style="text-align: center; margin-top: 10px; font-size: 14px; color: #4b5563;">
+            Cần xếp lịch học riêng cho tập thể trường/nhóm lớp? Gọi ngay <strong>0372.484.382</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
 
-        </ul>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    function closeOnOutside(event, id) {
+      if (event.target.id === id) {
+        closeModal(id);
+      }
+    }
+    function chuyenSangDangKy(tenKhoaHoc) {
+      closeModal('modal-lich-hoc');
+      document.getElementById('khoa-hoc').value = tenKhoaHoc;
+      document.getElementById('form-tu-van').style.display = 'block';
+      document.getElementById('thong-bao-thanh-cong').style.display = 'none';
+      openModal('modal-dang-ky');
+    }
+    function submitDangKy(event) {
+      event.preventDefault();
+      var ten = document.getElementById('ho-ten').value;
+      document.getElementById('ten-da-nhap').innerText = ten;
+      document.getElementById('form-tu-van').style.display = 'none';
+      document.getElementById('thong-bao-thanh-cong').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
+
+
+       
