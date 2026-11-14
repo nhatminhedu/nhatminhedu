@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chương trình Nghiệp vụ & Kĩ năng Giáo dục</title>
+    <title>Nghiệp vụ và Kĩ năng Giáo dục - Giáo dục Nhật Minh</title>
     <style>
         :root {
-            --primary: #0f4c81;
-            --primary-light: #1e6fb8;
-            --accent: #e67e22;
-            --bg-body: #f4f7f9;
+            --primary: #244a38;       /* Xanh rêu chuẩn Nhật Minh */
+            --primary-light: #356850;
+            --accent: #e67e22;        /* Cam nút Đăng ký */
+            --bg-body: #f4f6f5;
             --bg-card: #ffffff;
-            --text-main: #2c3e50;
-            --text-muted: #5a6c7d;
-            --border: #e1e8ed;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
         }
 
         * {
@@ -26,271 +26,267 @@
         body {
             background-color: var(--bg-body);
             color: var(--text-main);
-            line-height: 1.65;
-            padding: 20px;
+            line-height: 1.7;
         }
 
-        .container {
-            max-width: 1000px;
+        /* Thanh điều hướng giống hệt ảnh 1 */
+        .top-bar {
+            background-color: var(--primary);
+            padding: 15px 20px;
+        }
+
+        .top-bar-inner {
+            max-width: 960px;
             margin: 0 auto;
-            background: var(--bg-card);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-            overflow: hidden;
         }
 
-        /* Hero Header */
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        .btn-back {
             color: #ffffff;
-            padding: 50px 40px;
-            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s;
         }
 
-        .hero h1 {
-            font-size: 28px;
+        .btn-back:hover {
+            opacity: 0.85;
+        }
+
+        /* Khung bài viết chính */
+        .container {
+            max-width: 960px;
+            margin: 30px auto;
+            background: var(--bg-card);
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 40px 45px;
+        }
+
+        /* Nhãn danh mục phía trên tiêu đề */
+        .category-badge {
+            display: inline-block;
+            background-color: #e6efe9;
+            color: var(--primary);
             font-weight: 700;
-            margin-bottom: 18px;
-            line-height: 1.35;
+            font-size: 12.5px;
+            padding: 5px 14px;
+            border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-bottom: 14px;
         }
 
-        .hero p {
-            font-size: 16px;
-            max-width: 820px;
-            margin: 0 auto 12px;
-            opacity: 0.95;
-        }
-
-        /* Content Sections */
-        .content {
-            padding: 40px;
-        }
-
-        .section-title {
-            font-size: 22px;
+        /* Tiêu đề chính in hoa */
+        h1.article-title {
+            font-size: 27px;
             color: var(--primary);
-            border-left: 5px solid var(--accent);
-            padding-left: 14px;
-            margin-bottom: 25px;
+            line-height: 1.35;
+            margin-bottom: 22px;
+            text-transform: uppercase;
             font-weight: 700;
         }
 
-        /* Grid for Pillar Cards */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-            gap: 24px;
-            margin-bottom: 45px;
-        }
-
-        .pillar-box {
-            background: #f8fafc;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 25px;
-        }
-
-        .pillar-box h3 {
-            font-size: 18px;
-            color: var(--primary);
-            margin-bottom: 16px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #dbe4ec;
-        }
-
-        .pillar-list {
-            list-style: none;
-        }
-
-        .pillar-list li {
-            margin-bottom: 16px;
-            font-size: 15px;
+        /* Khung đoạn dẫn mở đầu có viền trái màu xanh giống ảnh 1 */
+        .intro-box {
+            background-color: #f7faf8;
+            border-left: 4px solid var(--primary);
+            border-radius: 0 10px 10px 0;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            font-size: 15.5px;
             color: var(--text-muted);
         }
 
-        .pillar-list li:last-child {
+        .intro-box p {
+            margin-bottom: 12px;
+        }
+
+        .intro-box p:last-child {
             margin-bottom: 0;
         }
 
-        .pillar-list strong {
-            color: var(--text-main);
-            display: block;
-            font-size: 15.5px;
-            margin-bottom: 4px;
+        .intro-box strong {
+            color: var(--primary);
         }
 
-        /* Course Table */
+        /* Các tiêu đề mục 1, 2, 3, 4 */
+        h2.section-heading {
+            font-size: 20px;
+            color: var(--primary);
+            margin-top: 32px;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        ul.styled-list, ol.styled-list {
+            padding-left: 22px;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 15.5px;
+        }
+
+        ul.styled-list li, ol.styled-list li {
+            margin-bottom: 10px;
+        }
+
+        ul.styled-list li strong, ol.styled-list li strong {
+            color: var(--text-main);
+        }
+
+        /* Bảng danh mục khóa học */
         .table-wrapper {
             overflow-x: auto;
-            margin-bottom: 45px;
-            border-radius: 10px;
+            margin: 18px 0 30px;
+            border-radius: 8px;
             border: 1px solid var(--border);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 700px;
+            min-width: 680px;
         }
 
         th {
             background-color: var(--primary);
             color: #ffffff;
             text-align: left;
-            padding: 15px 18px;
-            font-size: 15px;
-            font-weight: 600;
+            padding: 13px 16px;
+            font-size: 14.5px;
         }
 
         td {
-            padding: 16px 18px;
+            padding: 14px 16px;
             border-bottom: 1px solid var(--border);
             font-size: 14.5px;
-            vertical-align: top;
             color: var(--text-muted);
+            vertical-align: top;
         }
 
         tr:nth-child(even) {
-            background-color: #f9fbfd;
-        }
-
-        tr:hover {
-            background-color: #f1f6fa;
+            background-color: #f9fbfa;
         }
 
         td strong {
             color: var(--primary);
-            font-size: 15px;
         }
 
-        /* CTA Box */
-        .cta-box {
-            background: linear-gradient(135deg, #fff8f1, #ffeedb);
-            border: 2px solid #fbd3a8;
-            border-radius: 14px;
-            padding: 35px;
+        /* Khung CTA xanh rêu giống hệt ảnh 2 */
+        .cta-banner {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-radius: 12px;
+            padding: 36px 30px;
             text-align: center;
+            margin-top: 36px;
         }
 
-        .cta-box h2 {
-            color: #c05621;
+        .cta-banner h2 {
             font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .cta-subtitle {
             font-weight: 700;
-            color: var(--text-main);
-            font-size: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
-        .cta-info {
-            display: inline-block;
-            text-align: left;
-            background: #ffffff;
-            padding: 18px 28px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            margin-bottom: 20px;
-        }
-
-        .cta-info p {
-            margin-bottom: 8px;
+        .cta-banner p {
             font-size: 15px;
+            max-width: 720px;
+            margin: 0 auto 24px;
+            opacity: 0.95;
+            line-height: 1.6;
         }
 
-        .cta-info p:last-child {
-            margin-bottom: 0;
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
-        .btn-cta {
-            display: inline-block;
+        .btn-orange {
             background-color: var(--accent);
             color: #ffffff;
             text-decoration: none;
             font-weight: 700;
-            font-size: 16px;
-            padding: 14px 36px;
-            border-radius: 30px;
-            transition: background-color 0.25s ease, transform 0.2s ease;
-            box-shadow: 0 4px 14px rgba(230, 126, 34, 0.35);
+            font-size: 15px;
+            padding: 12px 26px;
+            border-radius: 8px;
+            transition: background 0.2s;
         }
 
-        .btn-cta:hover {
+        .btn-orange:hover {
             background-color: #d35400;
-            transform: translateY(-2px);
         }
 
-        .cta-closing {
-            margin-top: 18px;
-            font-style: italic;
-            font-size: 14.5px;
-            color: var(--text-muted);
+        .btn-white {
+            background-color: #ffffff;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 12px 26px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .btn-white:hover {
+            background-color: #f3f4f6;
         }
 
         @media (max-width: 600px) {
-            .hero { padding: 35px 20px; }
-            .hero h1 { font-size: 22px; }
-            .content { padding: 25px 20px; }
-            .pillars-grid { grid-template-columns: 1fr; }
+            .container { margin: 15px; padding: 25px 20px; }
+            h1.article-title { font-size: 21px; }
+            .cta-banner { padding: 28px 18px; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Phần Mở Đầu -->
-    <header class="hero">
-        <h1>Kiến tạo năng lực sư phạm & Quản trị giáo dục: Chìa khóa dẫn dắt tương lai</h1>
-        <p>Trong bối cảnh giáo dục hiện đại không ngừng đổi mới, năng lực của người làm giáo dục không chỉ dừng lại ở kiến thức chuyên môn mà còn nằm ở <strong>nghệ thuật quản trị, dẫn dắt tâm lý và kiến tạo môi trường học tập hạnh phúc</strong>.</p>
-        <p>Hệ thống các chương trình <strong>Nghiệp vụ và Kĩ năng Giáo dục</strong> được thiết kế toàn diện từ cấp quản lý đến thực hành chuyên sâu, giúp nhà giáo, cán bộ quản lý và người khởi nghiệp giáo dục tự tin làm chủ lớp học, vận hành cơ sở hiệu quả và đồng hành trọn vẹn cùng sự phát triển của người học.</p>
-    </header>
+    <!-- Thanh điều hướng giống hệt trang Kế toán -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <a href="index.html" class="btn-back">← Quay lại Trang chủ Giáo dục Nhật Minh</a>
+        </div>
+    </div>
 
-    <main class="content">
-        <!-- Phần 1 -->
-        <h2 class="section-title">Phần 1: Các chương trình Nghiệp vụ & Kĩ năng Giáo dục Trọng điểm</h2>
+    <div class="container">
+        <span class="category-badge">NGHIỆP VỤ & KĨ NĂNG GIÁO DỤC</span>
+        <h1 class="article-title">Đào tạo & Bồi dưỡng Nghiệp vụ và Kĩ năng Giáo dục – Vững bước nghề giáo</h1>
         
-        <div class="pillars-grid">
-            <!-- Trụ cột 1 -->
-            <div class="pillar-box">
-                <h3>1. Trụ cột Quản lý Giáo dục & Chuyển tiếp Cấp học</h3>
-                <ul class="pillar-list">
-                    <li>
-                        <strong>Quản lý Giáo dục Mầm non</strong>
-                        Trang bị tư duy quản trị hiện đại để mở và vận hành trường mầm non, nhóm trẻ độc lập. Chương trình đi sâu vào quản lý chất lượng chăm sóc – nuôi dưỡng, đảm bảo an toàn học đường và xây dựng môi trường giáo dục lấy trẻ làm trung tâm.
-                    </li>
-                    <li>
-                        <strong>Quản lý Giáo dục Phổ thông</strong>
-                        Tập trung vào năng lực lãnh đạo nhà trường, quản trị nhân sự sư phạm, hoạch định tài chính – cơ sở vật chất và kiểm định chất lượng giáo dục. Học viên được rèn luyện tư duy đổi mới để dẫn dắt tập thể thích ứng với các chương trình giáo dục mới.
-                    </li>
-                    <li>
-                        <strong>Nghiệp vụ Tiền tiểu học (Hành trang vào Lớp 1)</strong>
-                        Cầu nối tâm lý và tri thức quan trọng cho trẻ 5 – 6 tuổi. Chương trình hướng dẫn cách rèn nề nếp học tập, phát triển ngôn ngữ, tư duy logic và chuẩn bị tâm thế vững vàng giúp trẻ tự tin vượt qua giai đoạn chuyển cấp.
-                    </li>
-                </ul>
-            </div>
+        <div class="intro-box">
+            <p>
+                Trong bối cảnh giáo dục hiện đại không ngừng đổi mới, năng lực của người làm giáo dục không chỉ dừng lại ở kiến thức chuyên môn mà còn nằm ở <strong>nghệ thuật quản trị, dẫn dắt tâm lý và kiến tạo môi trường học tập hạnh phúc</strong>.
+            </p>
+            <p>
+                Hệ thống chương trình <strong>Đào tạo & Bồi dưỡng Nghiệp vụ và Kĩ năng Giáo dục</strong> tại Giáo dục Nhật Minh được thiết kế theo phương châm thực tiễn – chuẩn pháp lý, trang bị đầy đủ năng lực từ cấp quản lý cơ sở đến kỹ năng sư phạm chuyên sâu, giúp nhà giáo và cán bộ quản lý tự tin làm chủ lớp học, vận hành hiệu quả.
+            </p>
+        </div>
 
-            <!-- Trụ cột 2 -->
-            <div class="pillar-box">
-                <h3>2. Trụ cột Kĩ năng Giáo dục & Hỗ trợ Học đường Chuyên sâu</h3>
-                <ul class="pillar-list">
-                    <li>
-                        <strong>Nghệ thuật Chủ nhiệm lớp và Kỷ luật Tích cực</strong>
-                        Thay thế sự áp đặt bằng phương pháp dẫn dắt thấu cảm. Người học nắm vững kỹ thuật xây dựng lớp học tự quản, khơi gợi động lực nội tại và hóa giải xung đột học đường một cách nhân văn.
-                    </li>
-                    <li>
-                        <strong>Tư vấn Tâm lý Học đường và Giáo dục Hòa nhập</strong>
-                        Trang bị "la bàn tâm lý" giúp nhận diện sớm các dấu hiệu bất ổn tinh thần ở học sinh (lo âu, áp lực, bạo lực học đường). Đồng thời, cung cấp phương pháp tiếp cận chuyên biệt để hỗ trợ trẻ có nhu cầu đặc biệt hòa nhập hiệu quả.
-                    </li>
-                    <li>
-                        <strong>Tổ chức Hoạt động Trải nghiệm và Hướng nghiệp</strong>
-                        Biến lý thuyết thành thực tiễn sinh động thông qua kỹ năng thiết kế dự án cộng đồng, sân chơi trí tuệ và định hướng nghề nghiệp bám sát năng lực, sở trường của từng cá nhân.
-                    </li>
-                    <li>
-                        <strong>Kỹ năng Kết nối Gia đình – Nhà trường – Xã hội</strong>
-                        Nâng cao nghệ thuật giao tiếp sư phạm với phụ huynh, biến các buổi họp phụ huynh thành diễn đàn đồng hành tích cực và huy động hiệu quả các nguồn lực xã hội hóa.
-                    </li>
-                </ul>
+        <!-- Mục 1 -->
+        <h2 class="section-heading">1. Nhóm chương trình Quản lý Giáo dục & Chuyển tiếp Cấp học</h2>
+        <ul class="styled-list">
+            <li><strong>Quản lý Giáo dục Mầm non:</strong> Trang bị tư duy quản trị hiện đại để mở và vận hành trường mầm non, nhóm trẻ độc lập. Chương trình đi sâu vào quản lý chất lượng chăm sóc – nuôi dưỡng, đảm bảo an toàn học đường và xây dựng môi trường giáo dục lấy trẻ làm trung tâm.</li>
+            <li><strong>Quản lý Giáo dục Phổ thông:</strong> Tập trung vào năng lực lãnh đạo nhà trường, quản trị nhân sự sư phạm, hoạch định tài chính – cơ sở vật chất và kiểm định chất lượng giáo dục, đáp ứng yêu cầu đổi mới chương trình giáo dục phổ thông.</li>
+            <li><strong>Nghiệp vụ Tiền tiểu học (Hành trang vào Lớp 1):</strong> Cầu nối tâm lý và tri thức quan trọng cho trẻ 5 – 6 tuổi. Hướng dẫn cách rèn nề nếp học tập, phát triển ngôn ngữ, tư duy logic và chuẩn bị tâm thế vững vàng giúp trẻ tự tin bước vào lớp 1.</li>
+        </ul>
+
+        <!-- Mục 2 -->
+        <h2 class="section-heading">2. Nhóm chương trình Kĩ năng Giáo dục & Hỗ trợ Học đường Chuyên sâu</h2>
+        <ul class="styled-list">
+            <li><strong>Nghệ thuật Chủ nhiệm lớp và Kỷ luật Tích cực:</strong> Thay thế sự áp đặt bằng phương pháp dẫn dắt thấu cảm. Nắm vững kỹ thuật xây dựng lớp học tự quản, khơi gợi động lực nội tại và hóa giải xung đột học đường nhân văn.</li>
+            <li><strong>Tư vấn Tâm lý Học đường và Giáo dục Hòa nhập:</strong> Nhận diện sớm các dấu hiệu bất ổn tinh thần ở học sinh (lo âu, áp lực, bạo lực học đường) và phương pháp tiếp cận chuyên biệt để hỗ trợ trẻ có nhu cầu đặc biệt hòa nhập hiệu quả.</li>
+            <li><strong>Tổ chức Hoạt động Trải nghiệm và Hướng nghiệp:</strong> Kỹ năng thiết kế dự án cộng đồng, sân chơi trí tuệ và định hướng nghề nghiệp bám sát năng lực, sở trường của từng cá nhân.</li>
+            <li><strong>Kỹ năng Kết nối Gia đình – Nhà trường – Xã hội:</strong> Nâng cao nghệ thuật giao tiếp sư phạm với phụ huynh và huy động hiệu quả các nguồn lực xã hội hóa giáo dục.</li>
+        </ul>
+
+        <!-- Mục 3 -->
+        <h2 class="section-heading">3. Danh mục các Khóa học Bồi dưỡng Tiêu biểu</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Tên khóa học</th>
+                        <th style="width: 35%;">Nội dung trọng tâm</th>
+                        <th style="width: 22%;">Đối tượng phù hợp</th>
