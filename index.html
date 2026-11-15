@@ -181,19 +181,30 @@
     .btn-reg-small { display: inline-block; background-color: #b7791f; color: #ffffff; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: bold; white-space: nowrap; }
 </style>
 
-<script>
+<<script>
     let docLichDaoTao = null;
 
-    fetch('lichdaotao.html')
-        .then(res => res.ok ? res.text() : fetch('lich-dao-tao.html').then(r => r.text()))
-        .then(html => {
-            docLichDaoTao = new DOMParser().parseFromString(html, 'text/html');
-            hienThiBangLich('box-nvsp');
-        })
-        .catch(() => {
-            document.getElementById('nm-schedule-display').innerHTML = 
-                '<p style="padding:20px; margin:0; color:#333;">Vui lòng xem lịch chi tiết tại <a href="lichdaotao.html" style="color:#137333; font-weight:bold;">Trang Lịch đào tạo →</a></p>';
-        });
+    async function khoiTaoLich() {
+        const displayArea = document.getElementById('nm-schedule-display');
+        const danhSachTenFile = ['lich-dao-tao.html', 'lichdaotao.html', 'LichDaoTao.html'];
+
+        for (let tenFile of danhSachTenFile) {
+            try {
+                const res = await fetch(tenFile);
+                if (res.ok) {
+                    const html = await res.text();
+                    const doc = new DOMParser().parseFromString(html, 'text/html');
+                    if (doc.getElementById('box-nvsp')) {
+                        docLichDaoTao = doc;
+                        hienThiBangLich('box-nvsp');
+                        return;
+                    }
+                }
+            } catch (e) {}
+        }
+
+        displayArea.innerHTML = '<p style="padding:20px; margin:0; color:#333;">Chưa tìm thấy tệp dữ liệu lịch. Vui lòng bấm vào mục <b>Lịch đào tạo</b> trên thanh menu để xem chi tiết.</p>';
+    }
 
     function chonChuongTrinh(boxId, btnElement) {
         document.querySelectorAll('.nm-prog-btn').forEach(b => b.classList.remove('active'));
@@ -207,10 +218,15 @@
         const targetBox = docLichDaoTao.getElementById(boxId);
         if (targetBox) {
             displayArea.innerHTML = targetBox.innerHTML;
+        } else {
+            displayArea.innerHTML = '<p style="padding:20px; margin:0; color:#333;">Đang cập nhật lịch cho chương trình này.</p>';
         }
     }
+
+    khoiTaoLich();
 </script>
 <!-- KẾT THÚC -->
+
     <!-- GIỚI THIỆU -->
     <section class="section container intro-section" id="gioi-thieu">
      <div class="intro-image">
