@@ -626,10 +626,25 @@ window.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('load', function() {
         const params = new URLSearchParams(window.location.search);
         const tabCanMo = params.get('tab');
-        if (tabCanMo) {
-            const nutTuongUng = document.querySelector('.program-card-btn[onclick*="' + tabCanMo + '"]');
-            if (nutTuongUng) {
-                nutTuongUng.click();
+        const danhSachBox = ['box-nvsp', 'box-cdnn', 'box-vb2', 'box-ketoan', 'box-tinhoc', 'box-tamly', 'box-khac'];
+        const viTri = danhSachBox.indexOf(tabCanMo);
+
+        if (viTri !== -1) {
+            // Ẩn tất cả các bảng và hiện đúng bảng được chọn
+            danhSachBox.forEach(function(id) {
+                const box = document.getElementById(id);
+                if (box) box.style.display = 'none';
+            });
+            const targetBox = document.getElementById(tabCanMo);
+            if (targetBox) targetBox.style.display = 'block';
+
+            // Xóa màu xanh ở thẻ cũ và tô xanh đúng thẻ theo thứ tự
+            const tatCaNut = document.querySelectorAll('.program-card-btn');
+            tatCaNut.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            if (tatCaNut[viTri]) {
+                tatCaNut[viTri].classList.add('active');
             }
         }
     });
