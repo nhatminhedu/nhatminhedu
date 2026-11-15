@@ -622,15 +622,15 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 
-    <script>
-    window.addEventListener('load', function() {
+   <script>
+    function capNhatTabTuLink() {
         const params = new URLSearchParams(window.location.search);
         const tabCanMo = params.get('tab');
         const danhSachBox = ['box-nvsp', 'box-cdnn', 'box-vb2', 'box-ketoan', 'box-tinhoc', 'box-tamly', 'box-khac'];
         const viTri = danhSachBox.indexOf(tabCanMo);
 
         if (viTri !== -1) {
-            // Ẩn tất cả các bảng và hiện đúng bảng được chọn
+            // 1. Ẩn tất cả các bảng và chỉ hiện đúng bảng của chương trình được chọn
             danhSachBox.forEach(function(id) {
                 const box = document.getElementById(id);
                 if (box) box.style.display = 'none';
@@ -638,7 +638,7 @@ window.addEventListener('DOMContentLoaded', function() {
             const targetBox = document.getElementById(tabCanMo);
             if (targetBox) targetBox.style.display = 'block';
 
-            // Xóa màu xanh ở thẻ cũ và tô xanh đúng thẻ theo thứ tự
+            // 2. Xóa màu xanh ở tất cả thẻ và tô xanh đúng thẻ vừa bấm
             const tatCaNut = document.querySelectorAll('.program-card-btn');
             tatCaNut.forEach(function(btn) {
                 btn.classList.remove('active');
@@ -647,6 +647,12 @@ window.addEventListener('DOMContentLoaded', function() {
                 tatCaNut[viTri].classList.add('active');
             }
         }
+    }
+
+    // Chạy ngay khi tải trang và chạy lại sau 150ms để chống bị ghi đè mặc định
+    window.addEventListener('DOMContentLoaded', capNhatTabTuLink);
+    window.addEventListener('load', function() {
+        setTimeout(capNhatTabTuLink, 150);
     });
 </script>
 
