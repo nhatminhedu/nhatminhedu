@@ -49,7 +49,7 @@
 
     <!-- 7 THẺ CHƯƠNG TRÌNH -->
     <div class="program-grid">
-      <button type="button" class="program-card-btn active" onclick="['box-nvsp','box-cdnn','box-vb2','box-ketoan','box-tinhoc','box-tamly','box-khac'].forEach(id=>document.getElementById(id).style.display='none'); document.getElementById('box-nvsp').style.display='block'; document.querySelectorAll('.program-card-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">
+      <button type="button" class="program-card-btn" onclick="['box-nvsp','box-cdnn','box-vb2','box-ketoan','box-tinhoc','box-tamly','box-khac'].forEach(id=>document.getElementById(id).style.display='none'); document.getElementById('box-nvsp').style.display='block'; document.querySelectorAll('.program-card-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">
         <div class="prog-num">Chương trình 01</div>
         <div class="prog-name">Nghiệp vụ Sư phạm</div>
       </button>
@@ -623,37 +623,36 @@ window.addEventListener('DOMContentLoaded', function() {
 </script>
 
    <script>
-    function capNhatTabTuLink() {
+    function dongBoMauVaBang() {
         const params = new URLSearchParams(window.location.search);
-        const tabCanMo = params.get('tab');
+        const hash = window.location.hash.replace('#', '');
+        const tabCanMo = params.get('tab') || hash || 'box-nvsp';
+
         const danhSachBox = ['box-nvsp', 'box-cdnn', 'box-vb2', 'box-ketoan', 'box-tinhoc', 'box-tamly', 'box-khac'];
         const viTri = danhSachBox.indexOf(tabCanMo);
+        const indexChuan = viTri !== -1 ? viTri : 0;
 
-        if (viTri !== -1) {
-            // 1. Ẩn tất cả các bảng và chỉ hiện đúng bảng của chương trình được chọn
-            danhSachBox.forEach(function(id) {
-                const box = document.getElementById(id);
-                if (box) box.style.display = 'none';
-            });
-            const targetBox = document.getElementById(tabCanMo);
-            if (targetBox) targetBox.style.display = 'block';
+        danhSachBox.forEach(function(id) {
+            const box = document.getElementById(id);
+            if (box) box.style.display = 'none';
+        });
+        const targetBox = document.getElementById(danhSachBox[indexChuan]);
+        if (targetBox) targetBox.style.display = 'block';
 
-            // 2. Xóa màu xanh ở tất cả thẻ và tô xanh đúng thẻ vừa bấm
-            const tatCaNut = document.querySelectorAll('.program-card-btn');
-            tatCaNut.forEach(function(btn) {
-                btn.classList.remove('active');
-            });
-            if (tatCaNut[viTri]) {
-                tatCaNut[viTri].classList.add('active');
+        const tatCaNut = document.querySelectorAll('.program-card-btn');
+        tatCaNut.forEach(function(btn, idx) {
+            btn.classList.remove('active');
+            btn.style.backgroundColor = '';
+            btn.style.color = '';
+            if (idx === indexChuan) {
+                btn.classList.add('active');
             }
-        }
+        });
     }
 
-    // Chạy ngay khi tải trang và chạy lại sau 150ms để chống bị ghi đè mặc định
-    window.addEventListener('DOMContentLoaded', capNhatTabTuLink);
-    window.addEventListener('load', function() {
-        setTimeout(capNhatTabTuLink, 150);
-    });
+    dongBoMauVaBang();
+    window.addEventListener('DOMContentLoaded', dongBoMauVaBang);
+    window.addEventListener('load', function() { setTimeout(dongBoMauVaBang, 300); });
 </script>
 
 </body>
