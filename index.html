@@ -81,6 +81,123 @@
           <a class="btn btn-yellow" href="#chuong-trinh">Khám phá chương trình đào tạo →</a>
         </div>
       </div>
+       <!-- BẮT ĐẦU: 7 THẺ CHẠY NGANG + BẢNG LỊCH CHI TIẾT -->
+<div class="khu-vuc-the-chay">
+    <div class="khung-truot-ngang">
+        <div class="dai-the-chay">
+            <button class="the-chuong-trinh active" onclick="xemLichChiTiet('nvsp', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 01</span>
+                <strong>Nghiệp vụ Sư phạm</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('cdnn', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 02</span>
+                <strong>Chức danh nghề nghiệp</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('vb2', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 03</span>
+                <strong>Văn bằng 2</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('ketoan', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 04</span>
+                <strong>Nghiệp vụ Kế toán</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('tinhoc', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 05</span>
+                <strong>Tin học và Ngoại ngữ</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('kynang', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 06</span>
+                <strong>Nghiệp vụ và Kĩ năng Giáo Dục</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('khac', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 07</span>
+                <strong>Các khóa học khác</strong>
+            </button>
+
+            <!-- Bản sao lặp lại để dải thẻ chạy vòng tròn không bị đứt đoạn -->
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('nvsp', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 01</span>
+                <strong>Nghiệp vụ Sư phạm</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('cdnn', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 02</span>
+                <strong>Chức danh nghề nghiệp</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('vb2', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 03</span>
+                <strong>Văn bằng 2</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('ketoan', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 04</span>
+                <strong>Nghiệp vụ Kế toán</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('tinhoc', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 05</span>
+                <strong>Tin học và Ngoại ngữ</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('kynang', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 06</span>
+                <strong>Nghiệp vụ và Kĩ năng Giáo Dục</strong>
+            </button>
+            <button class="the-chuong-trinh" onclick="xemLichChiTiet('khac', this)">
+                <span class="nhan-ct">CHƯƠNG TRÌNH 07</span>
+                <strong>Các khóa học khác</strong>
+            </button>
+        </div>
+    </div>
+
+    <div id="bang-lich-chi-tiet" class="khung-lich-chi-tiet">
+        <p style="color: #666; margin: 0;">Đang tải lịch đào tạo...</p>
+    </div>
+</div>
+
+<style>
+    .khu-vuc-the-chay { max-width: 1200px; margin: 20px auto 40px auto; font-family: Arial, sans-serif; }
+    .khung-truot-ngang { width: 100%; overflow: hidden; padding: 10px 0; position: relative; }
+    .dai-the-chay { display: flex; gap: 15px; width: max-content; animation: chayNgang 28s linear infinite; }
+    .khung-truot-ngang:hover .dai-the-chay { animation-play-state: paused; }
+    @keyframes chayNgang { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .the-chuong-trinh { min-width: 220px; background: #f8faf9; border: 1px solid #dce5e0; border-radius: 12px; padding: 14px 18px; text-align: left; cursor: pointer; display: flex; flex-direction: column; justify-content: center; transition: 0.25s; }
+    .the-chuong-trinh:hover { border-color: #4d8566; transform: translateY(-2px); }
+    .nhan-ct { font-size: 10px; font-weight: bold; color: #7a8c82; margin-bottom: 4px; }
+    .the-chuong-trinh strong { font-size: 14px; color: #1f3d2e; }
+    .the-chuong-trinh.active { background: #4d8566; border-color: #4d8566; }
+    .the-chuong-trinh.active .nhan-ct { color: #d4e8dc; }
+    .the-chuong-trinh.active strong { color: #fff; }
+    .khung-lich-chi-tiet { margin-top: 20px; background: #fff; border: 1px solid #e0e6e3; border-radius: 14px; padding: 20px; overflow-x: auto; }
+    .khung-lich-chi-tiet table { width: 100%; border-collapse: collapse; }
+    .khung-lich-chi-tiet th { background: #2e5a44; color: #fff; padding: 12px; text-align: left; }
+    .khung-lich-chi-tiet td { padding: 12px; border-bottom: 1px solid #eee; }
+</style>
+
+<script>
+    let noiDungFileLich = null;
+    fetch('lichdaotao.html')
+        .then(res => res.text())
+        .then(html => {
+            noiDungFileLich = new DOMParser().parseFromString(html, 'text/html');
+            hienThiLich('nvsp');
+        });
+
+    function xemLichChiTiet(maCT, theDuocBam) {
+        document.querySelectorAll('.the-chuong-trinh').forEach(el => el.classList.remove('active'));
+        theDuocBam.classList.add('active');
+        hienThiLich(maCT);
+    }
+
+    function hienThiLich(maCT) {
+        const khung = document.getElementById('bang-lich-chi-tiet');
+        if (!noiDungFileLich) return;
+        const lichTuongUng = noiDungFileLich.getElementById(maCT);
+        if (lichTuongUng) {
+            khung.innerHTML = lichTuongUng.innerHTML;
+        } else {
+            khung.innerHTML = '<p style="margin:0;">Đang cập nhật lịch. <a href="lichdaotao.html">Xem chi tiết tại đây →</a></p>';
+        }
+    }
+</script>
+<!-- KẾT THÚC -->
+      
     </section>
 
     <!-- GIỚI THIỆU -->
