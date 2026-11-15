@@ -81,122 +81,135 @@
           <a class="btn btn-yellow" href="#chuong-trinh">Khám phá chương trình đào tạo →</a>
         </div>
       </div>
-       <!-- BẮT ĐẦU: 7 THẺ CHẠY NGANG + BẢNG LỊCH CHI TIẾT -->
-<div class="khu-vuc-the-chay">
-    <div class="khung-truot-ngang">
-        <div class="dai-the-chay">
-            <button class="the-chuong-trinh active" onclick="xemLichChiTiet('nvsp', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 01</span>
-                <strong>Nghiệp vụ Sư phạm</strong>
+      <!-- BẮT ĐẦU: 7 THẺ CHẠY NGANG + BẢNG LỊCH CHI TIẾT -->
+<div class="nm-schedule-section">
+    <div class="nm-marquee-wrapper">
+        <div class="nm-marquee-track">
+            <!-- BỘ 7 THẺ CHÍNH -->
+            <button type="button" class="nm-prog-btn active" onclick="chonChuongTrinh('box-nvsp', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 01</div>
+                <div class="nm-prog-name">Nghiệp vụ Sư phạm</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('cdnn', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 02</span>
-                <strong>Chức danh nghề nghiệp</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-cdnn', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 02</div>
+                <div class="nm-prog-name">Chức danh nghề nghiệp</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('vb2', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 03</span>
-                <strong>Văn bằng 2</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-vb2', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 03</div>
+                <div class="nm-prog-name">Văn bằng 2</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('ketoan', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 04</span>
-                <strong>Nghiệp vụ Kế toán</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-ketoan', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 04</div>
+                <div class="nm-prog-name">Nghiệp vụ Kế toán</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('tinhoc', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 05</span>
-                <strong>Tin học và Ngoại ngữ</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-tinhoc', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 05</div>
+                <div class="nm-prog-name">Tin học và Ngoại ngữ</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('kynang', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 06</span>
-                <strong>Nghiệp vụ và Kĩ năng Giáo Dục</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-tamly', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 06</div>
+                <div class="nm-prog-name">Nghiệp vụ và Kĩ năng Giáo Dục</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('khac', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 07</span>
-                <strong>Các khóa học khác</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-khac', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 07</div>
+                <div class="nm-prog-name">Các khóa học khác</div>
             </button>
 
-            <!-- Bản sao lặp lại để dải thẻ chạy vòng tròn không bị đứt đoạn -->
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('nvsp', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 01</span>
-                <strong>Nghiệp vụ Sư phạm</strong>
+            <!-- BẢN SAO LẶP LẠI ĐỂ CHẠY VÒNG TRÒN LIÊN TỤC -->
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-nvsp', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 01</div>
+                <div class="nm-prog-name">Nghiệp vụ Sư phạm</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('cdnn', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 02</span>
-                <strong>Chức danh nghề nghiệp</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-cdnn', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 02</div>
+                <div class="nm-prog-name">Chức danh nghề nghiệp</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('vb2', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 03</span>
-                <strong>Văn bằng 2</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-vb2', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 03</div>
+                <div class="nm-prog-name">Văn bằng 2</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('ketoan', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 04</span>
-                <strong>Nghiệp vụ Kế toán</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-ketoan', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 04</div>
+                <div class="nm-prog-name">Nghiệp vụ Kế toán</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('tinhoc', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 05</span>
-                <strong>Tin học và Ngoại ngữ</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-tinhoc', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 05</div>
+                <div class="nm-prog-name">Tin học và Ngoại ngữ</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('kynang', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 06</span>
-                <strong>Nghiệp vụ và Kĩ năng Giáo Dục</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-tamly', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 06</div>
+                <div class="nm-prog-name">Nghiệp vụ và Kĩ năng Giáo Dục</div>
             </button>
-            <button class="the-chuong-trinh" onclick="xemLichChiTiet('khac', this)">
-                <span class="nhan-ct">CHƯƠNG TRÌNH 07</span>
-                <strong>Các khóa học khác</strong>
+            <button type="button" class="nm-prog-btn" onclick="chonChuongTrinh('box-khac', this)">
+                <div class="nm-prog-num">CHƯƠNG TRÌNH 07</div>
+                <div class="nm-prog-name">Các khóa học khác</div>
             </button>
         </div>
     </div>
 
-    <div id="bang-lich-chi-tiet" class="khung-lich-chi-tiet">
-        <p style="color: #666; margin: 0;">Đang tải lịch đào tạo...</p>
+    <div id="nm-schedule-display" class="schedule-detail-box">
+        <p style="padding: 20px; margin: 0; color: #666;">Đang tải dữ liệu lịch đào tạo...</p>
     </div>
 </div>
 
 <style>
-    .khu-vuc-the-chay { max-width: 1200px; margin: 20px auto 40px auto; font-family: Arial, sans-serif; }
-    .khung-truot-ngang { width: 100%; overflow: hidden; padding: 10px 0; position: relative; }
-    .dai-the-chay { display: flex; gap: 15px; width: max-content; animation: chayNgang 28s linear infinite; }
-    .khung-truot-ngang:hover .dai-the-chay { animation-play-state: paused; }
-    @keyframes chayNgang { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .the-chuong-trinh { min-width: 220px; background: #f8faf9; border: 1px solid #dce5e0; border-radius: 12px; padding: 14px 18px; text-align: left; cursor: pointer; display: flex; flex-direction: column; justify-content: center; transition: 0.25s; }
-    .the-chuong-trinh:hover { border-color: #4d8566; transform: translateY(-2px); }
-    .nhan-ct { font-size: 10px; font-weight: bold; color: #7a8c82; margin-bottom: 4px; }
-    .the-chuong-trinh strong { font-size: 14px; color: #1f3d2e; }
-    .the-chuong-trinh.active { background: #4d8566; border-color: #4d8566; }
-    .the-chuong-trinh.active .nhan-ct { color: #d4e8dc; }
-    .the-chuong-trinh.active strong { color: #fff; }
-    .khung-lich-chi-tiet { margin-top: 20px; background: #fff; border: 1px solid #e0e6e3; border-radius: 14px; padding: 20px; overflow-x: auto; }
-    .khung-lich-chi-tiet table { width: 100%; border-collapse: collapse; }
-    .khung-lich-chi-tiet th { background: #2e5a44; color: #fff; padding: 12px; text-align: left; }
-    .khung-lich-chi-tiet td { padding: 12px; border-bottom: 1px solid #eee; }
+    .nm-schedule-section { max-width: 1200px; margin: 20px auto 40px auto; padding: 0 15px; font-family: 'Be Vietnam Pro', Arial, sans-serif; position: relative; z-index: 5; }
+    .nm-marquee-wrapper { width: 100%; overflow: hidden; padding: 10px 0 20px 0; position: relative; }
+    .nm-marquee-track { display: flex; gap: 14px; width: max-content; animation: nmScrollLeft 30s linear infinite; }
+    .nm-marquee-wrapper:hover .nm-marquee-track { animation-play-state: paused; }
+    @keyframes nmScrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    .nm-prog-btn { min-width: 230px; background: #ffffff; border: 2px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; text-align: left; cursor: pointer; transition: all 0.2s ease; }
+    .nm-prog-btn:hover { border-color: #137333; transform: translateY(-2px); }
+    .nm-prog-btn.active { background-color: #137333; border-color: #137333; color: #ffffff; box-shadow: 0 4px 12px rgba(19, 115, 51, 0.25); }
+    .nm-prog-num { font-size: 11px; font-weight: bold; text-transform: uppercase; color: #b7791f; margin-bottom: 4px; }
+    .nm-prog-btn.active .nm-prog-num { color: #fef08a; }
+    .nm-prog-name { font-size: 15px; font-weight: bold; line-height: 1.35; }
+
+    .schedule-detail-box { background: #ffffff; border-radius: 10px; border: 2px solid #137333; overflow: hidden; }
+    .table-responsive { width: 100%; overflow-x: auto; }
+    table.schedule-table { width: 100%; border-collapse: collapse; }
+    table.schedule-table th, table.schedule-table td { padding: 14px; text-align: left; border-bottom: 1px solid #edf2f7; font-size: 14px; line-height: 1.5; vertical-align: middle; color: #2d3748; }
+    table.schedule-table th { background-color: #137333; color: #ffffff; white-space: nowrap; }
+    .course-code { display: inline-block; font-size: 11.5px; font-weight: bold; color: #137333; background: #e6f4ea; padding: 2px 8px; border-radius: 4px; margin-bottom: 4px; }
+    .badge-online { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; white-space: nowrap; }
+    .badge-open { display: inline-block; background: #dcfce7; color: #15803d; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; white-space: nowrap; }
+    .badge-wait { display: inline-block; background: #fef3c7; color: #b7791f; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; white-space: nowrap; }
+    .unit-text { font-weight: 600; color: #1e293b; }
+    .btn-reg-small { display: inline-block; background-color: #b7791f; color: #ffffff; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: bold; white-space: nowrap; }
 </style>
 
 <script>
-    let noiDungFileLich = null;
+    let docLichDaoTao = null;
+
     fetch('lichdaotao.html')
-        .then(res => res.text())
+        .then(res => res.ok ? res.text() : fetch('lich-dao-tao.html').then(r => r.text()))
         .then(html => {
-            noiDungFileLich = new DOMParser().parseFromString(html, 'text/html');
-            hienThiLich('nvsp');
+            docLichDaoTao = new DOMParser().parseFromString(html, 'text/html');
+            hienThiBangLich('box-nvsp');
+        })
+        .catch(() => {
+            document.getElementById('nm-schedule-display').innerHTML = 
+                '<p style="padding:20px; margin:0; color:#333;">Vui lòng xem lịch chi tiết tại <a href="lichdaotao.html" style="color:#137333; font-weight:bold;">Trang Lịch đào tạo →</a></p>';
         });
 
-    function xemLichChiTiet(maCT, theDuocBam) {
-        document.querySelectorAll('.the-chuong-trinh').forEach(el => el.classList.remove('active'));
-        theDuocBam.classList.add('active');
-        hienThiLich(maCT);
+    function chonChuongTrinh(boxId, btnElement) {
+        document.querySelectorAll('.nm-prog-btn').forEach(b => b.classList.remove('active'));
+        btnElement.classList.add('active');
+        hienThiBangLich(boxId);
     }
 
-    function hienThiLich(maCT) {
-        const khung = document.getElementById('bang-lich-chi-tiet');
-        if (!noiDungFileLich) return;
-        const lichTuongUng = noiDungFileLich.getElementById(maCT);
-        if (lichTuongUng) {
-            khung.innerHTML = lichTuongUng.innerHTML;
-        } else {
-            khung.innerHTML = '<p style="margin:0;">Đang cập nhật lịch. <a href="lichdaotao.html">Xem chi tiết tại đây →</a></p>';
+    function hienThiBangLich(boxId) {
+        const displayArea = document.getElementById('nm-schedule-display');
+        if (!docLichDaoTao) return;
+        const targetBox = docLichDaoTao.getElementById(boxId);
+        if (targetBox) {
+            displayArea.innerHTML = targetBox.innerHTML;
         }
     }
 </script>
 <!-- KẾT THÚC -->
+
       
     </section>
 
