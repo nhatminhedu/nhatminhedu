@@ -1120,3 +1120,12 @@ header {
   font-weight: bold !important;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1) !important;
 }
+
+/* Kích thước chuẩn cho logo tròn trên thanh đầu trang */
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
