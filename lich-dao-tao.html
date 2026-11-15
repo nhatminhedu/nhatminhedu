@@ -623,23 +623,13 @@ window.addEventListener('DOMContentLoaded', function() {
 </script>
 
     <script>
-    window.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('load', function() {
         const params = new URLSearchParams(window.location.search);
         const tabCanMo = params.get('tab');
         if (tabCanMo) {
-            const danhSachBox = ['box-nvsp','box-cdnn','box-vb2','box-ketoan','box-tinhoc','box-tamly','box-khac'];
-            const viTri = danhSachBox.indexOf(tabCanMo);
-            if (viTri !== -1) {
-                danhSachBox.forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) el.style.display = 'none';
-                });
-                const targetBox = document.getElementById(tabCanMo);
-                if (targetBox) targetBox.style.display = 'block';
-
-                const tatCaNut = document.querySelectorAll('.program-card-btn');
-                tatCaNut.forEach(b => b.classList.remove('active'));
-                if (tatCaNut[viTri]) tatCaNut[viTri].classList.add('active');
+            const nutTuongUng = document.querySelector('.program-card-btn[onclick*="' + tabCanMo + '"]');
+            if (nutTuongUng) {
+                nutTuongUng.click();
             }
         }
     });
